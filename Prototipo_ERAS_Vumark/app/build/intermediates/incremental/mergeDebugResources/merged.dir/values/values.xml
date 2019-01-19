@@ -2774,7 +2774,7 @@
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
-    <style name="SampleAppsTheme" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+    <style name="SampleAppsTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/black</item>
     </style>
