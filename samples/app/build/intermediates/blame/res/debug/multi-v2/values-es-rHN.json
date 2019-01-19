@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rHN\\values-es-rHN.xml",
+            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rHN\\values-es-rHN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\de1f457591775c84609e84fdbc706d0b\\res\\values-es-rHN\\values.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\915d9a3cbd0c1c82d2b3ae8b704e483b\\res\\values-es-rHN\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xxhdpi-v4\\values-xxhdpi-v4.xml",
+            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xxhdpi-v4\\values-xxhdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\src\\main\\res\\values-xxhdpi\\dimens.xml",
+                    "source": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\src\\main\\res\\values-xxhdpi\\dimens.xml",
                     "from": {
                         "startLines": "3,4",
                         "startColumns": "4,4",

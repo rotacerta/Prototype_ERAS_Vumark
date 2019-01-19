@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "3,5,6,7,8,4",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "56,136,175,220,279,96",
-                        "endColumns": "39,38,44,58,47,39",
-                        "endOffsets": "91,170,215,274,322,131"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "55,95,134,179,238,286",
-                        "endColumns": "39,38,44,58,47,39",
-                        "endOffsets": "90,129,174,233,281,321"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\de1f457591775c84609e84fdbc706d0b\\res\\values\\values.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\915d9a3cbd0c1c82d2b3ae8b704e483b\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\src\\main\\res\\values\\strings_content_description.xml",
+                    "source": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\src\\main\\res\\values\\strings_content_description.xml",
                     "from": {
                         "startLines": "3,4,5",
                         "startColumns": "4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
@@ -74,7 +57,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "3,5,6,7,8,4",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "56,136,175,220,279,96",
+                        "endColumns": "39,38,44,58,47,39",
+                        "endOffsets": "91,170,215,274,322,131"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,95,134,179,238,286",
+                        "endColumns": "39,38,44,58,47,39",
+                        "endOffsets": "90,129,174,233,281,321"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "43,44,45,46,51,48,47,50,49,52,53,55,54,33,24,40,31,35,26,34,25,39,30,36,27,38,29,41,32,37,28,8,7,4,3,22,6,57,11,10,20,19,17,18,61,71,73,70,72,66,68,67,69,62,63,65,64,13,15,14,75,59,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
                         "startLines": "11,4,5,8,6,7,9,10,2,3,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

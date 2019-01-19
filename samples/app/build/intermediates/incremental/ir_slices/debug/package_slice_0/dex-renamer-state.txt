@@ -1,4 +1,4 @@
-#Thu Dec 20 19:44:39 BRT 2018
-base.0=C\:\\Users\\felip\\AndroidStudioProjects\\sample_vuforia_all\\samples\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Jan 08 17:20:17 BRT 2019
+base.0=C\:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\samples\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
