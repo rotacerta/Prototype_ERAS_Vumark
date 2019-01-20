@@ -18,7 +18,8 @@ public class MenuNavigationActvity extends AppCompatActivity {
     private DachshundTabLayout tabLayout;
     private ViewPager viewPager;
 
-    public MenuNavigationActvity( ) {
+    public MenuNavigationActvity() {
+
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         viewPager = findViewById(R.id.view_pager);
@@ -28,7 +29,6 @@ public class MenuNavigationActvity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.setAnimatedIndicator(new LineMoveIndicator(tabLayout));
-
     }
 
     private void hideSystemUI() {

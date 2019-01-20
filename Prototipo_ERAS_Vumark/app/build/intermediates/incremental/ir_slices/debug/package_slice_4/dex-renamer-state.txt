@@ -1,4 +1,4 @@
-#Sat Jan 19 13:33:44 BRT 2019
+#Sun Jan 20 14:34:12 BRT 2019
 base.0=C\:\\Users\\felip\\Documents\\GitHub\\sample_vuforia\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
 path.0=classes.dex
 renamed.0=classes.dex

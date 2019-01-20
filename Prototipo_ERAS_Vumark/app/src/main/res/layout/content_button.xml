@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
+        android:onClick="hideVumarkApp"
         android:src="@drawable/ic_list_black_24dp"
         app:backgroundTint="@color/colorPrimary" />
 
