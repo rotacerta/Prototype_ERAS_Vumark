@@ -1,4 +1,5 @@
 samples/*
 samples_vumark/*
-.grandle/*
-app/build/intermediates/*
+Prototipo_ERAS_Vumark/.grandle/*
+Prototipo_ERAS_Vumark/.idea/*
+Prototipo_ERAS_Vumark/app/build/*

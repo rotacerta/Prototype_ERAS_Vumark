@@ -26,7 +26,6 @@ import android.view.WindowManager;
 import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.kekstudio.dachshundtablayout.indicators.LineMoveIndicator;
 import com.vuforia.Navigation.Adapters.PagerAdapter;
-import com.vuforia.Navigation.MenuNavigationActvity;
 import com.vuforia.VuforiaSamples.R;
 
 
@@ -78,5 +77,12 @@ public class ActivityLauncher extends AppCompatActivity
         intent.putExtra("ABOUT_TEXT", "VuMark/VM_about.html");
         startActivity(intent);
     }
+
+    public void finishActivity() {
+        Log.d(null, "finishActivity");
+        finishActivity(0);
+    }
+
+
 
 }
