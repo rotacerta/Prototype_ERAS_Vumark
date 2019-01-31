@@ -13,6 +13,7 @@ package com.vuforia.SampleApplication;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
 

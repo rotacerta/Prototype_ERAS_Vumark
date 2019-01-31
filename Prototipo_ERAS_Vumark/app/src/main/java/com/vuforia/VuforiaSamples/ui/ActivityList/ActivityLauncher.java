@@ -27,6 +27,7 @@ import com.kekstudio.dachshundtablayout.DachshundTabLayout;
 import com.kekstudio.dachshundtablayout.indicators.LineMoveIndicator;
 import com.vuforia.Navigation.Adapters.PagerAdapter;
 import com.vuforia.VuforiaSamples.R;
+import com.vuforia.VuforiaSamples.app.VuMark.VuMark;
 
 
 /**
@@ -71,10 +72,7 @@ public class ActivityLauncher extends AppCompatActivity
     public void hideVumarkApp(View view) {
 
         Log.d(null, "hideVumarkApp");
-        Intent intent = new Intent(this, AboutScreen.class);
-        intent.putExtra("ACTIVITY_TO_LAUNCH",
-                "app.VuMark.VuMark");
-        intent.putExtra("ABOUT_TEXT", "VuMark/VM_about.html");
+        Intent intent = new Intent(this, VuMark.class);
         startActivity(intent);
     }
 

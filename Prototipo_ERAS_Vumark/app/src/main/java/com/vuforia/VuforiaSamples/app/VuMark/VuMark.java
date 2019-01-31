@@ -50,15 +50,11 @@ import com.vuforia.SampleApplication.utils.LoadingDialogHandler;
 import com.vuforia.SampleApplication.utils.SampleApplicationGLView;
 import com.vuforia.SampleApplication.utils.Texture;
 import com.vuforia.VuforiaSamples.R;
-import com.vuforia.VuforiaSamples.ui.SampleAppMenu.SampleAppMenu;
-import com.vuforia.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuGroup;
-import com.vuforia.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuInterface;
 
 import java.util.Vector;
 
 
-public class VuMark extends Activity implements SampleApplicationControl,
-        SampleAppMenuInterface
+public class VuMark extends Activity implements SampleApplicationControl
 {
     private static final String LOGTAG = "VuMark";
     
@@ -79,8 +75,6 @@ public class VuMark extends Activity implements SampleApplicationControl,
 
     private RelativeLayout mUILayout;
     
-    private SampleAppMenu mSampleAppMenu;
-    
     final LoadingDialogHandler loadingDialogHandler = new LoadingDialogHandler(this);
 
     View _viewCard;
@@ -99,14 +93,14 @@ public class VuMark extends Activity implements SampleApplicationControl,
     {
         Log.d(LOGTAG, "onCreate");
         super.onCreate(savedInstanceState);
-        
+
         vuforiaAppSession = new SampleApplicationSession(this);
         
         startLoadingAnimation();
 
-        vuforiaAppSession
-            .initAR(this, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
+        vuforiaAppSession.initAR( this, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
         mGestureDetector = new GestureDetector(this, new GestureListener());
         
         // Load any sample specific textures:
@@ -290,7 +284,7 @@ public class VuMark extends Activity implements SampleApplicationControl,
 
         addContentView(mUILayout, new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.MATCH_PARENT));
-        
+
     }
 
     // it is called from VuMarkRenderer class in method renderFrame
@@ -433,10 +427,6 @@ public class VuMark extends Activity implements SampleApplicationControl,
             mUILayout.bringToFront();
 
             mUILayout.setBackgroundColor(Color.TRANSPARENT);
-            
-            mSampleAppMenu = new SampleAppMenu(this, this, "VuMark",
-                mGlView, mUILayout, null);
-            setSampleAppMenuSettings();
 
             vuforiaAppSession.startAR(CameraDevice.CAMERA_DIRECTION.CAMERA_DIRECTION_DEFAULT);
 
@@ -663,93 +653,9 @@ public class VuMark extends Activity implements SampleApplicationControl,
         return result;
     }
     
-    
-    @Override
-    public boolean onTouchEvent(MotionEvent event)
-    {
-        // Process the Gestures
-        return ((mSampleAppMenu != null && mSampleAppMenu.processEvent(event))
-                || mGestureDetector.onTouchEvent(event));
-    }
-    
-    
     private boolean isDeviceTrackingActive()
     {
         return mDeviceTracker;
     }
 
-
-    // Menu options
-    private final static int CMD_BACK = -1;
-    private final static int CMD_DEVICE_TRACKER = 1;
-
-    private void setSampleAppMenuSettings()
-    {
-        SampleAppMenuGroup group;
-        
-        group = mSampleAppMenu.addGroup("", false);
-        group.addTextItem(getString(R.string.menu_back), -1);
-        
-        group = mSampleAppMenu.addGroup("", true);
-        group.addSelectionItem(getString(R.string.menu_device_tracker),
-                CMD_DEVICE_TRACKER, false);
-
-        mSampleAppMenu.attachMenu();
-    }
-
-
-    // In this function you can define the desired behavior for each menu option
-    // Each case corresponds to a menu option
-    @Override
-    public boolean menuProcess(int command)
-    {
-        
-        boolean result = true;
-        
-        switch (command)
-        {
-            case CMD_BACK:
-                finish();
-                break;
-
-            case CMD_DEVICE_TRACKER:
-                TrackerManager trackerManager = TrackerManager.getInstance();
-                PositionalDeviceTracker deviceTracker = (PositionalDeviceTracker)
-                        trackerManager.getTracker(PositionalDeviceTracker.getClassType());
-
-                if (deviceTracker != null)
-                {
-                    if (!mDeviceTracker)
-                    {
-                        if (!deviceTracker.start())
-                        {
-                            Log.e(LOGTAG,"Failed to start device tracker");
-                            result = false;
-                        } else
-                        {
-                            Log.d(LOGTAG,"Successfully started device tracker");
-                        }
-                    }
-                    else
-                    {
-                        deviceTracker.stop();
-                    }
-                }
-                else
-                {
-                    Log.e(LOGTAG, "Device tracker is null!");
-                    result = false;
-                }
-
-                if (result)
-                    mDeviceTracker = !mDeviceTracker;
-                
-                break;
-            
-            default:
-                break;
-        }
-        
-        return result;
-    }
 }
