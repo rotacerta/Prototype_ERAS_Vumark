@@ -1,15 +1,6 @@
-# Flutter WhatsAppClone
+# Flutter Eras
 
-Building a WhatsApp Clone in Flutter.
-
-### Show some :heart: and star the repo to support the project
-
-### Screenshots
-
-<img src="ss1.png" height="300em" /> <img src="ss2.png" height="300em" />
-
-[Watch the video tutorial on YouTube](https://youtu.be/2Tyrofn6zPg)
-
+# Para usar esse app é necessário instalar o flutter em seu site 
 ### Created & Maintained By
 
 [Pawan Kumar](https://github.com/iampawan) ([@imthepk](https://www.twitter.com/imthepk)) ([Youtube](https://www.youtube.com/c/MTechViral))
