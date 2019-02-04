@@ -1,5 +1,11 @@
-samples/*
-samples_vumark/*
-Prototipo_ERAS_Vumark/.grandle/*
-Prototipo_ERAS_Vumark/.idea/*
-Prototipo_ERAS_Vumark/app/build/*
+.DS_Store
+.atom/
+.dart_tool/
+.idea
+.vscode/
+.packages
+.pub/
+build/
+ios/.generated/
+packages
+.flutter-plugins
