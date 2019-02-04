@@ -53,7 +53,6 @@ public class ActivityLauncher extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         navigationMenu();
-        // hideVumarkApp();
     }
 
     public void navigationMenu() {
@@ -73,7 +72,7 @@ public class ActivityLauncher extends AppCompatActivity
 
         Log.d(null, "hideVumarkApp");
         Intent intent = new Intent(this, VuMark.class);
-        startActivity(intent);
+        startActivityForResult(intent, 0);
     }
 
     public void finishActivity() {

@@ -1154,6 +1154,7 @@ id btn_reset
 id buttonPanel
 id button_layout
 id button_start
+id camera
 id camera_button
 id camera_overlay_layout
 id camera_preview
