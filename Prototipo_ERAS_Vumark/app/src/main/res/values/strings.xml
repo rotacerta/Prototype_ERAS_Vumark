@@ -5,6 +5,9 @@
     <string name="mechanical_appliances">Aparelhos de mecânica</string>
     <string name="electronic_materials">Materiais de eletrônica</string>
 
+    <string name="menu_item_map">Mapa</string>
+    <string name="menu_item_list">Lista de produtos</string>
+
     <string name="app_name">PickByPath</string>
     <string name="app_description">Vuforia Sample Applications</string>
     
