@@ -36,14 +36,28 @@
             android:adjustViewBounds="true"
             android:clickable="false"
             android:contentDescription="@string/descr_loading_icon"/>
+
         <View
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
-    <include layout="@layout/floating_menu"/>
+    <include
+        android:id="@+id/list_camera"
+        layout="@layout/floating_button_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/map_camera"
+        android:layout_marginBottom="-50dp" />
+
+    <include
+        android:id="@+id/map_camera"
+        layout="@layout/floating_button_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
 
 </RelativeLayout>

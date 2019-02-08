@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_span="3"
+        android:padding="18dip"
+        android:text="MAPA"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="18dp" />
+
+
+
+    <include
+        android:id="@+id/list_map"
+        layout="@layout/floating_button_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/camera_map"
+        android:layout_marginBottom="-50dp" />
+
+    <include
+        android:id="@+id/camera_map"
+        layout="@layout/floating_button_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
