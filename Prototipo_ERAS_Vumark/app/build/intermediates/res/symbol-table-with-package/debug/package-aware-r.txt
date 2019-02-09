@@ -1110,7 +1110,9 @@ drawable vuforia_splash
 id ALT
 id CTRL
 id FUNCTION
-id FbtnBottom
+id FbtnBottomCam
+id FbtnBottomList
+id FbtnBottomMap
 id META
 id SHIFT
 id SYM

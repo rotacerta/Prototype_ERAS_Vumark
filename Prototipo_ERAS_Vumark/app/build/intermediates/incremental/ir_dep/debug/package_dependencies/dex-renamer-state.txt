@@ -1,4 +1,4 @@
-#Fri Feb 08 17:02:15 BRT 2019
+#Fri Feb 08 21:33:37 BRT 2019
 base.0=C\:\\Users\\felip\\Documents\\GitHub\\Prototype_ERAS_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex
