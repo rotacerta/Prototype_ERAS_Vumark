@@ -92,9 +92,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.vuforia.VuforiaSamples.ui.ActivityList.ActivityLauncher"
-            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
-            android:screenOrientation="portrait" >
+            android:name="com.vuforia.Navigation.ListProducts"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
+        </activity>
+        <activity
+            android:name="com.vuforia.Navigation.Map"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
         </activity>
         <activity
             android:name="com.vuforia.VuforiaSamples.app.VuMark.VuMark"

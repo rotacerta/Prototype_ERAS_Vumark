@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.vuforia.VuforiaSamples.R;
+import com.vuforia.VuforiaSamples.app.VuMark.VuMark;
 
 
 /**
@@ -52,7 +53,7 @@ public class ActivitySplashScreen extends Activity
             public void run()
             {
                 Intent intent = new Intent(ActivitySplashScreen.this,
-                    ActivityLauncher.class);
+                    VuMark.class);
                 startActivity(intent);
             }
             

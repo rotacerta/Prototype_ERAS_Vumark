@@ -91,13 +91,18 @@
                  <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
          </activity>
-        
+
         <activity
-            android:name=".ui.ActivityList.ActivityLauncher"
+            android:name="com.vuforia.Navigation.ListProducts"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
-            android:screenOrientation="portrait"
             >
         </activity>
+        <activity
+            android:name="com.vuforia.Navigation.Map"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+            >
+        </activity>
+
 
         <activity
             android:name=".app.VuMark.VuMark"

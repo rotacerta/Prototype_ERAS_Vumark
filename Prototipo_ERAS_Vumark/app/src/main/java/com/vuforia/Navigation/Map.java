@@ -1,13 +1,14 @@
 package com.vuforia.Navigation;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.FloatingActionButton;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.vuforia.VuforiaSamples.R;
+import com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen;
 
-public class Map  extends AppCompatActivity
+public class Map  extends Navigate
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -19,6 +20,16 @@ public class Map  extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.map);
+        setOnClick();
     }
+
+    public void setOnClick() {
+        FloatingActionButton btn_list = findViewById(R.id.FbtnBottomList);
+        setOnClickInFloatingButton(btn_list, ListProducts.class);
+
+        FloatingActionButton btn_camera = findViewById(R.id.FbtnBottomCam);
+        setOnClickInFloatingButton(btn_camera, ActivitySplashScreen.class);
+    }
+
 }
 

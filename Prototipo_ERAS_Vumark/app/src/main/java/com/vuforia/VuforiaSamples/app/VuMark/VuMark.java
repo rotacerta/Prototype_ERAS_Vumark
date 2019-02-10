@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -20,13 +21,17 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -35,6 +40,9 @@ import android.widget.TextView;
 import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
 import com.vuforia.HINT;
+import com.vuforia.Navigation.ListProducts;
+import com.vuforia.Navigation.Map;
+import com.vuforia.Navigation.Navigate;
 import com.vuforia.ObjectTracker;
 import com.vuforia.PositionalDeviceTracker;
 import com.vuforia.STORAGE_TYPE;
@@ -54,7 +62,7 @@ import com.vuforia.VuforiaSamples.R;
 import java.util.Vector;
 
 
-public class VuMark extends Activity implements SampleApplicationControl
+public class VuMark extends Navigate implements SampleApplicationControl
 {
     private static final String LOGTAG = "VuMark";
     
@@ -87,12 +95,19 @@ public class VuMark extends Activity implements SampleApplicationControl
     
     private boolean mIsDroidDevice = false;
 
+    String DEBUG_TAG = "TESTE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        Log.d(LOGTAG, "onCreate");
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setContentView(R.layout.camera_overlay_reticle);
+        setOnClick();
 
         vuforiaAppSession = new SampleApplicationSession(this);
         
@@ -132,6 +147,13 @@ public class VuMark extends Activity implements SampleApplicationControl
         _instanceImageView = (ImageView) _viewCard.findViewById(R.id.instance_image);
     }
 
+    public void setOnClick() {
+        FloatingActionButton btn_map = findViewById(R.id.FbtnBottomMap);
+        setOnClickInFloatingButton(btn_map, Map.class);
+
+        FloatingActionButton btn_list = findViewById(R.id.FbtnBottomList);
+        setOnClickInFloatingButton(btn_list, ListProducts.class);
+    }
 
     private class GestureListener extends
         GestureDetector.SimpleOnGestureListener
