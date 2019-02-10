@@ -1066,6 +1066,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable eras_logo
+drawable eras_logo_apk
 drawable fundo_drawer
 drawable ic_camera_alt_black
 drawable ic_close_black_24dp
@@ -1302,7 +1304,6 @@ id snackbar_action
 id snackbar_text
 id snap
 id spacer
-id splash_image
 id split_action_bar
 id spread
 id spread_inside
