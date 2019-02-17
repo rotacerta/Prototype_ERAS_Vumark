@@ -1262,6 +1262,7 @@ id legacy_table_view
 id line1
 id line3
 id listMode
+id listProducts
 id list_camera
 id list_item
 id list_map
@@ -1440,6 +1441,7 @@ layout camera_overlay_reticle
 layout camera_overlay_udt
 layout camera_overlay_with_scanline
 layout card
+layout card_list
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

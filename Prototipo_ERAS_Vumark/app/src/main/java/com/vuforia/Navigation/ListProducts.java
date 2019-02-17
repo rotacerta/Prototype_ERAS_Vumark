@@ -1,16 +1,22 @@
 package com.vuforia.Navigation;
 
 import android.os.Bundle;
+import android.support.design.card.MaterialCardView;
 import android.support.design.widget.FloatingActionButton;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
-import com.levitnudi.legacytableview.LegacyTableView;
 import com.vuforia.VuforiaSamples.R;
 import com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen;
 
+import androidx.cardview.widget.CardView;
+
+
 public class ListProducts extends Navigate
 {
+    ProductItem listProducts[];
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -23,35 +29,37 @@ public class ListProducts extends Navigate
         setContentView(R.layout.list_products);
 
         setOnClick();
-        createTable();
+        initializeProductsList();
+        createList();
     }
 
-    public void createTable() {
-        //set table title labels
-        LegacyTableView.insertLegacyTitle("Id", "Name", "Age", "Email");
-        //set table contents as string arrays
-        LegacyTableView.insertLegacyContent("2999010", "John Deer", "50", "john@example.com",
-                "332312", "Kennedy F", "33", "ken@example.com"
-                ,"42343243", "Java Lover", "28", "Jlover@example.com"
-                ,"4288383", "Mike Tee", "22", "miket@example.com");
+    private void initializeProductsList(ProductItem[]... products) {
+        // listProducts = products;
+        listProducts = new ProductItem[3];
+        listProducts[0] = new ProductItem("Fardamento",5, "121212", null);
+        listProducts[1] = new ProductItem("Computadores",25, "123123", null);
+        listProducts[2] = new ProductItem("Ferramentas",5, "444444", null);
+    }
 
-        LegacyTableView legacyTableView = (LegacyTableView)findViewById(R.id.legacy_table_view);
-        legacyTableView.setTitle(LegacyTableView.readLegacyTitle());
-        legacyTableView.setContent(LegacyTableView.readLegacyContent());
+    public void createList() {
+        MaterialCardView cards[] = new MaterialCardView[listProducts.length];
+        for (int index = 0; index < cards.length; index++) {
+            cards[index].addView(createTextView(listProducts[index].title));
+            cards[index].addView(createTextView(Integer.toString(listProducts[index].amount)));
+            cards[index].addView(createTextView(listProducts[index].locate));
+            if(listProducts[index].description != null) {
+                cards[index].addView(createTextView(listProducts[index].description));
+            }
+            cards[index].setPadding(15,15,15,15);
+            cards[index].setMinimumHeight(150);
+        }
+    }
 
-        //depending on the phone screen size default table scale is 100
-        //you can change it using this method
-        //legacyTableView.setInitialScale(100);//default initialScale is zero (0)
-
-        //if you want a smaller table, change the padding setting
-        legacyTableView.setTablePadding(7);
-
-        //to enable users to zoom in and out:
-        legacyTableView.setZoomEnabled(true);
-        legacyTableView.setShowZoomControls(true);
-
-        //remember to build your table as the last step
-        legacyTableView.build();
+    private TextView createTextView(String text) {
+        TextView textView = new TextView(this);
+        textView.setText(text);
+        textView.setPadding(15,15,15,15);
+        return textView;
     }
 
     public void setOnClick() {

@@ -6,7 +6,6 @@ INJECTED from C:\Users\felip\Documents\GitHub\Prototype_ERAS_Vumark\Prototipo_ER
 INJECTED from C:\Users\felip\Documents\GitHub\Prototype_ERAS_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-117:12
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\915d9a3cbd0c1c82d2b3ae8b704e483b\AndroidManifest.xml:17:1-46:12
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\934503df934c1541bc2007381ed769b1\AndroidManifest.xml:17:1-24:12
-MERGED from [com.github.levitnudi:LegacyTableView:master] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\LegacyTableView-master.aar\bafb766d97d04b006791e3148ee9eb41\AndroidManifest.xml:2:1-17:12
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\645e952b42276f228de86a897196f2ec\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\17ee5637fbfa6bb482b4061b7a0810a9\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-transformation:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-transformation-28.0.0-alpha1.aar\5a934cc43350b9b475be1ba5a91c1180\AndroidManifest.xml:17:1-24:12
@@ -29,15 +28,16 @@ MERGED from [com.android.support:appcompat-v7:28.0.0-alpha1] C:\Users\felip\.gra
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8585691c1453a31418bcb957749a9ef1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\cbe026d31f37f8823a3b3fc85da8c84c\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:support-fragment:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0-alpha1.aar\7080fdecab192aa621bee4464e3263fa\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\6998396bef22b688d828a4548d3a2fb4\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0-alpha1.aar\a42be57bbfe802a7c404753b01931f4e\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\9271dd47e8f7ffcbf68b7e65206193cf\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-circularreveal-coordinatorlayout:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-circularreveal-coordinatorlayout-28.0.0-alpha1.aar\7b6c32935e17d25b16d12e487aed3e27\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\78b9a4b6b9b5dca4534cc179f97835a7\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\337e6c241b6abd2a7e9a9d8ecdfa3f18\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\6998396bef22b688d828a4548d3a2fb4\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:support-core-ui:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0-alpha1.aar\37cc35de039c5f3f583a9717560816e4\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\c0b25c37e09c56d5ba5bb1e5b0507de8\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:support-core-utils:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0-alpha1.aar\c73227d651c2a690a9fb41ae065ee07c\AndroidManifest.xml:17:1-23:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\2bf6c7cf33214b8f7ca3f1339748308f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\0483460185ccf3a6a9949c98285310ce\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:loader:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\loader-28.0.0-alpha1.aar\c8e5efbd372b0863ae02be20d0c7f488\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:viewpager:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0-alpha1.aar\ac1700d6b5d8d2c8f439fcae27b2c4e7\AndroidManifest.xml:17:1-23:12
@@ -47,7 +47,6 @@ MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha1] C:\Users\felip
 MERGED from [com.android.support:customview:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\customview-28.0.0-alpha1.aar\45beb1420a49596bbad5e9dd1fe61f41\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0-alpha1.aar\d46d8eab2d0cf7fcd2e09dfab13ff949\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0-alpha1.aar\bea6de6a8a84f6e79776939cf821d982\AndroidManifest.xml:17:1-23:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\2bf6c7cf33214b8f7ca3f1339748308f\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0-alpha1.aar\c1944ef1fa73da718528aedc6d3d8173\AndroidManifest.xml:17:1-23:12
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\92bb3d3e03cfe1209ccc2d237a571ae8\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-circularreveal-cardview:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-circularreveal-cardview-28.0.0-alpha1.aar\fc4ef79688a8a1f03130b58b53b2781a\AndroidManifest.xml:17:1-24:12
@@ -144,8 +143,6 @@ MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\915d9a3cbd0c1c82d2b3ae8b704e483b\AndroidManifest.xml:30:5-44:19
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\934503df934c1541bc2007381ed769b1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\934503df934c1541bc2007381ed769b1\AndroidManifest.xml:22:5-20
-MERGED from [com.github.levitnudi:LegacyTableView:master] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\LegacyTableView-master.aar\bafb766d97d04b006791e3148ee9eb41\AndroidManifest.xml:11:5-15:19
-MERGED from [com.github.levitnudi:LegacyTableView:master] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\LegacyTableView-master.aar\bafb766d97d04b006791e3148ee9eb41\AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\645e952b42276f228de86a897196f2ec\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\645e952b42276f228de86a897196f2ec\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\17ee5637fbfa6bb482b4061b7a0810a9\AndroidManifest.xml:22:5-20
@@ -218,7 +215,6 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\fe
 		ADDED from [androidx.core:core:1.0.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\ee83ff20e868b8a7f7968c8ec6a54346\AndroidManifest.xml:22:18-86
 	android:supportsRtl
 		ADDED from C:\Users\felip\Documents\GitHub\Prototype_ERAS_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:60:9-35
-		REJECTED from [com.github.levitnudi:LegacyTableView:master] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\LegacyTableView-master.aar\bafb766d97d04b006791e3148ee9eb41\AndroidManifest.xml:14:9-35
 	android:label
 		ADDED from C:\Users\felip\Documents\GitHub\Prototype_ERAS_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:55:9-41
 	android:launchMode
@@ -291,8 +287,6 @@ MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\915d9a3cbd0c1c82d2b3ae8b704e483b\AndroidManifest.xml:26:5-28:41
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\934503df934c1541bc2007381ed769b1\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\934503df934c1541bc2007381ed769b1\AndroidManifest.xml:20:5-44
-MERGED from [com.github.levitnudi:LegacyTableView:master] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\LegacyTableView-master.aar\bafb766d97d04b006791e3148ee9eb41\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.levitnudi:LegacyTableView:master] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\LegacyTableView-master.aar\bafb766d97d04b006791e3148ee9eb41\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\645e952b42276f228de86a897196f2ec\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\645e952b42276f228de86a897196f2ec\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-theme:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-theme-28.0.0-alpha1.aar\17ee5637fbfa6bb482b4061b7a0810a9\AndroidManifest.xml:20:5-44
@@ -337,6 +331,8 @@ MERGED from [com.google.android.material:material:1.0.0] C:\Users\felip\.gradle\
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\cbe026d31f37f8823a3b3fc85da8c84c\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0-alpha1.aar\7080fdecab192aa621bee4464e3263fa\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:support-fragment:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0-alpha1.aar\7080fdecab192aa621bee4464e3263fa\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\6998396bef22b688d828a4548d3a2fb4\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\6998396bef22b688d828a4548d3a2fb4\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0-alpha1.aar\a42be57bbfe802a7c404753b01931f4e\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:recyclerview-v7:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0-alpha1.aar\a42be57bbfe802a7c404753b01931f4e\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:design-animation:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-animation-28.0.0-alpha1.aar\9271dd47e8f7ffcbf68b7e65206193cf\AndroidManifest.xml:20:5-44
@@ -347,14 +343,14 @@ MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\felip
 MERGED from [com.android.support:design-expandable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-expandable-28.0.0-alpha1.aar\78b9a4b6b9b5dca4534cc179f97835a7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\337e6c241b6abd2a7e9a9d8ecdfa3f18\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-stateful:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-stateful-28.0.0-alpha1.aar\337e6c241b6abd2a7e9a9d8ecdfa3f18\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\6998396bef22b688d828a4548d3a2fb4\AndroidManifest.xml:21:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0-alpha1.aar\6998396bef22b688d828a4548d3a2fb4\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0-alpha1.aar\37cc35de039c5f3f583a9717560816e4\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:support-core-ui:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0-alpha1.aar\37cc35de039c5f3f583a9717560816e4\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\c0b25c37e09c56d5ba5bb1e5b0507de8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design-ripple:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-ripple-28.0.0-alpha1.aar\c0b25c37e09c56d5ba5bb1e5b0507de8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0-alpha1.aar\c73227d651c2a690a9fb41ae065ee07c\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:support-core-utils:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0-alpha1.aar\c73227d651c2a690a9fb41ae065ee07c\AndroidManifest.xml:21:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\2bf6c7cf33214b8f7ca3f1339748308f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\2bf6c7cf33214b8f7ca3f1339748308f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\0483460185ccf3a6a9949c98285310ce\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:transition:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\transition-28.0.0-alpha1.aar\0483460185ccf3a6a9949c98285310ce\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:loader:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\loader-28.0.0-alpha1.aar\c8e5efbd372b0863ae02be20d0c7f488\AndroidManifest.xml:21:5-44
@@ -373,8 +369,6 @@ MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha1] C:\Users\feli
 MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0-alpha1.aar\d46d8eab2d0cf7fcd2e09dfab13ff949\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0-alpha1.aar\bea6de6a8a84f6e79776939cf821d982\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0-alpha1.aar\bea6de6a8a84f6e79776939cf821d982\AndroidManifest.xml:21:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\2bf6c7cf33214b8f7ca3f1339748308f\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0-alpha1.aar\2bf6c7cf33214b8f7ca3f1339748308f\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-compat:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0-alpha1.aar\c1944ef1fa73da718528aedc6d3d8173\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:support-compat:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0-alpha1.aar\c1944ef1fa73da718528aedc6d3d8173\AndroidManifest.xml:21:5-44
 MERGED from [com.android.support:design-canvas:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-canvas-28.0.0-alpha1.aar\92bb3d3e03cfe1209ccc2d237a571ae8\AndroidManifest.xml:20:5-44
