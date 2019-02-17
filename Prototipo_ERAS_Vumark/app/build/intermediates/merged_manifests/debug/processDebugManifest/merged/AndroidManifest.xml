@@ -51,13 +51,13 @@
     -->
     <application
         android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:description="@string/app_description"
         android:icon="@drawable/eras_logo_apk"
         android:label="@string/app_name"
         android:launchMode="singleTask"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/SampleAppsTheme" >
 
         <!-- The following must be present to facilitate use of ARCore, if available -->
