@@ -51,7 +51,6 @@
     -->
     <application
         android:allowBackup="true"
-        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:description="@string/app_description"
         android:icon="@drawable/eras_logo_apk"

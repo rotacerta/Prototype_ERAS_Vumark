@@ -1,16 +1,19 @@
 package com.vuforia.Navigation;
 
 import android.os.Bundle;
-import android.support.design.card.MaterialCardView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.CardView;
+import android.text.Layout;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.vuforia.VuforiaSamples.R;
 import com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen;
 
-import androidx.cardview.widget.CardView;
 
 
 public class ListProducts extends Navigate
@@ -30,7 +33,8 @@ public class ListProducts extends Navigate
 
         setOnClick();
         initializeProductsList();
-        createList();
+        CardView cards[] = createList();
+        setCardsInLayout(cards);
     }
 
     private void initializeProductsList(ProductItem[]... products) {
@@ -41,25 +45,45 @@ public class ListProducts extends Navigate
         listProducts[2] = new ProductItem("Ferramentas",5, "444444", null);
     }
 
-    public void createList() {
-        MaterialCardView cards[] = new MaterialCardView[listProducts.length];
+    public CardView[] createList() {
+        CardView cards[] = new CardView[listProducts.length];
         for (int index = 0; index < cards.length; index++) {
-            cards[index].addView(createTextView(listProducts[index].title));
-            cards[index].addView(createTextView(Integer.toString(listProducts[index].amount)));
-            cards[index].addView(createTextView(listProducts[index].locate));
-            if(listProducts[index].description != null) {
-                cards[index].addView(createTextView(listProducts[index].description));
-            }
-            cards[index].setPadding(15,15,15,15);
+            cards[index] = new CardView(this);
+            cards[index].addView( createLinearLayout(index) );
+            LinearLayout.LayoutParams cardViewParams
+                    = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            cardViewParams.setMargins(50, 50, 50, 0);
+            cards[index].setLayoutParams(cardViewParams);
+            cards[index].requestLayout();
             cards[index].setMinimumHeight(150);
         }
+        return cards;
+    }
+
+    public LinearLayout createLinearLayout(int index) {
+        LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.addView(createTextView("Produto: " + listProducts[index].title));
+        linearLayout.addView(createTextView("Quantidade: " + Integer.toString(listProducts[index].amount)));
+        linearLayout.addView(createTextView("Local: " + listProducts[index].locate));
+        if(listProducts[index].description != null) {
+            linearLayout.addView(createTextView("Descrição: " + listProducts[index].description));
+        }
+        return linearLayout;
     }
 
     private TextView createTextView(String text) {
         TextView textView = new TextView(this);
         textView.setText(text);
-        textView.setPadding(15,15,15,15);
+        textView.setPadding(30,30,30,30);
         return textView;
+    }
+
+    public void setCardsInLayout(CardView[] cards) {
+        LinearLayout layout = findViewById(R.id.listProducts);
+        for (CardView card: cards) {
+            layout.addView(card);
+        }
     }
 
     public void setOnClick() {
