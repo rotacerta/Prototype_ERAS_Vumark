@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
+            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw\\values-sw.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\e1ac5c1d63266f20ac5ae5815fd9308e\\res\\values-sw\\values.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\c1944ef1fa73da718528aedc6d3d8173\\res\\values-sw\\values-sw.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "25",
+                        "startColumns": "4",
+                        "startOffsets": "2328",
+                        "endColumns": "100",
+                        "endOffsets": "2424"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\915d9a3cbd0c1c82d2b3ae8b704e483b\\res\\values-sw\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\5547e87fd4fc0e4e3bf6ef773b8830b8\\res\\values-sw\\values-sw.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\7dfcb442d01175ca4f918a0549cd39d1\\res\\values-sw\\values-sw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -35,23 +52,6 @@
                         "startOffsets": "489,592,690,798,888,993,1110,1192,1275,1357,1458,1567,1666,1773,1882,1987,2149,2246",
                         "endColumns": "102,97,107,89,104,116,81,82,81,100,108,98,106,108,104,161,96,81",
                         "endOffsets": "587,685,793,883,988,1105,1187,1270,1352,1453,1562,1661,1768,1877,1982,2144,2241,2323"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\184f8d7ceb3b0d9974afeabdb5f9d3e9\\res\\values-sw\\values-sw.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "25",
-                        "startColumns": "4",
-                        "startOffsets": "2328",
-                        "endColumns": "100",
-                        "endOffsets": "2424"
                     }
                 }
             ]
