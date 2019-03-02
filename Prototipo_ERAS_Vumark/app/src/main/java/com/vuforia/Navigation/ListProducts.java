@@ -3,16 +3,14 @@ package com.vuforia.Navigation;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
-import android.text.Layout;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.vuforia.VuforiaSamples.R;
-import com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen;
+import com.vuforia.UI.R;
+import com.vuforia.UI.ActivitySplashScreen;
 
 
 

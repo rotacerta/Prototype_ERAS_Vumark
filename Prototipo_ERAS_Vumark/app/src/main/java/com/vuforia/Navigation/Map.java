@@ -5,8 +5,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.vuforia.VuforiaSamples.R;
-import com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen;
+import com.vuforia.UI.R;
+import com.vuforia.UI.ActivitySplashScreen;
 
 public class Map  extends Navigate
 {

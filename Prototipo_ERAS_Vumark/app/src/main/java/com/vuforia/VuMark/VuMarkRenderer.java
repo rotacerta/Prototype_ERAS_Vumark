@@ -7,7 +7,7 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 
-package com.vuforia.VuforiaSamples.app.VuMark;
+package com.vuforia.VuMark;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -23,6 +23,14 @@ import com.vuforia.InstanceId;
 import com.vuforia.Matrix44F;
 import com.vuforia.PIXEL_FORMAT;
 import com.vuforia.Renderer;
+import com.vuforia.SampleApplication.SampleAppRenderer;
+import com.vuforia.SampleApplication.SampleAppRendererControl;
+import com.vuforia.SampleApplication.SampleApplicationSession;
+import com.vuforia.SampleApplication.utils.CubeShaders;
+import com.vuforia.SampleApplication.utils.LoadingDialogHandler;
+import com.vuforia.SampleApplication.utils.SampleMath;
+import com.vuforia.SampleApplication.utils.SampleUtils;
+import com.vuforia.SampleApplication.utils.Texture;
 import com.vuforia.State;
 import com.vuforia.Tool;
 import com.vuforia.TrackableResult;
@@ -33,14 +41,6 @@ import com.vuforia.VuMarkTarget;
 import com.vuforia.VuMarkTargetResult;
 import com.vuforia.VuMarkTemplate;
 import com.vuforia.Vuforia;
-import com.vuforia.SampleApplication.SampleAppRenderer;
-import com.vuforia.SampleApplication.SampleAppRendererControl;
-import com.vuforia.SampleApplication.SampleApplicationSession;
-import com.vuforia.SampleApplication.utils.CubeShaders;
-import com.vuforia.SampleApplication.utils.LoadingDialogHandler;
-import com.vuforia.SampleApplication.utils.SampleMath;
-import com.vuforia.SampleApplication.utils.SampleUtils;
-import com.vuforia.SampleApplication.utils.Texture;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;

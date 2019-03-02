@@ -68,7 +68,7 @@ INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_V
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-117:12
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-117:12
 	package
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:4:5-41
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:4:5-29
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -199,7 +199,7 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:64:54-78
 	android:name
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:64:20-53
-activity#com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen
+activity#com.vuforia.UI.ActivitySplashScreen
 ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:82:10-93:21
 	android:screenOrientation
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:85:13-49
@@ -208,7 +208,7 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 	android:configChanges
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:84:13-93
 	android:name
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:83:13-65
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:83:13-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:88:14-92:30
 action#android.intent.action.MAIN
@@ -231,7 +231,7 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:102:13-93
 	android:name
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:101:13-54
-activity#com.vuforia.VuforiaSamples.app.VuMark.VuMark
+activity#com.vuforia.VuMark.VuMark
 ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:107:9-113:20
 	android:launchMode
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:111:13-44
@@ -240,7 +240,7 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 	android:theme
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:110:13-51
 	android:name
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:108:13-46
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:108:13-53
 uses-sdk
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml

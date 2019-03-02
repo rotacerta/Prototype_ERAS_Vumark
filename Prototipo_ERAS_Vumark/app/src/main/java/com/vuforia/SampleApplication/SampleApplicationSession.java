@@ -13,7 +13,6 @@ package com.vuforia.SampleApplication;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -25,7 +24,7 @@ import com.vuforia.INIT_FLAGS;
 import com.vuforia.State;
 import com.vuforia.Vuforia;
 import com.vuforia.Vuforia.UpdateCallbackInterface;
-import com.vuforia.VuforiaSamples.R;
+import com.vuforia.UI.R;
 
 import java.lang.ref.WeakReference;
 

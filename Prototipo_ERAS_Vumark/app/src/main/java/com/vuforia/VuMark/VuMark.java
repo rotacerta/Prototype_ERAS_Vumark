@@ -7,13 +7,11 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 
-package com.vuforia.VuforiaSamples.app.VuMark;
+package com.vuforia.VuMark;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -31,7 +29,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -39,6 +36,7 @@ import android.widget.TextView;
 
 import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
+import com.vuforia.FUSION_PROVIDER_TYPE;
 import com.vuforia.HINT;
 import com.vuforia.Navigation.ListProducts;
 import com.vuforia.Navigation.Map;
@@ -46,18 +44,17 @@ import com.vuforia.Navigation.Navigate;
 import com.vuforia.ObjectTracker;
 import com.vuforia.PositionalDeviceTracker;
 import com.vuforia.STORAGE_TYPE;
-import com.vuforia.State;
-import com.vuforia.Tracker;
-import com.vuforia.TrackerManager;
-import com.vuforia.FUSION_PROVIDER_TYPE;
-import com.vuforia.Vuforia;
 import com.vuforia.SampleApplication.SampleApplicationControl;
 import com.vuforia.SampleApplication.SampleApplicationException;
 import com.vuforia.SampleApplication.SampleApplicationSession;
 import com.vuforia.SampleApplication.utils.LoadingDialogHandler;
 import com.vuforia.SampleApplication.utils.SampleApplicationGLView;
 import com.vuforia.SampleApplication.utils.Texture;
-import com.vuforia.VuforiaSamples.R;
+import com.vuforia.State;
+import com.vuforia.Tracker;
+import com.vuforia.TrackerManager;
+import com.vuforia.Vuforia;
+import com.vuforia.UI.R;
 
 import java.util.Vector;
 

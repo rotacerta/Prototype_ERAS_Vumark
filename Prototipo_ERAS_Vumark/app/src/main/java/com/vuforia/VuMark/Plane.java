@@ -7,7 +7,7 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 
-package com.vuforia.VuforiaSamples.app.VuMark;
+package com.vuforia.VuMark;
 
 import com.vuforia.SampleApplication.utils.MeshObject;
 

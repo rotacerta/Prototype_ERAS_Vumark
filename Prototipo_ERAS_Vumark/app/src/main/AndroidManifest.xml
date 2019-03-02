@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.vuforia.VuforiaSamples" >
+    package="com.vuforia.UI" >
 
     <uses-feature android:glEsVersion="0x00020000" />
 
@@ -80,7 +80,7 @@
         -->
         <!-- Splash Screen Activity -->
          <activity
-            android:name=".ui.ActivityList.ActivitySplashScreen"
+            android:name="com.vuforia.UI.ActivitySplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
             android:noHistory="true"
@@ -105,7 +105,7 @@
 
 
         <activity
-            android:name=".app.VuMark.VuMark"
+            android:name="com.vuforia.VuMark.VuMark"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:theme="@style/SampleAppsTheme"
             android:launchMode="singleTask"
