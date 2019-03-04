@@ -81,5 +81,7 @@
     <string name="menu_button_green">Green</string>
         
     <string name="splash_screen_description">Vuforia Splash</string>
-    
+    <string name="insert_quantity_input_hint">Insira a quantidade</string>
+    <string name="confirm_button">Confirmar</string>
+
 </resources>

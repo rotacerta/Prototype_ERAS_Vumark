@@ -1455,6 +1455,7 @@ string button_OK
 string button_start
 string character_counter_pattern
 string computer_devices
+string confirm_button
 string content_desc_camera_button
 string descr_loading_icon
 string descr_scan_line
@@ -1465,6 +1466,7 @@ string fab_transformation_sheet_behavior
 string feature_ground_plane
 string feature_model_targets
 string hide_bottom_view_on_scroll_behavior
+string insert_quantity_input_hint
 string instruct_empty
 string instruct_gestures
 string instruct_point_device
