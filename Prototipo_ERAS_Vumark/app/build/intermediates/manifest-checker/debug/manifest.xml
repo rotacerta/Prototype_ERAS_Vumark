@@ -81,7 +81,7 @@
         -->
         <!-- Splash Screen Activity -->
         <activity
-            android:name="com.vuforia.VuforiaSamples.ui.ActivityList.ActivitySplashScreen"
+            android:name="com.vuforia.UI.ActivitySplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:noHistory="true"
             android:screenOrientation="portrait" >
@@ -100,7 +100,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
         </activity>
         <activity
-            android:name="com.vuforia.VuforiaSamples.app.VuMark.VuMark"
+            android:name="com.vuforia.VuMark.VuMark"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme" >

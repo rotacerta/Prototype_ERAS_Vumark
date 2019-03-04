@@ -3,46 +3,31 @@
         android:orientation="vertical"
 		android:background="#fff"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
+        android:layout_height="match_parent">
     <LinearLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
 	        android:orientation="horizontal"
-	        android:baselineAligned="false"
-        >
-        
-        <View 
+	        android:baselineAligned="false">
+        <View
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
-	        android:layout_weight="35"
-            />
+	        android:layout_weight="35"/>
 		<RelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:layout_weight="25"
-			>
-
+			android:layout_weight="25">
 			<ImageView
 				android:id="@+id/logo_image"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
 				android:scaleType="centerInside"
 				android:src="@drawable/eras_logo"
-				android:contentDescription="@string/splash_screen_description"
-				/>
-
+				android:contentDescription="@string/splash_screen_description"/>
 		</RelativeLayout>
 		<View
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:layout_weight="35"
-			/>
-
-
-
-
+			android:layout_weight="35"/>
 	</LinearLayout>
-
 </RelativeLayout>

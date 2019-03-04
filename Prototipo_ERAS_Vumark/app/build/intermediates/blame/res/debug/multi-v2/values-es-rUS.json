@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
+            "outputFile": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\915d9a3cbd0c1c82d2b3ae8b704e483b\\res\\values-es-rUS\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "194,243,295,394,494",
-                        "endColumns": "48,51,98,99,62",
-                        "endOffsets": "242,294,393,493,556"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,158,214,317,421",
-                        "endColumns": "52,55,102,103,66",
-                        "endOffsets": "153,209,312,416,483"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\c1944ef1fa73da718528aedc6d3d8173\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\29e24d02b28a6a30c9acc427166767ed\\res\\values-es-rUS\\values-es-rUS.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\7dfcb442d01175ca4f918a0549cd39d1\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\e6590306f226eeacca7f67976e4b0ff4\\res\\values-es-rUS\\values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "488,608,717,825,910,1011,1134,1219,1301,1383,1495,1595,1696,1804,1911,2018,2177,2277",
                         "endColumns": "119,108,107,84,100,122,84,81,81,111,99,100,107,106,106,158,99,81",
                         "endOffsets": "603,712,820,905,1006,1129,1214,1296,1378,1490,1590,1691,1799,1906,2013,2172,2272,2354"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\367b2c0ff7d29bfc89c5687b85a3ec8a\\res\\values-es-rUS\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "194,243,295,394,494",
+                        "endColumns": "48,51,98,99,62",
+                        "endOffsets": "242,294,393,493,556"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,158,214,317,421",
+                        "endColumns": "52,55,102,103,66",
+                        "endOffsets": "153,209,312,416,483"
                     }
                 }
             ]
