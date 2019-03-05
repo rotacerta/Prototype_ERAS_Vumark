@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import com.vuforia.UI.R;
 import com.vuforia.UI.ActivitySplashScreen;
 
-public class Map  extends Navigate
+public class Map extends Navigate
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

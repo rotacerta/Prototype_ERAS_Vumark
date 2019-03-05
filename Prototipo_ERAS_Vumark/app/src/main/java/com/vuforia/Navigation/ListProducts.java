@@ -9,14 +9,13 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.vuforia.Models.ProductItem;
 import com.vuforia.UI.R;
 import com.vuforia.UI.ActivitySplashScreen;
 
-
-
 public class ListProducts extends Navigate
 {
-    ProductItem listProducts[];
+    private ProductItem listProducts[];
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -61,11 +60,11 @@ public class ListProducts extends Navigate
     public LinearLayout createLinearLayout(int index) {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.addView(createTextView("Produto: " + listProducts[index].title));
-        linearLayout.addView(createTextView("Quantidade: " + Integer.toString(listProducts[index].amount)));
-        linearLayout.addView(createTextView("Local: " + listProducts[index].locate));
-        if(listProducts[index].description != null) {
-            linearLayout.addView(createTextView("Descrição: " + listProducts[index].description));
+        linearLayout.addView(createTextView("Produto: " + listProducts[index].getTitle()));
+        linearLayout.addView(createTextView("Quantidade: " + Integer.toString(listProducts[index].getAmount())));
+        linearLayout.addView(createTextView("Local: " + listProducts[index].getLocate()));
+        if(listProducts[index].getDescription() != null) {
+            linearLayout.addView(createTextView("Descrição: " + listProducts[index].getDescription()));
         }
         return linearLayout;
     }
