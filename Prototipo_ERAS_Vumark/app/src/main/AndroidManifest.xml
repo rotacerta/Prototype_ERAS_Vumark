@@ -99,6 +99,7 @@
         </activity>
         <activity
             android:name="com.vuforia.Navigation.Map"
+            android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             >
         </activity>

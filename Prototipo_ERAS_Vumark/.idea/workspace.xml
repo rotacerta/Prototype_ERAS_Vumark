@@ -10,20 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acc9a815-859f-421d-b76f-1ab49c1ae787" name="Default Changelist" comment="Adicionado">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Map/MapBuildingsEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Map/MapDefinitionsEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Map/MapUnmappedEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/MapService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Streets.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/StreetsEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Models/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vuforia/SampleApplication/utils/SampleApplication3DModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/SampleApplication/utils/SampleApplication3DModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Service/PathFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/PathFinderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest-checker/debug/manifest.crc" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest-checker/debug/manifest.crc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest-checker/debug/manifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest-checker/debug/manifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,130 +47,40 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="51" />
-          <entry key="png" value="6" />
-          <entry key="xml" value="40" />
+          <entry key="html" value="2" />
+          <entry key="java" value="54" />
+          <entry key="png" value="10" />
+          <entry key="xml" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="Image" value="6" />
-          <entry key="JAVA" value="51" />
-          <entry key="XML" value="40" />
+          <entry key="HTML" value="2" />
+          <entry key="Image" value="10" />
+          <entry key="JAVA" value="54" />
+          <entry key="XML" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="37" />
-          <entry key="java" value="2125" />
+          <entry key="java" value="2127" />
           <entry key="txt" value="10" />
-          <entry key="xml" value="163" />
+          <entry key="xml" value="280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2125" />
+          <entry key="JAVA" value="2127" />
           <entry key="PLAIN_TEXT" value="47" />
-          <entry key="XML" value="163" />
+          <entry key="XML" value="280" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="docComment;method#GenerateGridLayout#0;class#Map#0" />
-                <element signature="method#GenerateGridLayout#0;class#Map#0" />
-                <element signature="docComment;method#GenerateStreetLabelImageView#0;class#Map#0" />
-                <element signature="method#GenerateStreetLabelImageView#0;class#Map#0" />
-                <element signature="docComment;method#CreateStreetLabelBitmap#0;class#Map#0" />
-                <element signature="method#CreateStreetLabelBitmap#0;class#Map#0" />
-                <element signature="docComment;method#SetViewSize#0;class#Map#0" />
-                <element signature="method#SetViewSize#0;class#Map#0" />
-                <element signature="docComment;method#GetDeviceDimension#0;class#Map#0" />
-                <element signature="method#GetDeviceDimension#0;class#Map#0" />
-                <element signature="docComment;method#InitMatrix#0;class#Map#0" />
-                <element signature="method#SetOnClick#0;class#Map#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/PathFinderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="173" selection-start-line="173" selection-end-line="173" />
-              <folding>
-                <element signature="docComment;method#PathFinderService#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetCellByTuple#0;class#PathFinderService#0" />
-                <element signature="method#GetCellByTuple#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetDestinations#0;class#PathFinderService#0" />
-                <element signature="method#GetDestinations#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetDestinations#1;class#PathFinderService#0" />
-                <element signature="docComment;method#GetStatPoint#0;class#PathFinderService#0" />
-                <element signature="docComment;method#CleanMatrix#0;class#PathFinderService#0" />
-                <element signature="method#CleanMatrix#0;class#PathFinderService#0" />
-                <element signature="docComment;method#SortDestinations#0;class#PathFinderService#0" />
-                <element signature="method#SortDestinations#0;class#PathFinderService#0" />
-                <element signature="docComment;method#SetCurrentPoint#0;class#PathFinderService#0" />
-                <element signature="method#SetCurrentPoint#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetCurrentCell#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetNextCell#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetNextdestination#0;class#PathFinderService#0" />
-                <element signature="docComment;method#GetErrors#0;class#PathFinderService#0" />
-                <element signature="docComment;method#FindPath#0;class#PathFinderService#0" />
-                <element signature="method#FindPath#0;class#PathFinderService#0" />
-                <element signature="docComment;method#FindNeighbors#0;class#PathFinderService#0" />
-                <element signature="method#FindNeighbors#0;class#PathFinderService#0" />
-                <element signature="docComment;method#CalcuLateHCost#0;class#PathFinderService#0" />
-                <element signature="method#CalcuLateHCost#0;class#PathFinderService#0" />
-                <element signature="docComment;method#CalcuLateGCost#0;class#PathFinderService#0" />
-                <element signature="method#CalcuLateGCost#0;class#PathFinderService#0" />
-                <element signature="docComment;method#HighlightPath#0;class#PathFinderService#0" />
-                <element signature="method#HighlightPath#0;class#PathFinderService#0" />
-                <element signature="docComment;method#AnyMatchInList#0;class#PathFinderService#0" />
-                <element signature="method#AnyMatchInList#0;class#PathFinderService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Models/Cell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/MapService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="method#MapService#0;class#MapService#0" />
-                <element signature="docComment;method#GetMap#0;class#MapService#0" />
-                <element signature="docComment;method#InitMap#0;class#MapService#0" />
-                <element signature="method#InitMap#0;class#MapService#0" />
-                <element signature="docComment;method#FillMatrixBuildings#0;class#MapService#0" />
-                <element signature="method#FillMatrixObstacles#0;class#MapService#0" />
-                <element signature="docComment;method#FillMatrixUnmappedArea#0;class#MapService#0" />
-                <element signature="method#FillMatrixUnmappedArea#0;class#MapService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -200,6 +106,7 @@
       <find>initCell</find>
       <find>InitMatrix</find>
       <find>CleanMatrix</find>
+      <find>mainGridIBGLayout</find>
     </findStrings>
     <replaceStrings>
       <replace>BUILDING(</replace>
@@ -212,7 +119,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/splash_screen.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_products.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/floating_button_map.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/floating_button_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/floating_button_camera.xml" />
@@ -228,17 +134,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Navigate.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/ListProducts.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/VuMark/VuMark.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/map.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Matrix/MatrixDefinitions.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Matrix/Unmapped.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Matrix/Buildings.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/PathFinder.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Enums/Map/MatrixBuildingsEnum.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Map.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/PathFinderService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/MapService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Models/Cell.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_products.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/camera_overlay_reticle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/map.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Map.java" />
       </list>
     </option>
   </component>
@@ -261,22 +170,6 @@
             <path>
               <item name="Prototipo_ERAS_Vumark" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Prototipo_ERAS_Vumark" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Prototipo_ERAS_Vumark" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="vuforia" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Prototipo_ERAS_Vumark" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
           </expand>
           <select />
@@ -379,24 +272,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.20045386" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20045386" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" weight="0.3295082" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.7327869" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3295082" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Build" order="8" weight="0.3295082" />
       <window_info anchor="bottom" id="Android Profiler" order="9" />
       <window_info anchor="right" id="Hierarchy" weight="0.32980332" />
@@ -435,32 +328,20 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border_table_body.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/border_table_header.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-ldpi/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-mdpi/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -523,22 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_products.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="88" column="57" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/UI/ActivitySplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -566,22 +431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_list.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/floating_button_camera.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -652,13 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/VuMark/VuMark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Navigate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -677,14 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/map.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -765,10 +599,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/MapService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="method#MapService#0;class#MapService#0" />
+            <element signature="docComment;method#GetMap#0;class#MapService#0" />
+            <element signature="docComment;method#InitMap#0;class#MapService#0" />
+            <element signature="method#InitMap#0;class#MapService#0" />
+            <element signature="docComment;method#FillMatrixBuildings#0;class#MapService#0" />
+            <element signature="method#FillMatrixObstacles#0;class#MapService#0" />
+            <element signature="docComment;method#FillMatrixUnmappedArea#0;class#MapService#0" />
+            <element signature="method#FillMatrixUnmappedArea#0;class#MapService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/VuMark/VuMark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/floating_button_camera.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="87" column="28" lean-forward="true" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/camera_overlay_reticle.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_products.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-331">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/map.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Navigation/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="85">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="docComment;method#GenerateGridLayout#0;class#Map#0" />
             <element signature="method#GenerateGridLayout#0;class#Map#0" />
@@ -786,19 +692,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/vuforia/Services/MapService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/arrow_left.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/arrow_right.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/card_info.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/reticle.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/Vuforia.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/VuforiaSampleDatabaseCustom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/vuforia/UI/BuildConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="51">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/VuMark/VM_about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
           <folding>
-            <element signature="method#MapService#0;class#MapService#0" />
-            <element signature="docComment;method#GetMap#0;class#MapService#0" />
-            <element signature="docComment;method#InitMap#0;class#MapService#0" />
-            <element signature="method#InitMap#0;class#MapService#0" />
-            <element signature="docComment;method#FillMatrixBuildings#0;class#MapService#0" />
-            <element signature="method#FillMatrixObstacles#0;class#MapService#0" />
-            <element signature="docComment;method#FillMatrixUnmappedArea#0;class#MapService#0" />
-            <element signature="method#FillMatrixUnmappedArea#0;class#MapService#0" />
+            <element signature="e#1274#1300#0" expanded="true" />
+            <element signature="e#1351#1392#0" expanded="true" />
           </folding>
         </state>
       </provider>

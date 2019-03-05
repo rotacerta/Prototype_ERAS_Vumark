@@ -97,7 +97,8 @@
         </activity>
         <activity
             android:name="com.vuforia.Navigation.Map"
-            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.vuforia.VuMark.VuMark"
