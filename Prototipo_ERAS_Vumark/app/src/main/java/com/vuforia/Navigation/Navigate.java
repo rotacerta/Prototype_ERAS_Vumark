@@ -8,7 +8,9 @@ import android.view.View;
 
 import com.vuforia.VuMark.VuMark;
 
-public class Navigate extends AppCompatActivity {
+public abstract class Navigate extends AppCompatActivity {
+
+    protected abstract void SetOnClick();
 
     public void setOnClickInFloatingButton(FloatingActionButton button, final Class classSelected) {
         button.setOnClickListener(new View.OnClickListener() {

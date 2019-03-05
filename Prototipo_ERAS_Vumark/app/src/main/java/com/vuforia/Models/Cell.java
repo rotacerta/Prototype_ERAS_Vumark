@@ -2,7 +2,8 @@ package com.vuforia.Models;
 
 import android.support.annotation.NonNull;
 
-public class Cell implements Comparable {
+public class Cell implements Comparable
+{
     private int X;
     private int Y;
     private int Gcost;
@@ -16,6 +17,13 @@ public class Cell implements Comparable {
     {
         this.X = -1;
         this.Y = -1;
+    }
+
+    public Cell(int x, int y, int value)
+    {
+        this.X = x;
+        this.Y = y;
+        this.Value = value;
     }
 
     public Cell(Cell Father, int Gcost, int Fcost, int Hcost, boolean IsAWay, int Value, int X, int Y)

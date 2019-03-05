@@ -952,6 +952,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen street_label_size
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1050,6 +1051,9 @@ drawable border_button
 drawable border_table_body
 drawable border_table_header
 drawable card_info
+drawable cell_current
+drawable cell_destin
+drawable cell_normal
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1058,6 +1062,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable eras_logo
 drawable eras_logo_apk
+drawable grey_square
 drawable ic_camera_alt_black
 drawable ic_dehaze_black
 drawable ic_list_black_24dp
@@ -1087,6 +1092,7 @@ drawable scanline
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vuforia_splash
+drawable white_square
 id ALT
 id CTRL
 id FUNCTION
@@ -1147,6 +1153,7 @@ id clip_vertical
 id collapseActionView
 id container
 id content
+id contentGridIBGLayout
 id contentPanel
 id coordinator
 id custom
@@ -1200,6 +1207,7 @@ id list_item
 id list_map
 id loading_indicator
 id logo_image
+id mainGridIBGLayout
 id map_camera
 id map_list
 id masked

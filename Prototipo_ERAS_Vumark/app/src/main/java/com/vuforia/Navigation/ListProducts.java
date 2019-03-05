@@ -28,7 +28,7 @@ public class ListProducts extends Navigate
 
         setContentView(R.layout.list_products);
 
-        setOnClick();
+        SetOnClick();
         initializeProductsList();
         CardView cards[] = createList();
         setCardsInLayout(cards);
@@ -83,7 +83,7 @@ public class ListProducts extends Navigate
         }
     }
 
-    public void setOnClick() {
+    public void SetOnClick() {
         FloatingActionButton btn_map = findViewById(R.id.FbtnBottomMap);
         setOnClickInFloatingButton(btn_map, Map.class);
 

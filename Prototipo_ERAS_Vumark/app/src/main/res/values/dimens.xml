@@ -14,5 +14,7 @@
 
     <dimen name="card_button_text_size">11dp</dimen>
     <dimen name="card_input_text_size">14dp</dimen>
+
+    <dimen name="street_label_size">16dp</dimen>
 </resources>
 
