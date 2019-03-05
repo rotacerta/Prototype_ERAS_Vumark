@@ -23,7 +23,7 @@ import android.content.res.AssetManager;
 /**
  * This class is used to load 3D models from a .txt file
  *
- * As an example look at Buildings.txt
+ * As an example look at MapBuildingsEnum.txt
  * The first number in the text file corresponds to the number of vertices * 3 (x, y, z)
  * The lines are parsed until we have parsed all of the vertices
  * Then the process repeats for reading the normals and tex coords

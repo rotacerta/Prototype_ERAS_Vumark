@@ -1,8 +1,9 @@
-package com.vuforia.Service;
+package com.vuforia.Services;
 
 import android.annotation.SuppressLint;
 
 import com.vuforia.Enums.CellValueEnum;
+import com.vuforia.Enums.Map.MapDefinitionsEnum;
 import com.vuforia.Models.Cell;
 import com.vuforia.Util.Tuple;
 
@@ -11,14 +12,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class PathFinder {
+public class PathFinderService
+{
     private Cell nextCell;
     private Cell[][] matrix;
     private Cell currentCell;
     private Cell nextdestination;
-    public final int LineLength = 14;
-    public final int ColumnLength = 15;
-    public final ArrayList<String> errors;
+    private final int MatrixRows;
+    private final int MatrixColumns;
+    private final ArrayList<String> errors;
     private final boolean DIAGONALLY = true;
     private final ArrayList<Cell> destinations;
 
@@ -27,12 +29,16 @@ public class PathFinder {
      * @param currentCell The current cell that the user is
      * @param destinations An ArrayList filled with all destinations
      */
-    public PathFinder(Tuple<Integer, Integer> currentCell, ArrayList<Tuple<Integer, Integer>> destinations)
+    public PathFinderService(Tuple<Integer, Integer> currentCell, ArrayList<Tuple<Integer, Integer>> destinations)
     {
-        this.matrix = InitMatrix(LineLength, ColumnLength);
+        MatrixRows = MapDefinitionsEnum.ROWS.Value;
+        MatrixColumns = MapDefinitionsEnum.COLUMNS.Value;
+
+        MapService mapService = new MapService();
+        this.matrix = mapService.GetMap();
+
         this.currentCell = GetStatPoint(currentCell);
         this.nextdestination = new Cell();
-        FillMatrixObstacles();
         this.destinations = SortDestinations(this.currentCell, GetDestinations(destinations));
         if(this.destinations.size() > 0)
         {
@@ -42,123 +48,13 @@ public class PathFinder {
     }
 
     /**
-     * Method to init the matrix map
-     * @param lines Lines of the matrix
-     * @param columns Columns of the matrix
-     * @return The matrix initialized
-     */
-    private Cell[][] InitMatrix(int lines, int columns)
-    {
-        Cell[][] _matrix = new Cell[lines][columns];
-        for (int i = 0; i < lines; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
-                _matrix[i][j] = initCell( i, j );
-            }
-        }
-        return _matrix;
-    }
-
-    /**
-     * Temporary method to fill the matrix with obstacles
-     */
-    private void FillMatrixObstacles()
-    {
-        //TODO: Delete this method when the API be completes
-        ArrayList<Tuple<Integer, Integer>> obstacles = new ArrayList<>();
-        obstacles.add(new Tuple<>(0, 0));
-        obstacles.add(new Tuple<>(1, 0));
-        obstacles.add(new Tuple<>(2, 0));
-        obstacles.add(new Tuple<>(3, 0));
-        obstacles.add(new Tuple<>(4, 0));
-        obstacles.add(new Tuple<>(5, 0));
-        obstacles.add(new Tuple<>(6, 0));
-        obstacles.add(new Tuple<>(7, 0));
-        obstacles.add(new Tuple<>(8, 0));
-        obstacles.add(new Tuple<>(9, 0));
-        obstacles.add(new Tuple<>(12, 0));
-        obstacles.add(new Tuple<>(11, 0));
-        obstacles.add(new Tuple<>(10, 0));
-        obstacles.add(new Tuple<>(0, 11));
-        obstacles.add(new Tuple<>(0, 1));
-        obstacles.add(new Tuple<>(0, 2));
-        obstacles.add(new Tuple<>(0, 3));
-        obstacles.add(new Tuple<>(0, 4));
-        obstacles.add(new Tuple<>(0, 5));
-        obstacles.add(new Tuple<>(0, 6));
-        obstacles.add(new Tuple<>(0, 7));
-        obstacles.add(new Tuple<>(0, 8));
-        obstacles.add(new Tuple<>(0, 9));
-        obstacles.add(new Tuple<>(0, 10));
-        obstacles.add(new Tuple<>(2, 3));
-        obstacles.add(new Tuple<>(6, 3));
-        obstacles.add(new Tuple<>(5, 3));
-        obstacles.add(new Tuple<>(4, 3));
-        obstacles.add(new Tuple<>(3, 3));
-        obstacles.add(new Tuple<>(2, 6));
-        obstacles.add(new Tuple<>(2, 4));
-        obstacles.add(new Tuple<>(2, 5));
-        obstacles.add(new Tuple<>(6, 6));
-        obstacles.add(new Tuple<>(6, 4));
-        obstacles.add(new Tuple<>(6, 5));
-        obstacles.add(new Tuple<>(3, 6));
-        obstacles.add(new Tuple<>(4, 6));
-        obstacles.add(new Tuple<>(5, 6));
-        obstacles.add(new Tuple<>(9, 3));
-        obstacles.add(new Tuple<>(12, 3));
-        obstacles.add(new Tuple<>(12, 6));
-        obstacles.add(new Tuple<>(9, 6));
-        obstacles.add(new Tuple<>(9, 4));
-        obstacles.add(new Tuple<>(9, 5));
-        obstacles.add(new Tuple<>(12, 4));
-        obstacles.add(new Tuple<>(12, 5));
-        obstacles.add(new Tuple<>(3, 8));
-        obstacles.add(new Tuple<>(11, 8));
-        obstacles.add(new Tuple<>(10, 8));
-        obstacles.add(new Tuple<>(9, 8));
-        obstacles.add(new Tuple<>(8, 8));
-        obstacles.add(new Tuple<>(7, 8));
-        obstacles.add(new Tuple<>(6, 8));
-        obstacles.add(new Tuple<>(5, 8));
-        obstacles.add(new Tuple<>(4, 8));
-        obstacles.add(new Tuple<>(2, 12));
-        obstacles.add(new Tuple<>(5, 12));
-        obstacles.add(new Tuple<>(4, 12));
-        obstacles.add(new Tuple<>(3, 12));
-        obstacles.add(new Tuple<>(9, 12));
-        obstacles.add(new Tuple<>(12, 12));
-        obstacles.add(new Tuple<>(11, 12));
-        obstacles.add(new Tuple<>(10, 12));
-        obstacles.add(new Tuple<>(9, 14));
-        obstacles.add(new Tuple<>(10, 14));
-        obstacles.add(new Tuple<>(11, 14));
-        obstacles.add(new Tuple<>(12, 14));
-        for(Tuple<Integer, Integer> obstacle: obstacles)
-        {
-            this.matrix[obstacle.key][obstacle.value].setValue(CellValueEnum.OBSTACLE.Value);
-        }
-    }
-
-    /**
-     * Method to init a Cell object
-     * @param x Position X of the Cell in matrix
-     * @param y Position Y of the Cell in matrix
-     * @return A new instance of a Cell object
-     */
-    private Cell initCell(int x, int y)
-    {
-        return new Cell( null, 0, 0, 0, false, CellValueEnum.WALKABLE.Value, x, y );
-    }
-
-    /**
      * Method to get a cell by a Tuple object
      * @param position A tuple object with the position of the cell that you want to get
      * @return <code>null</code> if the cell was not found; <code>Cell</code> if the cell was found
      */
     private Cell GetCellByTuple(Tuple<Integer, Integer> position)
     {
-        if (((position.key >=0) && (position.key < LineLength)) && ((position.value >= 0) && (position.value < ColumnLength)))
+        if (((position.key >=0) && (position.key < MatrixRows)) && ((position.value >= 0) && (position.value < MatrixColumns)))
         {
             return matrix[position.key][position.value];
         }
@@ -205,23 +101,21 @@ public class PathFinder {
 
     /**
      * Method to clear all properties of each cell that not is an obstacle in matrix
-     * @param _matrix The matrix to clear
      * @return The matrix cleaned
      */
-    private Cell[][] CleanMatrix(Cell[][] _matrix)
+    private void CleanMatrix()
     {
-        for (int i = 0; i < LineLength; i++)
+        for (int i = 0; i < MatrixRows; i++)
         {
-            for (int j = 0; j < ColumnLength; j++)
+            for (int j = 0; j < MatrixColumns; j++)
             {
-                _matrix[i][j].setFcost(0);
-                _matrix[i][j].setGcost(0);
-                _matrix[i][j].setHcost(0);
-                _matrix[i][j].setWay(false);
-                _matrix[i][j].setFather(null);
+                matrix[i][j].setFcost(0);
+                matrix[i][j].setGcost(0);
+                matrix[i][j].setHcost(0);
+                matrix[i][j].setWay(false);
+                matrix[i][j].setFather(null);
             }
         }
-        return _matrix;
     }
 
     /**
@@ -251,7 +145,7 @@ public class PathFinder {
                                 new Tuple<>(new Tuple<>(destination.getX(), destination.getY()),
                                         matrix[destination.getX()][destination.getY()].getFcost()));
                     }
-                    CleanMatrix(matrix);
+                    CleanMatrix();
                 }
                 if(destinationsCost.size() > 0)
                 {
@@ -304,7 +198,7 @@ public class PathFinder {
             }
             if (nextdestination != null)
             {
-                CleanMatrix(matrix);
+                CleanMatrix();
                 if (FindPath(this.matrix, this.currentCell, this.nextdestination))
                 {
                     this.matrix = HighlightPath(this.matrix, this.nextdestination);
@@ -362,6 +256,14 @@ public class PathFinder {
     public Cell GetNextdestination()
     {
         return this.nextdestination;
+    }
+
+    /**
+     * @return An ArrayList with erros strings
+     */
+    public ArrayList<String> GetErrors()
+    {
+        return errors;
     }
 
     /**
@@ -432,17 +334,17 @@ public class PathFinder {
     private ArrayList<Cell> FindNeighbors(Cell father, boolean diagonally)
     {
         ArrayList<Cell> neighbors = new ArrayList<>();
-        if (father.getX() + 1 < LineLength)
+        if (father.getX() + 1 < MatrixRows)
         {
             neighbors.add(matrix[father.getX() + 1][father.getY()]);
-            if (father.getY() + 1 < ColumnLength)
+            if (father.getY() + 1 < MatrixColumns)
             {
                 if ((matrix[father.getX()][father.getY() + 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() + 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
                 {
                     neighbors.add(matrix[father.getX() + 1][father.getY() + 1]);
                 }
             }
-            if ((father.getY() - 1 < ColumnLength) && (father.getY() - 1 >= 0))
+            if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
             {
                 if ((matrix[father.getX()][father.getY() - 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() + 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
                 {
@@ -450,25 +352,25 @@ public class PathFinder {
                 }
             }
         }
-        if (father.getY() + 1 < ColumnLength)
+        if (father.getY() + 1 < MatrixColumns)
         {
             neighbors.add(matrix[father.getX()][father.getY() + 1]);
         }
-        if ((father.getY() - 1 < ColumnLength) && (father.getY() - 1 >= 0))
+        if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
         {
             neighbors.add(matrix[father.getX()][father.getY() - 1]);
         }
-        if ((father.getX() - 1 < LineLength) && (father.getX() - 1 >= 0))
+        if ((father.getX() - 1 < MatrixRows) && (father.getX() - 1 >= 0))
         {
             neighbors.add(matrix[father.getX() - 1][father.getY()]);
-            if (father.getY() + 1 < ColumnLength)
+            if (father.getY() + 1 < MatrixColumns)
             {
                 if ((matrix[father.getX()][father.getY() + 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() - 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
                 {
                     neighbors.add(matrix[father.getX() - 1][father.getY() + 1]);
                 }
             }
-            if ((father.getY() - 1 < ColumnLength) && (father.getY() - 1 >= 0))
+            if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
             {
                 if ((matrix[father.getX()][father.getY() - 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() - 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
                 {

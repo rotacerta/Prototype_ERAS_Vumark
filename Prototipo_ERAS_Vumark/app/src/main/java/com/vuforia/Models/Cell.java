@@ -19,13 +19,6 @@ public class Cell implements Comparable
         this.Y = -1;
     }
 
-    public Cell(int x, int y, int value)
-    {
-        this.X = x;
-        this.Y = y;
-        this.Value = value;
-    }
-
     public Cell(Cell Father, int Gcost, int Fcost, int Hcost, boolean IsAWay, int Value, int X, int Y)
     {
         this.Gcost = Gcost;

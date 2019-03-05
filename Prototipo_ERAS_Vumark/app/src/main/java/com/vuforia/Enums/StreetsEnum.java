@@ -1,6 +1,6 @@
 package com.vuforia.Enums;
 
-public enum Streets
+public enum StreetsEnum
 {
     STREET_1_1(
             "Rua 1", 14, 2, 0, 0, 0
@@ -31,7 +31,7 @@ public enum Streets
     public float YMOD;
     public float ROTATION;
 
-    Streets(String text, int xCoord, int yCoord, float xMod, float yMod, float rotation)
+    StreetsEnum(String text, int xCoord, int yCoord, float xMod, float yMod, float rotation)
     {
         TEXT = text;
         XCOORD = xCoord;
