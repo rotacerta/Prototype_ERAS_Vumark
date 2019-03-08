@@ -352,8 +352,10 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         {
             // If we have a detection, let's make sure
             // the card is visible
-            mActivity.showCard(markerType, markerValue, markerBitmap);
-            currentVumarkIdOnCard = markerValue;
+            if (mActivity.isGoal(markerValue)) {
+                mActivity.showCard(markerType, markerValue, markerBitmap);
+                currentVumarkIdOnCard = markerValue;
+            }
         }
         else
         {

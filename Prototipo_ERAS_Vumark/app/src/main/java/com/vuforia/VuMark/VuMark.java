@@ -308,6 +308,11 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     }
 
+    boolean isGoal(final String value) {
+        //TODO: IMPLEMENTAR O FILTRO DO MAPA
+        return false;
+    }
+
     // it is called from VuMarkRenderer class in method renderFrame
     void showCard(final String type, final String value, final Bitmap bitmap)
     {
@@ -695,6 +700,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 break;
             case "CHECKED":
                 this.imageRender = "checked.png";
+                hideCard();
                 break;
         }
     }
