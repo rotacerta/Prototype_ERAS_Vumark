@@ -693,6 +693,9 @@ public class VuMark extends Navigate implements SampleApplicationControl
             case "BOTTOM":
                 this.imageRender = "arrow_bottom.png";
                 break;
+            case "CHECKED":
+                this.imageRender = "checked.png";
+                break;
         }
     }
 
