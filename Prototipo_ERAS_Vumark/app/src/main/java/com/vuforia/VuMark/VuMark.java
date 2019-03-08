@@ -63,7 +63,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
 {
     private static final String LOGTAG = "VuMark";
 
-    private String arrow = "arrow_right.png";
+    private String imageRender = "arrow_right.png";
     
     private SampleApplicationSession vuforiaAppSession;
     
@@ -199,7 +199,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
     // Load specific textures from the APK, which we will later use for rendering.
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk("arrow_right.png",
+        mTextures.add(Texture.loadTextureFromApk(this.imageRender,
                 getAssets()));
     }
     
@@ -679,11 +679,20 @@ public class VuMark extends Navigate implements SampleApplicationControl
         return mDeviceTracker;
     }
 
-    public void setArrow(String arrow) {
-        if (arrow == "LEFT") {
-            this.arrow = "arrow_left.png";
-        } else {
-            this.arrow = "arrow_right.png";
+    public void setImageRender(String imageRender) {
+        switch (imageRender) {
+            case "LEFT":
+                this.imageRender = "arrow_left.png";
+                break;
+            case "RIGHT":
+                this.imageRender = "arrow_right.png";
+                break;
+            case "TOP":
+                this.imageRender = "arrow_top.png";
+                break;
+            case "BOTTOM":
+                this.imageRender = "arrow_bottom.png";
+                break;
         }
     }
 

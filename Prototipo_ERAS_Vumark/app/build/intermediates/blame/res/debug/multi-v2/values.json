@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\aluno\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\design-navigation-28.0.0-alpha1.aar\\28f0145c743286bf83d396cc12127396\\res\\values\\values.xml",
@@ -113,23 +113,6 @@
                         "endLines": "229,254,255,256,374,395,400,403,404,405,406,407,408,409,412,557,560,564,640,641,2440,2455,2791,2811,2846,3050,3051,3067,3172,3180,3347",
                         "endColumns": "66,62,64,65,53,58,59,71,70,55,70,56,56,65,56,47,65,62,144,120,10,10,10,10,10,253,165,90,95,94,132",
                         "endOffsets": "12159,13659,13724,13790,21724,23080,23401,23611,23682,23738,23809,23866,23923,23989,24181,32894,33086,33328,40222,40343,158425,159359,181910,182946,185175,199165,199331,199774,214424,214746,235505"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aluno\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "11,14,15,4,5,8,6,7,9,10,2,3,12,17",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "576,684,738,151,217,388,287,337,447,509,57,100,628,793",
-                        "endColumns": "50,52,51,64,68,57,48,49,60,65,41,49,52,48",
-                        "endOffsets": "622,732,785,211,281,441,331,382,503,570,94,145,676,837"
-                    },
-                    "to": {
-                        "startLines": "363,364,365,433,434,435,436,437,438,439,440,441,442,513",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "21008,21059,21112,25649,25714,25783,25841,25890,25940,26001,26067,26109,26159,30651",
-                        "endColumns": "50,52,51,64,68,57,48,49,60,65,41,49,52,48",
-                        "endOffsets": "21054,21107,21159,25709,25778,25836,25885,25935,25996,26062,26104,26154,26207,30695"
                     }
                 },
                 {
@@ -264,7 +247,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aluno\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
                         "startLines": "7,5,3,4,6,9,10,11,12,8",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -317,6 +300,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\strings_content_description.xml",
+                    "from": {
+                        "startLines": "3,4,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "59,126,181",
+                        "endColumns": "65,53,71",
+                        "endOffsets": "120,175,248"
+                    },
+                    "to": {
+                        "startLines": "648,649,650",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "40718,40784,40838",
+                        "endColumns": "65,53,71",
+                        "endOffsets": "40779,40833,40905"
+                    }
+                },
+                {
                     "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\design-animation-28.0.0-alpha1.aar\\18ea07217c5326d898b256a5f8e119d9\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -351,25 +351,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aluno\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "118",
-                        "endLines": "9",
-                        "endColumns": "12",
-                        "endOffsets": "520"
-                    },
-                    "to": {
-                        "startLines": "2364",
-                        "startColumns": "4",
-                        "startOffsets": "151362",
-                        "endLines": "2370",
-                        "endColumns": "12",
-                        "endOffsets": "151758"
-                    }
-                },
-                {
                     "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\design-chip-28.0.0-alpha1.aar\\d276e6419bd100a2c99e938a1fcf1846\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,7,8,9,10,11,50,54,57,66,69,77,5,6",
@@ -386,6 +367,25 @@
                         "endLines": "17,18,19,472,473,568,681,2145,2501,2934,2943,2946,2954,2959,3128,3129",
                         "endColumns": "52,57,47,61,50,57,79,10,10,10,10,10,10,10,1333,347",
                         "endOffsets": "882,940,988,27933,27984,33560,43181,136284,161889,190726,191103,191262,191590,191807,212179,212527"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "118",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "520"
+                    },
+                    "to": {
+                        "startLines": "2364",
+                        "startColumns": "4",
+                        "startOffsets": "151362",
+                        "endLines": "2370",
+                        "endColumns": "12",
+                        "endOffsets": "151758"
                     }
                 },
                 {
@@ -482,24 +482,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aluno\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\strings_content_description.xml",
+                    "source": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
-                        "startLines": "3,4,5",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "59,126,181",
-                        "endColumns": "65,53,71",
-                        "endOffsets": "120,175,248"
+                        "startLines": "11,14,15,4,5,8,6,7,9,10,2,3,12,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "576,684,738,151,217,388,287,337,447,509,57,100,628,793",
+                        "endColumns": "50,52,51,64,68,57,48,49,60,65,41,49,52,48",
+                        "endOffsets": "622,732,785,211,281,441,331,382,503,570,94,145,676,837"
                     },
                     "to": {
-                        "startLines": "648,649,650",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "40718,40784,40838",
-                        "endColumns": "65,53,71",
-                        "endOffsets": "40779,40833,40905"
+                        "startLines": "363,364,365,433,434,435,436,437,438,439,440,441,442,513",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "21008,21059,21112,25649,25714,25783,25841,25890,25940,26001,26067,26109,26159,30651",
+                        "endColumns": "50,52,51,64,68,57,48,49,60,65,41,49,52,48",
+                        "endOffsets": "21054,21107,21159,25709,25778,25836,25885,25935,25996,26062,26104,26154,26207,30695"
                     }
                 },
                 {
-                    "source": "C:\\Users\\aluno\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\aluno\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "50,51,52,53,58,55,54,57,56,59,60,62,61,40,31,47,38,42,33,41,32,46,37,43,34,45,36,48,39,44,35,15,14,11,10,29,13,3,84,64,5,18,17,83,27,26,24,25,4,68,78,80,77,79,73,75,74,76,69,70,72,71,8,7,20,22,21,82,66,65",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
