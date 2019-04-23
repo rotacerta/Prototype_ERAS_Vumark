@@ -9,25 +9,23 @@
 	        android:layout_height="match_parent"
 	        android:orientation="horizontal"
 	        android:baselineAligned="false">
-        <View
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:layout_weight="35"/>
+
 		<RelativeLayout
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_weight="25">
+
 			<ImageView
 				android:id="@+id/logo_image"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:layout_alignParentTop="true"
+				android:layout_marginLeft="45dp"
+				android:layout_marginRight="45dp"
+				android:contentDescription="@string/splash_screen_description"
 				android:scaleType="centerInside"
-				android:src="@drawable/eras_logo"
-				android:contentDescription="@string/splash_screen_description"/>
+				android:src="@drawable/pbp_logo" />
 		</RelativeLayout>
-		<View
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_weight="35"/>
+
 	</LinearLayout>
 </RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/open_box"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="199dp"
+            android:layout_height="86dp"
+            android:layout_above="@+id/open_image"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="34dp"
+            android:contentDescription="@string/splash_screen_description"
+            android:scaleType="centerInside"
+            android:src="@drawable/pbp_logo" />
+
+
+        <ImageView
+            android:id="@+id/open_image"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="218dp"
+            android:contentDescription="@string/splash_screen_description"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_open" />
+
+        <TextView
+            android:layout_width="257dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_open"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="46dp"
+            android:gravity="center"
+            android:text="Para começar a navegação recupere a lista enviada pela plataforma WEB."
+            app:fontFamily="sans-serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="49dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/border_button_orange"
+            android:text="Iniciar navegação"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
