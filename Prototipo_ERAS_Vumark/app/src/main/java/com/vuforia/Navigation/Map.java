@@ -24,7 +24,6 @@ import com.vuforia.Enums.StreetsEnum;
 import com.vuforia.Models.Cell;
 import com.vuforia.Services.MapService;
 import com.vuforia.UI.R;
-import com.vuforia.UI.ActivitySplashScreen;
 import com.vuforia.Util.Tuple;
 import com.vuforia.VuMark.VuMark;
 
@@ -42,6 +41,7 @@ public class Map extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.map);
+        changeMenu("MAP");
         SetOnClick();
 
         MatrixRows = MapDefinitionsEnum.ROWS.Value;
@@ -203,11 +203,11 @@ public class Map extends Navigate
 
     public void SetOnClick()
     {
-        FloatingActionButton btn_list = findViewById(R.id.FbtnBottomList);
-        setOnClickInFloatingButton(btn_list, ListProducts.class);
+        ImageView btn_list = findViewById(R.id.image_list);
+        setOnClickInImageView(btn_list, ListProducts.class);
 
-        FloatingActionButton btn_camera = findViewById(R.id.FbtnBottomCam);
-        setOnClickInFloatingButton(btn_camera, VuMark.class);
+        ImageView btn_camera = findViewById(R.id.image_camera);
+        setOnClickInImageView(btn_camera, VuMark.class);
     }
 }
 

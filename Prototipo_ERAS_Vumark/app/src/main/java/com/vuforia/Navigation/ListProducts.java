@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class ListProducts extends Navigate
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.list_products);
+        changeMenu("LIST");
 
         SetOnClick();
         initializeProductsList();
@@ -88,11 +90,11 @@ public class ListProducts extends Navigate
     }
 
     public void SetOnClick() {
-        FloatingActionButton btn_map = findViewById(R.id.FbtnBottomMap);
-        setOnClickInFloatingButton(btn_map, Map.class);
+        ImageView btn_list = findViewById(R.id.image_map);
+        setOnClickInImageView(btn_list, Map.class);
 
-        FloatingActionButton btn_camera = findViewById(R.id.FbtnBottomCam);
-        setOnClickInFloatingButton(btn_camera, VuMark.class);
+        ImageView btn_camera = findViewById(R.id.image_camera);
+        setOnClickInImageView(btn_camera, VuMark.class);
 
         Button btn_end = findViewById(R.id.btn_end);
         setOnClickInButton(btn_end, OpenApp.class);

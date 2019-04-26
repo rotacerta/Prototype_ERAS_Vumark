@@ -6,8 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <include
+        android:id="@+id/menu_list"
+        layout="@layout/menu_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/txt_list"
+        android:layout_below="@+id/menu_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -39,19 +46,5 @@
         android:text="Encerrar"
         android:textColor="@color/white" />
 
-    <include
-        android:id="@+id/map_list"
-        layout="@layout/floating_button_map"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/camera_list"
-        android:layout_marginBottom="-50dp" />
-
-    <include
-        android:id="@+id/camera_list"
-        layout="@layout/floating_button_camera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
 </RelativeLayout>
 

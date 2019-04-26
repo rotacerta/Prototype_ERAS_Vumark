@@ -1066,9 +1066,12 @@ drawable eras_logo
 drawable eras_logo_apk
 drawable grey_square
 drawable ic_camera_alt_black
+drawable ic_camera_alt_white
 drawable ic_dehaze_black
 drawable ic_list_black_24dp
-drawable ic_map_black
+drawable ic_list_white_24dp
+drawable ic_map_black_dp
+drawable ic_map_white_dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1144,8 +1147,6 @@ id btn_end
 id btn_open
 id buttonPanel
 id button_send
-id camera_list
-id camera_map
 id camera_overlay_layout
 id card_layout
 id center
@@ -1163,6 +1164,7 @@ id contentGridIBGLayout
 id contentPanel
 id coordinator
 id custom
+id customAppBarLayout
 id customPanel
 id decor_content_parent
 id default_activity_button
@@ -1196,6 +1198,9 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_camera
+id image_list
+id image_map
 id info
 id instance_image
 id invisible
@@ -1210,13 +1215,12 @@ id listMode
 id listProducts
 id list_camera
 id list_item
-id list_map
 id loading_indicator
 id logo_image
 id mainGridIBGLayout
 id map_camera
-id map_list
 id masked
+id menu_list
 id message
 id middle
 id mini
@@ -1388,6 +1392,7 @@ layout floating_button_list
 layout floating_button_map
 layout list_products
 layout map
+layout menu_tabs
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
