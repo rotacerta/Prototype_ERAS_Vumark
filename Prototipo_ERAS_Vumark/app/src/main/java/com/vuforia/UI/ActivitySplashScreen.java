@@ -53,7 +53,7 @@ public class ActivitySplashScreen extends Activity
             public void run()
             {
                 Intent intent = new Intent(ActivitySplashScreen.this,
-                    VuMark.class);
+                    OpenApp.class);
                 startActivity(intent);
             }
             

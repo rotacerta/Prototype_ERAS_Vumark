@@ -1140,6 +1140,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_end
 id btn_open
 id buttonPanel
 id button_send
@@ -1310,6 +1311,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id txt_list
 id uniform
 id unlabeled
 id up

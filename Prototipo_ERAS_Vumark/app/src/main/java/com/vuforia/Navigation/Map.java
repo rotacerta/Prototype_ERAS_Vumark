@@ -26,6 +26,7 @@ import com.vuforia.Services.MapService;
 import com.vuforia.UI.R;
 import com.vuforia.UI.ActivitySplashScreen;
 import com.vuforia.Util.Tuple;
+import com.vuforia.VuMark.VuMark;
 
 public class Map extends Navigate
 {
@@ -206,7 +207,7 @@ public class Map extends Navigate
         setOnClickInFloatingButton(btn_list, ListProducts.class);
 
         FloatingActionButton btn_camera = findViewById(R.id.FbtnBottomCam);
-        setOnClickInFloatingButton(btn_camera, ActivitySplashScreen.class);
+        setOnClickInFloatingButton(btn_camera, VuMark.class);
     }
 }
 

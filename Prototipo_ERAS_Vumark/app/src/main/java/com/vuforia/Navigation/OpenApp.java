@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import java.util.List;
 import com.vuforia.UI.R;
+import com.vuforia.VuMark.VuMark;
 
 public class OpenApp extends Navigate {
     @Override
@@ -29,12 +30,6 @@ public class OpenApp extends Navigate {
 
     private void startApp() {
         Button btn_open = findViewById(R.id.btn_open);
-
-        btn_open.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                goToActivity(v, ListProducts.class);
-                finish();
-            }
-        });
+        setOnClickInButton(btn_open, VuMark.class);
     }
 }

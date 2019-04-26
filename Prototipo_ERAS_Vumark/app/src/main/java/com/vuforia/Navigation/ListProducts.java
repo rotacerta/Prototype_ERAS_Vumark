@@ -1,17 +1,20 @@
 package com.vuforia.Navigation;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vuforia.Models.ProductItem;
 import com.vuforia.UI.R;
 import com.vuforia.UI.ActivitySplashScreen;
+import com.vuforia.VuMark.VuMark;
 
 public class ListProducts extends Navigate
 {
@@ -49,10 +52,11 @@ public class ListProducts extends Navigate
             cards[index].addView( createLinearLayout(index) );
             LinearLayout.LayoutParams cardViewParams
                     = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            cardViewParams.setMargins(50, 50, 50, 0);
+            cardViewParams.setMargins(50, 20, 50, 20);
             cards[index].setLayoutParams(cardViewParams);
             cards[index].requestLayout();
             cards[index].setMinimumHeight(150);
+            cards[index].setCardBackgroundColor(Color.parseColor("#F0E1BF"));
         }
         return cards;
     }
@@ -72,7 +76,7 @@ public class ListProducts extends Navigate
     private TextView createTextView(String text) {
         TextView textView = new TextView(this);
         textView.setText(text);
-        textView.setPadding(30,30,30,30);
+        textView.setPadding(30,5,30,5);
         return textView;
     }
 
@@ -88,7 +92,10 @@ public class ListProducts extends Navigate
         setOnClickInFloatingButton(btn_map, Map.class);
 
         FloatingActionButton btn_camera = findViewById(R.id.FbtnBottomCam);
-        setOnClickInFloatingButton(btn_camera, ActivitySplashScreen.class);
+        setOnClickInFloatingButton(btn_camera, VuMark.class);
+
+        Button btn_end = findViewById(R.id.btn_end);
+        setOnClickInButton(btn_end, OpenApp.class);
     }
 
 }
