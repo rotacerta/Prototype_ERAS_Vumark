@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
+ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
+INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
+INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
+INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\b17754988a866a58c541c5ad3c8379c8\AndroidManifest.xml:17:1-46:12
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\d5798a498b4ffe1b5d36786e3018dc7f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\2e2f0a07655cd766a1940fce0623c893\AndroidManifest.xml:17:1-24:12
@@ -64,22 +64,22 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\felip\.gradle\cach
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\feb37a24baeb85832c1bef6b99e4a3b8\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\7a65e26d703e47f9ad49e4f8fdab6afb\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\5ff85cde34d70efda61da40da566b49c\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
+INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
+INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
+INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
 	package
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:4:5-29
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-123:12
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-126:12
 		INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:11-69
@@ -108,7 +108,7 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 	android:name
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:40:22-77
 application
-ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:52:5-121:19
+ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:52:5-124:19
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\b17754988a866a58c541c5ad3c8379c8\AndroidManifest.xml:30:5-44:19
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\b17754988a866a58c541c5ad3c8379c8\AndroidManifest.xml:30:5-44:19
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\d5798a498b4ffe1b5d36786e3018dc7f\AndroidManifest.xml:22:5-20
@@ -220,35 +220,41 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 	android:name
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:91:28-75
 activity#com.vuforia.Navigation.ListProducts
-ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:95:9-99:20
+ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:95:9-100:20
+	android:screenOrientation
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:97:13-49
 	android:configChanges
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:97:13-93
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:98:13-93
 	android:name
 		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:96:13-63
 activity#com.vuforia.Navigation.Map
-ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:100:9-105:20
+ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:101:9-106:20
 	android:screenOrientation
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:102:13-49
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:103:13-49
 	android:configChanges
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:103:13-93
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:104:13-93
 	android:name
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:101:13-54
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:102:13-54
 activity#com.vuforia.UI.ActivitySplashScreen
-ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:106:9-110:20
+ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:107:9-112:20
+	android:screenOrientation
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:109:13-49
 	android:configChanges
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:108:13-93
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:110:13-93
 	android:name
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:107:13-63
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:108:13-63
 activity#com.vuforia.VuMark.VuMark
-ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:113:9-119:20
+ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:115:9-122:20
+	android:screenOrientation
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:117:13-49
 	android:launchMode
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:117:13-44
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:120:13-44
 	android:configChanges
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:115:13-93
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:118:13-93
 	android:theme
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:116:13-51
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:119:13-51
 	android:name
-		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:114:13-53
+		ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:116:13-53
 uses-sdk
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml

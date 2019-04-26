@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 
 import com.vuforia.VuMark.VuMark;
 
@@ -13,6 +14,15 @@ public abstract class Navigate extends AppCompatActivity {
     protected abstract void SetOnClick();
 
     public void setOnClickInFloatingButton(FloatingActionButton button, final Class classSelected) {
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                goToActivity(v, classSelected);
+                finish();
+            }
+        });
+    }
+
+    public void setOnClickInButton(Button button, final Class classSelected) {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 goToActivity(v, classSelected);
