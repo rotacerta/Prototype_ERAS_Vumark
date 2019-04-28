@@ -97,7 +97,7 @@ public class ListProducts extends Navigate
         setOnClickInImageView(btn_camera, VuMark.class);
 
         Button btn_end = findViewById(R.id.btn_end);
-        setOnClickInButton(btn_end, OpenApp.class);
+        setOnClickInButton(btn_end, NavigationSummary.class);
     }
 
 }

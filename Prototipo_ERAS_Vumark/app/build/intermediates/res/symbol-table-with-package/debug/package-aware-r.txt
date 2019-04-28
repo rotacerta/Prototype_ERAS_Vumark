@@ -858,6 +858,8 @@ dimen design_tab_scrollable_min_width
 dimen design_tab_text_size
 dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
+dimen dimen_16sp
+dimen dimen_20sp
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
@@ -1096,6 +1098,7 @@ drawable reticle
 drawable round_bg
 drawable sample_app_toast_background
 drawable scanline
+drawable shadown
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vuforia_splash
@@ -1106,6 +1109,7 @@ id FUNCTION
 id FbtnBottomCam
 id FbtnBottomList
 id FbtnBottomMap
+id LinearLayoutList
 id META
 id SHIFT
 id SYM
@@ -1144,11 +1148,15 @@ id beginning
 id blocking
 id bottom
 id btn_end
+id btn_finish
 id btn_open
 id buttonPanel
 id button_send
 id camera_overlay_layout
 id card_layout
+id card_product_location
+id card_product_name
+id card_product_quantity
 id center
 id center_horizontal
 id center_vertical
@@ -1227,6 +1235,8 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id nav_summ_date
+id nav_summ_time
 id navigation_header_container
 id never
 id none
@@ -1257,6 +1267,7 @@ id screen
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
+id scrollLayoutList
 id scrollView
 id scrollable
 id search_badge
@@ -1393,6 +1404,7 @@ layout floating_button_map
 layout list_products
 layout map
 layout menu_tabs
+layout navigation_summary
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1478,10 +1490,15 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string button_OK
 string button_start
+string card_product_location_label
+string card_product_name_label
+string card_product_quantity_label
 string character_counter_pattern
 string computer_devices
+string conclude_btn_label
 string confirm_button
 string content_desc_camera_button
+string date_label
 string descr_loading_icon
 string descr_scan_line
 string descr_vumark_instance
@@ -1516,6 +1533,7 @@ string mode_description
 string mode_mid_air
 string mode_product_placement
 string mtrl_chip_close_icon_content_description
+string navigation_summary_title
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1526,6 +1544,7 @@ string splash_screen_description
 string status_bar_notification_info_overflow
 string target_quality_error_desc
 string target_quality_error_title
+string time_label
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

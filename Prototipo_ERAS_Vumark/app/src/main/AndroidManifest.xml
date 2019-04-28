@@ -83,8 +83,7 @@
             android:name="com.vuforia.Navigation.OpenApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"
-            android:noHistory="true"
-            >
+            android:noHistory="true" >
              <intent-filter>
                  <action android:name="android.intent.action.MAIN" />
 
@@ -95,30 +94,29 @@
         <activity
             android:name="com.vuforia.Navigation.ListProducts"
             android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
-            >
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
         </activity>
         <activity
             android:name="com.vuforia.Navigation.Map"
             android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
-            >
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
+        </activity>
+        <activity
+            android:name="com.vuforia.Navigation.NavigationSummary"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
         </activity>
         <activity
             android:name="com.vuforia.UI.ActivitySplashScreen"
             android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
-            >
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
         </activity>
-
-
         <activity
             android:name="com.vuforia.VuMark.VuMark"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:theme="@style/SampleAppsTheme"
-            android:launchMode="singleTask"
-            >
+            android:launchMode="singleTask" >
         </activity>
          
     </application>

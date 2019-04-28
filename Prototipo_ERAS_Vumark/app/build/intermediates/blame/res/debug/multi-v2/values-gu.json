@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
+            "outputFile": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\01355f2215e98fc68d5f78cd29911838\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-2\\files-2.1\\b4b1d8d5c6bad2bfd3387adac4c6ac7d\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\b17754988a866a58c541c5ad3c8379c8\\res\\values-gu\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,237,287,395,503",
-                        "endColumns": "46,49,107,107,75",
-                        "endOffsets": "236,286,394,502,578"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,156,210,322,434",
-                        "endColumns": "50,53,111,111,79",
-                        "endOffsets": "151,205,317,429,509"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\23847ae00619e36f038fc6b09e9c364a\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-2\\files-2.1\\015cdbff04ed010f9b1da2d7d216e305\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "514,623,727,834,921,1022,1145,1222,1300,1380,1486,1588,1685,1794,1893,2003,2163,2266",
                         "endColumns": "108,103,106,86,100,122,76,77,79,105,101,96,108,98,109,159,102,79",
                         "endOffsets": "618,722,829,916,1017,1140,1217,1295,1375,1481,1583,1680,1789,1888,1998,2158,2261,2341"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-2\\files-2.1\\8d0c8da6e7f696d76634dd26e0792881\\res\\values-gu\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,237,287,395,503",
+                        "endColumns": "46,49,107,107,75",
+                        "endOffsets": "236,286,394,502,578"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,156,210,322,434",
+                        "endColumns": "50,53,111,111,79",
+                        "endOffsets": "151,205,317,429,509"
                     }
                 }
             ]

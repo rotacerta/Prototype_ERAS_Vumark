@@ -1,71 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
     <android.support.v7.widget.CardView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_margin="15dp">
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp">
 
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingTop="0dp">
 
             <LinearLayout
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+                android:paddingBottom="0dp"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp">
                 <TextView
                     android:text="@string/card_product_name_label"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textStyle="bold"
-                    android:padding="15dp"/>
+                    android:padding="8dp"/>
                 <TextView
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:id="@+id/card_product_name"
-                    android:padding="15dp"/>
+                    android:padding="8dp"/>
             </LinearLayout>
 
             <LinearLayout
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+                android:paddingBottom="0dp"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp">
                 <TextView
                     android:text="@string/card_product_quantity_label"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textStyle="bold"
-                    android:padding="15dp"/>
+                    android:padding="8dp"/>
                 <TextView
                     android:id="@+id/card_product_quantity"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
-                    android:padding="15dp"/>
+                    android:padding="8dp"/>
             </LinearLayout>
 
             <LinearLayout
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="horizontal"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+                android:paddingBottom="0dp"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp">
                 <TextView
                     android:text="@string/card_product_location_label"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
                     android:textStyle="bold"
-                    android:padding="15dp"/>
+                    android:padding="8dp"/>
                 <TextView
                     android:id="@+id/card_product_location"
                     android:layout_height="match_parent"
                     android:layout_width="wrap_content"
-                    android:padding="15dp"/>
+                    android:padding="8dp"/>
             </LinearLayout>
         </LinearLayout>
 

@@ -16,5 +16,9 @@
     <dimen name="card_input_text_size">14dp</dimen>
 
     <dimen name="street_label_size">16dp</dimen>
+
+
+    <dimen name="dimen_20sp">20sp</dimen>
+    <dimen name="dimen_16sp">16sp</dimen>
 </resources>
 
