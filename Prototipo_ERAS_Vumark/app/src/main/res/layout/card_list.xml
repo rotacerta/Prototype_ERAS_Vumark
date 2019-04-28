@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
     <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:minHeight="150dp">
+        android:layout_width="match_parent"
+        android:layout_margin="15dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="Oi"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="asdasd"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:text="@string/card_product_name_label"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="15dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/card_product_name"
+                    android:padding="15dp"/>
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:text="asdasadasdasdasdd" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:text="@string/card_product_quantity_label"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="15dp"/>
+                <TextView
+                    android:id="@+id/card_product_quantity"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:padding="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:text="@string/card_product_location_label"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="15dp"/>
+                <TextView
+                    android:id="@+id/card_product_location"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:padding="15dp"/>
+            </LinearLayout>
         </LinearLayout>
 
 
