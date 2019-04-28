@@ -3,25 +3,25 @@ package com.vuforia.Enums;
 public enum StreetsEnum
 {
     STREET_1_1(
-            "Rua 1", 14, 2, 0, 0, 0
+            "Rua 1", 16, 2, 0, 3, 0
     ),
     STREET_1_2(
-            "Rua 1", 13, 4, -0.5f, 0, 90
+            "Rua 1", 16, 4, 0.3f, 3, 90
     ),
     STREET_1_3(
-            "Rua 1", 17, 4, -0.5f, 0, 90
+            "Rua 1", 20, 4, 0.2f, 3, 90
     ),
     STREET_2(
-            "Rua 2", 13, 8, 0, 0, 0
+            "Rua 2", 16, 9, 0, 1, 0
     ),
     STREET_3(
-            "Rua 3", 13, 12, 0, 0, 0
+            "Rua 3", 16, 13, 0, 1, 0
     ),
     STREET_4(
-            "Rua 4", 7, 17, 0, -0.5f, 0
+            "Rua 4", 11, 18, 0, 0, 0
     ),
     STREET_5(
-            "Rua 5", 26, 7, -0.5f, 0, 90
+            "Rua 5", 27, 9, 0.1f, 0, 90
     );
 
     public String TEXT;

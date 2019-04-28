@@ -49,23 +49,29 @@ public class Map extends Navigate
 
         InitMatrix();
 
-        RelativeLayout contentLayout = findViewById(R.id.contentGridIBGLayout);
-        Tuple<Integer, Integer> viewDimensions = GetDeviceDimension();
-        int contentWidth = (viewDimensions.value * 9) / 10;
-        int contentHeight = (viewDimensions.key * 8) / 10;
+        AddGridLayoutInLayout((RelativeLayout) findViewById(R.id.contentGridIBGLayout));
+    }
 
-        GridLayout gridLayout = GenerateGridLayout(contentHeight, contentWidth);
-        contentLayout.addView(gridLayout);
+    private void AddGridLayoutInLayout(RelativeLayout contentLayout)
+    {
+        if(contentLayout != null)
+        {
+            Tuple<Integer, Integer> viewDimensions = GetDeviceDimension();
+            int contentWidth = (viewDimensions.value * 9) / 10;
+            int contentHeight = (viewDimensions.key * 8) / 10;
 
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) gridLayout.getLayoutParams();
-        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-        gridLayout.setLayoutParams(layoutParams);
+            GridLayout gridLayout = GenerateGridLayout(contentHeight, contentWidth);
+            contentLayout.addView(gridLayout);
 
-        SetViewSize(contentLayout, contentHeight, contentWidth);
-        SetViewSize(gridLayout, contentHeight, contentWidth);
+            RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) gridLayout.getLayoutParams();
+            layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+            gridLayout.setLayoutParams(layoutParams);
 
-        ImageView ivStreetLabel = GenerateStreetLabelImageView(contentHeight, contentWidth);
-        contentLayout.addView(ivStreetLabel);
+            SetViewSize(gridLayout, contentHeight, contentWidth);
+
+            ImageView ivStreetLabel = GenerateStreetLabelImageView(contentHeight, contentWidth);
+            contentLayout.addView(ivStreetLabel);
+        }
     }
 
     /**
@@ -197,7 +203,7 @@ public class Map extends Navigate
         this.matrix = mapService.GetMap();
         //TODO: Delete these rows below when necessary
         //These values will be currentCell and nextdestination (variables of PathFinderService)
-        this.matrix[17][3].setValue(CellValueEnum.STARTPOINT.Value);
+        this.matrix[17][0].setValue(CellValueEnum.STARTPOINT.Value);
         this.matrix[0][9].setValue(CellValueEnum.ENDPOINT.Value);
     }
 

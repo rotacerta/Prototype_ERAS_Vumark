@@ -1303,6 +1303,7 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
+id tab_menu
 id tag_transition_group
 id text
 id text2
