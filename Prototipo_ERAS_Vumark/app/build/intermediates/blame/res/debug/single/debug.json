@@ -2112,6 +2112,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-2\\files-2.1\\36ed3585fcb550a6e0a43f1f0f10bead\\res\\animator\\mtrl_chip_state_list_anim.xml"
     },
     {
+        "merged": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\res\\merged\\debug\\drawable_map_subtitle.png.flat",
+        "source": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\drawable\\map_subtitle.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\res\\merged\\debug\\layout_menu_tabs.xml.flat",
         "source": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\src\\main\\res\\layout\\menu_tabs.xml"
     },

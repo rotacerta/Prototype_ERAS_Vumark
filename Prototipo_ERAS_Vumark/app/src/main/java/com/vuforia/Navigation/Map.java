@@ -57,7 +57,7 @@ public class Map extends Navigate
         if(contentLayout != null)
         {
             Tuple<Integer, Integer> viewDimensions = GetDeviceDimension();
-            int contentWidth = (viewDimensions.value * 9) / 10;
+            int contentWidth = (viewDimensions.value * 8) / 10;
             int contentHeight = (viewDimensions.key * 8) / 10;
 
             GridLayout gridLayout = GenerateGridLayout(contentHeight, contentWidth);

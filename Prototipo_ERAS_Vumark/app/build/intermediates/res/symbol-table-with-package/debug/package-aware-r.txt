@@ -1079,6 +1079,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable icon_open
 drawable logo
+drawable map_subtitle
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -1514,6 +1515,7 @@ string instruct_empty
 string instruct_gestures
 string instruct_point_device
 string instruct_touch_screen
+string map_subtitle_label
 string mechanical_appliances
 string menu_back
 string menu_button_blue
