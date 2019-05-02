@@ -1515,7 +1515,6 @@ string instruct_empty
 string instruct_gestures
 string instruct_point_device
 string instruct_touch_screen
-string map_subtitle_label
 string mechanical_appliances
 string menu_back
 string menu_button_blue
