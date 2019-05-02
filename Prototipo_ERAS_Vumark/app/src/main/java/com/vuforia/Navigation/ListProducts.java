@@ -1,9 +1,12 @@
 package com.vuforia.Navigation;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,9 +20,11 @@ import com.vuforia.UI.R;
 import com.vuforia.UI.ActivitySplashScreen;
 import com.vuforia.VuMark.VuMark;
 
+import java.util.Locale;
+
 public class ListProducts extends Navigate
 {
-    private ProductItem listProducts[];
+    LinearLayout cardsLinerLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -31,61 +36,43 @@ public class ListProducts extends Navigate
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.list_products);
+        cardsLinerLayout = findViewById(R.id.listProducts);
         changeMenu("LIST");
 
         SetOnClick();
-        initializeProductsList();
-        CardView cards[] = createList();
-        setCardsInLayout(cards);
+        AddProductsInView();
     }
 
-    private void initializeProductsList(ProductItem[]... products) {
-        // listProducts = products;
-        listProducts = new ProductItem[3];
-        listProducts[0] = new ProductItem("Fardamento",5, "121212", null);
-        listProducts[1] = new ProductItem("Computadores",25, "123123", null);
-        listProducts[2] = new ProductItem("Ferramentas",5, "444444", null);
+    private ProductItem[] GetProducts()
+    {
+        ProductItem[] products = new ProductItem[3];
+        products[0] = new ProductItem("Fardamento",55, "1.1.1.1", null);
+        products[1] = new ProductItem("Computadores",25, "2.2.2.2", null);
+        products[2] = new ProductItem("Ferramentas",15, "3.3.3.3", null);
+        products[2] = new ProductItem("Produtos de Limpeza",5, "4.4.4.4", null);
+        products[2] = new ProductItem("Papél Higiênico",35, "5.5.5.5", null);
+        products[2] = new ProductItem("Teste com um produto com nome muito grande para verificar o comportamento do card",0, "6.6.6.6", null);
+        return  products;
     }
 
-    public CardView[] createList() {
-        CardView cards[] = new CardView[listProducts.length];
-        for (int index = 0; index < cards.length; index++) {
-            cards[index] = new CardView(this);
-            cards[index].addView( createLinearLayout(index) );
-            LinearLayout.LayoutParams cardViewParams
-                    = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            cardViewParams.setMargins(50, 20, 50, 20);
-            cards[index].setLayoutParams(cardViewParams);
-            cards[index].requestLayout();
-            cards[index].setMinimumHeight(150);
-            cards[index].setCardBackgroundColor(Color.parseColor("#F0E1BF"));
-        }
-        return cards;
-    }
 
-    public LinearLayout createLinearLayout(int index) {
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.addView(createTextView("Produto: " + listProducts[index].getTitle()));
-        linearLayout.addView(createTextView("Quantidade: " + Integer.toString(listProducts[index].getAmount())));
-        linearLayout.addView(createTextView("Local: " + listProducts[index].getLocate()));
-        if(listProducts[index].getDescription() != null) {
-            linearLayout.addView(createTextView("Descrição: " + listProducts[index].getDescription()));
-        }
-        return linearLayout;
-    }
-
-    private TextView createTextView(String text) {
-        TextView textView = new TextView(this);
-        textView.setText(text);
-        textView.setPadding(30,5,30,5);
-        return textView;
-    }
-
-    public void setCardsInLayout(CardView[] cards) {
-        LinearLayout layout = findViewById(R.id.listProducts);
-        for (CardView card: cards) {
-            layout.addView(card);
+    private void AddProductsInView()
+    {
+        ProductItem[] products = GetProducts();
+        for (ProductItem product : products)
+        {
+            LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+            if(inflater != null)
+            {
+                @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
+                cardsLinerLayout.addView(newCard);
+                TextView productName = newCard.findViewById(R.id.card_product_name);
+                productName.setText(product.getTitle());
+                TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
+                productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getAmount()));
+                TextView productLocation = newCard.findViewById(R.id.card_product_location);
+                productLocation.setText(product.getLocate());
+            }
         }
     }
 

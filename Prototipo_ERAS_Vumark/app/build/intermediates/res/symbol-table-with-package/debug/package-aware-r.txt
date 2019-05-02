@@ -1269,6 +1269,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollLayoutList
+id scrollListProducts
 id scrollView
 id scrollable
 id search_badge
