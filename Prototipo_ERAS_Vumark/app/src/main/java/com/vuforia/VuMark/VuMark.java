@@ -9,6 +9,7 @@ countries.
 
 package com.vuforia.VuMark;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -29,6 +30,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -128,7 +132,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
         _viewCard = View.inflate(this, R.layout.card, null);
         _viewCard.setVisibility(View.INVISIBLE);
 
-        LinearLayout cardLayout = (LinearLayout) _viewCard.findViewById(R.id.card_layout);
+        Button cardLayout = (Button) _viewCard.findViewById(R.id.button_send_amount);
 
         cardLayout.setOnClickListener(new View.OnClickListener()
         {
@@ -136,6 +140,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
             public void onClick(View view)
             {
                 hideCard();
+                getAmoutOfProducts(view);
             }
         });
 
@@ -703,6 +708,21 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 hideCard();
                 break;
         }
+    }
+
+    public void getAmoutOfProducts(View view) {
+        EditText msgTextField = (EditText) findViewById(R.id.amount);
+        String  amount = msgTextField.getText().toString();
+
+        Log.d("QUANTIDADE: ",amount);
+        // SETAR O VALOR NA CLASSE ESTÁTICA
+        msgTextField.setText("");
+        hideKeyboardFrom(this, view);
+    }
+
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
 }

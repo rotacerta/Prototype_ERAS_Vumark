@@ -1152,7 +1152,7 @@ id btn_end
 id btn_finish
 id btn_open
 id buttonPanel
-id button_send
+id button_send_amount
 id camera_overlay_layout
 id card_layout
 id card_product_location

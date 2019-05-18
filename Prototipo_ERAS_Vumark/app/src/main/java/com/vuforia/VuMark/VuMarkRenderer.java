@@ -321,7 +321,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                     // if this VuMark is not the one we've detected
                     if (! markerValue.equalsIgnoreCase(currentVumarkIdOnCard))
                     {
-                        mActivity.hideCard();
+                        mActivity.showCard(markerType, markerValue, markerBitmap);
                         blinkVumark(true);
                     }
                 }
