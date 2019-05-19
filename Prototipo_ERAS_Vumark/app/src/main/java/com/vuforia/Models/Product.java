@@ -1,5 +1,5 @@
 package com.vuforia.Models;
-//todo: ver se nenhuma parte do codigo quebrou dps da rafatoracao
+
 public class Product
 {
     private int ProductId;
@@ -17,7 +17,7 @@ public class Product
         QuantityCatched = quantityCatched;
     }
 
-    int getProductId()
+    public int getProductId()
     {
         return ProductId;
     }

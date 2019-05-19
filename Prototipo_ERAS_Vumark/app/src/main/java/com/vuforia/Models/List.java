@@ -36,7 +36,7 @@ public class List
     }
 
     @Nullable
-    private Product getProductById(int pruductId)
+    public Product getProductById(int pruductId)
     {
         if(Products != null && Products.size() > 0)
         {
@@ -63,6 +63,22 @@ public class List
         products[1] = new Product(1, "Computadores Usados", 0, 7, 0);
         products[2] = new Product(1, "Água mineral", 0, 55, 0);
         products[3] = new Product(1, "Detergente Neutro", 0, 15, 0);
+        return products;
+    }
+
+    public ArrayList<Product> getProductsByLocationId(int locationId)
+    {
+        ArrayList<Product> products = getProducts();
+        if(products != null && products.size() > 0)
+        {
+            for(Product p: products)
+            {
+                if(!(p.getLocationId() == locationId))
+                {
+                    products.remove(p);
+                }
+            }
+        }
         return products;
     }
 

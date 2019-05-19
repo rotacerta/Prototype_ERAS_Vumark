@@ -35,6 +35,7 @@ public class NavigationSummary extends Navigate
 
     private void AddProductsInView()
     {
+        // TODO: adicionar layout de QuantityCatched no layout do card (na tela de lista basta dar um hide no layout)
         Product[] products = Data.getProducts().getMockProducts();
         for (Product product : products)
         {

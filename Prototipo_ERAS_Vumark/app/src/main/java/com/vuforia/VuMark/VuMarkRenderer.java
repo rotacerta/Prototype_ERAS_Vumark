@@ -15,12 +15,15 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.Log;
+import com.vuforia.Enums.Map.MapDefinitionsEnum;
 
 import com.vuforia.CameraCalibration;
 import com.vuforia.Device;
 import com.vuforia.Image;
 import com.vuforia.InstanceId;
 import com.vuforia.Matrix44F;
+import com.vuforia.Models.Cell;
+import com.vuforia.Models.Location;
 import com.vuforia.PIXEL_FORMAT;
 import com.vuforia.Renderer;
 import com.vuforia.SampleApplication.SampleAppRenderer;
@@ -35,6 +38,8 @@ import com.vuforia.State;
 import com.vuforia.Tool;
 import com.vuforia.TrackableResult;
 import com.vuforia.TrackableResultList;
+import com.vuforia.Util.Data;
+import com.vuforia.Util.Tuple;
 import com.vuforia.Vec2F;
 import com.vuforia.Vec3F;
 import com.vuforia.VuMarkTarget;
@@ -45,6 +50,7 @@ import com.vuforia.Vuforia;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -319,6 +325,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
 
                     // Hide the augmentation and reset the blink animation
                     // if this VuMark is not the one we've detected
+                    // TODO: Avaliar se isso vai ter impacto (pode ficar mostrando o card toda hora)
                     if (! markerValue.equalsIgnoreCase(currentVumarkIdOnCard))
                     {
                         mActivity.showCard(markerType, markerValue, markerBitmap);
@@ -357,6 +364,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                 mActivity.showCard(markerType, markerValue, markerBitmap);
                 currentVumarkIdOnCard = markerValue;
             }
+            FindPath(markerValue);
         }
         else
         {
@@ -373,6 +381,33 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         mRenderer.end();
     }
 
+    private void FindPath(String markerValue)
+    {
+        Location location = Data.getLocationByVuMarkId(markerValue);
+        if(location != null)
+        {
+            Cell[][] map = Data.getPathFinderService().GetMap();
+            if(map != null)
+            {
+                for(int row = 0; row < MapDefinitionsEnum.ROWS.Value; row++)
+                {
+                    for(int col = 0; col < MapDefinitionsEnum.COLUMNS.Value; col++)
+                    {
+                        if(map[row][col].getLocationId() == location.getLocationId())
+                        {
+                            Tuple<Integer, Integer> tuple = new Tuple<Integer, Integer>(map[row][col].getX(), map[row][col].getY());
+                            ArrayList<String> errors = Data.getPathFinderService().SetCurrentPoint(tuple);
+                            if(errors.size() > 0)
+                            {
+                                // TODO: mostrar mensagem de erro na tela
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     private void renderModel(float[] projectionMatrix, float[] viewMatrix, float[] modelMatrix, boolean isMainVuMark)
     {

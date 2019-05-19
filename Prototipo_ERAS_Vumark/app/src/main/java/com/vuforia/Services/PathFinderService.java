@@ -180,7 +180,7 @@ public class PathFinderService
      * @return An ArrayList of string with errors that occurred during execution of the algorithm, or an empty ArrayList
      */
     @SuppressLint("DefaultLocale")
-    private ArrayList<String> SetCurrentPoint(Tuple<Integer, Integer> currentCell)
+    public ArrayList<String> SetCurrentPoint(Tuple<Integer, Integer> currentCell)
     {
         ArrayList<String> errors = new ArrayList<>();
         this.currentCell = GetStatPoint(currentCell);
@@ -449,5 +449,13 @@ public class PathFinderService
             }
         }
         return false;
+    }
+
+    /**
+     * @return Map
+     */
+    public Cell[][] GetMap()
+    {
+        return matrix;
     }
 }

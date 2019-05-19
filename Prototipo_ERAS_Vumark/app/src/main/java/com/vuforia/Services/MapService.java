@@ -5,7 +5,7 @@ import com.vuforia.Enums.Map.MapBuildingsEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
 import com.vuforia.Enums.Map.MapUnmappedEnum;
 import com.vuforia.Models.Cell;
-
+// TODO: criar um enum/classe que vai conter a ligacao entre as celulas do mapa e as localizacoes
 public class MapService
 {
     private int Rows;

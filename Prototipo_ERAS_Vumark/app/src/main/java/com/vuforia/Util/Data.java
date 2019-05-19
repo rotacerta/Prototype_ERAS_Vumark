@@ -37,7 +37,7 @@ public class Data
         Data.PathFinderService = pathFinderService;
     }
 
-    public static ArrayList<Cell> getDestinationsByocationId(int locationId)
+    public static ArrayList<Cell> getDestinationsByLocationId(int locationId)
     {
         ArrayList<Cell> destinations = null;
         if(!IsNull(Data.PathFinderService))

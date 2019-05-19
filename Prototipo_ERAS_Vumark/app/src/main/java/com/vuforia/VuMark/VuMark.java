@@ -42,6 +42,9 @@ import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
 import com.vuforia.FUSION_PROVIDER_TYPE;
 import com.vuforia.HINT;
+import com.vuforia.Models.Cell;
+import com.vuforia.Models.Location;
+import com.vuforia.Models.Product;
 import com.vuforia.Navigation.ListProducts;
 import com.vuforia.Navigation.Map;
 import com.vuforia.Navigation.Navigate;
@@ -57,9 +60,12 @@ import com.vuforia.SampleApplication.utils.Texture;
 import com.vuforia.State;
 import com.vuforia.Tracker;
 import com.vuforia.TrackerManager;
+import com.vuforia.Util.Data;
 import com.vuforia.Vuforia;
 import com.vuforia.UI.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Vector;
 
 
@@ -139,8 +145,11 @@ public class VuMark extends Navigate implements SampleApplicationControl
             @Override
             public void onClick(View view)
             {
-                hideCard();
-                getAmoutOfProducts(view);
+                boolean shouldHideCard = getAmoutOfProducts(view);
+                if(shouldHideCard)
+                {
+                    hideCard();
+                }
             }
         });
 
@@ -313,8 +322,14 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     }
 
-    boolean isGoal(final String value) {
-        //TODO: IMPLEMENTAR O FILTRO DO MAPA
+    boolean isGoal(final String value)
+    {
+        Location location = Data.getLocationByVuMarkId(value);
+        if(location != null)
+        {
+            ArrayList<Cell> products = Data.getDestinationsByLocationId(location.getLocationId());
+            return (products != null && products.size() > 0);
+        }
         return false;
     }
 
@@ -687,6 +702,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
     }
 
     public void setImageRender(String imageRender) {
+        // TODO: verificar em que momento essa variavel eh chamada para chamar esse metodo antes
         switch (imageRender) {
             case "LEFT":
                 this.imageRender = "arrow_left.png";
@@ -707,14 +723,38 @@ public class VuMark extends Navigate implements SampleApplicationControl
         }
     }
 
-    public void getAmoutOfProducts(View view) {
+    public boolean getAmoutOfProducts(View view)
+    {
+        String error = "";
         EditText msgTextField = (EditText) findViewById(R.id.amount);
-        String  amount = msgTextField.getText().toString();
-
-        Log.d("QUANTIDADE: ",amount);
-        // SETAR O VALOR NA CLASSE ESTÁTICA
-        msgTextField.setText("");
-        hideKeyboardFrom(this, view);
+        String amountS = msgTextField.getText().toString();
+        if(!amountS.isEmpty())
+        {
+            int amountI;
+            try
+            {
+                amountI = Integer.parseInt(amountS);
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+            Cell currentCell = Data.getPathFinderService().GetCurrentCell();
+            if(currentCell != null)
+            {
+                ArrayList<Product> products = Data.getProducts().getProductsByLocationId(currentCell.getLocationId());
+                if(products != null && products.size() > 0)
+                {
+                    Data.getProducts().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
+                    return true;
+                }
+            }
+            msgTextField.setText("");
+            hideKeyboardFrom(this, view);
+        }
+        // TODO: quando tiver produtos cadastrados descomentar essa linha
+        // return false;
+        return true;
     }
 
     public static void hideKeyboardFrom(Context context, View view) {
