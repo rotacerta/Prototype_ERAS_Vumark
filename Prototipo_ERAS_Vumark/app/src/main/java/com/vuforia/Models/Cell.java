@@ -12,6 +12,7 @@ public class Cell implements Comparable
     private int Value;
     private Cell Father;
     private boolean Way;
+    private int LocationId;
 
     public Cell()
     {
@@ -19,7 +20,7 @@ public class Cell implements Comparable
         this.Y = -1;
     }
 
-    public Cell(Cell Father, int Gcost, int Fcost, int Hcost, boolean IsAWay, int Value, int X, int Y)
+    public Cell(Cell Father, int Gcost, int Fcost, int Hcost, boolean IsAWay, int Value, int X, int Y, int LocationId)
     {
         this.Gcost = Gcost;
         this.Hcost = Hcost;
@@ -29,6 +30,7 @@ public class Cell implements Comparable
         this.Way = IsAWay;
         this.X = X;
         this.Y = Y;
+        this.LocationId = LocationId;
     }
 
     public int getY()
@@ -109,6 +111,16 @@ public class Cell implements Comparable
     public void setX(int X)
     {
         this.X = X;
+    }
+
+    public int getLocationId()
+    {
+        return LocationId;
+    }
+
+    public void setLocationId(int locationId)
+    {
+        LocationId = locationId;
     }
 
     @Override

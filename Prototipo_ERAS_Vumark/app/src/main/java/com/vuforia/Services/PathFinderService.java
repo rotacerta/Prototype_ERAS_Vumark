@@ -54,7 +54,7 @@ public class PathFinderService
      */
     private Cell GetCellByTuple(Tuple<Integer, Integer> position)
     {
-        if (((position.key >=0) && (position.key < MatrixRows)) && ((position.value >= 0) && (position.value < MatrixColumns)))
+        if ((position != null) && ((position.key >=0) && (position.key < MatrixRows)) && ((position.value >= 0) && (position.value < MatrixColumns)))
         {
             return matrix[position.key][position.value];
         }
@@ -69,13 +69,16 @@ public class PathFinderService
     private ArrayList<Cell> GetDestinations(ArrayList<Tuple<Integer, Integer>> destinations)
     {
         ArrayList<Cell> _destinations = new ArrayList<>();
-        for(Tuple<Integer, Integer> destin: destinations)
+        if(destinations != null && destinations.size() > 0)
         {
-            Cell cellDestin = GetCellByTuple(destin);
-            if(cellDestin != null)
+            for(Tuple<Integer, Integer> destin: destinations)
             {
-                cellDestin.setValue(CellValueEnum.ENDPOINT.Value);
-                _destinations.add(cellDestin);
+                Cell cellDestin = GetCellByTuple(destin);
+                if(cellDestin != null)
+                {
+                    cellDestin.setValue(CellValueEnum.ENDPOINT.Value);
+                    _destinations.add(cellDestin);
+                }
             }
         }
         return _destinations;
@@ -101,7 +104,6 @@ public class PathFinderService
 
     /**
      * Method to clear all properties of each cell that not is an obstacle in matrix
-     * @return The matrix cleaned
      */
     private void CleanMatrix()
     {
@@ -178,7 +180,7 @@ public class PathFinderService
      * @return An ArrayList of string with errors that occurred during execution of the algorithm, or an empty ArrayList
      */
     @SuppressLint("DefaultLocale")
-    public ArrayList<String> SetCurrentPoint(Tuple<Integer, Integer> currentCell)
+    private ArrayList<String> SetCurrentPoint(Tuple<Integer, Integer> currentCell)
     {
         ArrayList<String> errors = new ArrayList<>();
         this.currentCell = GetStatPoint(currentCell);

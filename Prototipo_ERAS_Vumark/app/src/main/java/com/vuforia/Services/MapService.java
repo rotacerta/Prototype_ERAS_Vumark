@@ -41,7 +41,7 @@ public class MapService
         {
             for(int col = 0; col < Columns; col++)
             {
-                _matrix[row][col] = new Cell( null, 0, 0, 0, false, CellValueEnum.WALKABLE.Value, row, col );
+                _matrix[row][col] = new Cell( null, 0, 0, 0, false, CellValueEnum.WALKABLE.Value, row, col, 0 );
             }
         }
         return  _matrix;

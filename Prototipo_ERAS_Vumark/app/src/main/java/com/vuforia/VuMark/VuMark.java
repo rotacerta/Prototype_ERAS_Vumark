@@ -670,8 +670,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
         return result;
     }
-    
-    
+
     @Override
     public boolean doDeinitTrackers()
     {

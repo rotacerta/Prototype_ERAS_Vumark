@@ -7,8 +7,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import java.util.List;
+import java.sql.Time;
+import java.util.ArrayList;
+
+import com.vuforia.Models.List;
+import com.vuforia.Models.Location;
+import com.vuforia.Models.Product;
+import com.vuforia.Services.PathFinderService;
 import com.vuforia.UI.R;
+import com.vuforia.Util.Data;
+import com.vuforia.Util.Tuple;
 import com.vuforia.VuMark.VuMark;
 
 public class OpenApp extends Navigate {
@@ -25,6 +33,9 @@ public class OpenApp extends Navigate {
 
         setContentView(R.layout.open_view);
 
+        PathFinderService pfs = new PathFinderService(new Tuple<Integer, Integer>(0, 0), new ArrayList<Tuple<Integer, Integer>>());
+        List l = new List(0, "MockList", new Time(0,0,0), new ArrayList<Product>());
+        Data.Init(pfs, l, new ArrayList<Location>());
         startApp();
     }
 
