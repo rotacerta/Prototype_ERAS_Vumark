@@ -411,7 +411,7 @@ public class SampleApplicationSession implements UpdateCallbackInterface
             {
                 // Configure Vuforia
                 // Note: license key goes in the third parameter
-                Vuforia.setInitParameters(session.mActivityRef.get(), session.mVuforiaFlags, "AU+flvP/////AAABmeDmU2Pnb0iuu/Fb0SWokeNKjzqvfOLMlhRdX82ZyE11pQkU95W7cj3Lws7WR6uxHK9kH3hqzsv4936ctE1FAIkAq7tpPQ7gqduSwinePI5vZ7TqvsO6lM4d2/rnsrsZxvgu+BmBjyrtRJPlM0b83qwl2gErcdBPENH+6ZCTLsB0mIIy1BWNH9L677NVxmLg2gjdTI7KzcL2Til92f++ZFMGH8ruGJMqHBDtZwdkIhevEb2gDCMT5tVTtCI7NmHBNIHIbOOsw7Dc4QP2JdA8BiTnm1pCsRcemcB41WH/iDxbiS5MDl+YCBfPKgrLXWA/mVpiFkR52BM99iRDI7F/B1+dn0m0UHJk9nkbOF5SN9zd");
+                Vuforia.setInitParameters(session.mActivityRef.get(), session.mVuforiaFlags, "AfQCmOb/////AAABmVa69LdRy0pgveaBerMiXguArsdwRjHdmfvQOKUcPw6Y0cZdMMmnp6eLL0bOVcR3vumSKW/7C7xu0buykeRi20guMja+5qh4GgxPyNMoBfm5jMvkTaQ1uyEbCaVu9jDD079HTbsUsSTYpRumePaEEa3emqZcMCre665pQU2PFFe1Z8Fz2VCXjPhSC5+YiguZOsP1hu3OmvOGuA6Retuwxkg2sxJo3zbhlkIesmW6mFbxaMwFdetR6eDMLOVp5H+5L1+Sy8NTWML/NJ3gwrRS3RlZfOdOO6TathJAmEKo6dCCSYeewr0W2s2yK8IVdzNPF6DI+87cLq5YG+MtK73kThyGPv8B8UYE2oQxcYVwHnI6");
                 
                 do
                 {

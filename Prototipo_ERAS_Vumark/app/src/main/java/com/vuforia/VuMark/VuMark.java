@@ -384,15 +384,14 @@ public class VuMark extends Navigate implements SampleApplicationControl
             .getTracker(ObjectTracker.getClassType());
         if (objectTracker == null)
             return false;
-        
+
         if (mCurrentDataset == null)
             mCurrentDataset = objectTracker.createDataSet();
 
         return mCurrentDataset != null
-                && mCurrentDataset.load("Vuforia.xml", STORAGE_TYPE.STORAGE_APPRESOURCE)
+                && mCurrentDataset.load("Vumark_PickByPath.xml", STORAGE_TYPE.STORAGE_APPRESOURCE)
                 && objectTracker.activateDataSet(mCurrentDataset);
     }
-    
     
     @Override
     public boolean doUnloadTrackersData()
@@ -416,13 +415,12 @@ public class VuMark extends Navigate implements SampleApplicationControl
             {
                 result = false;
             }
-            
+
             mCurrentDataset = null;
         }
         
         return result;
     }
-
 
     @Override
     public void onVuforiaResumed()
