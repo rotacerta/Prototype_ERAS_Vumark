@@ -102,6 +102,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
         </activity>
         <activity
+            android:name="com.vuforia.Navigation.DrawerNavigation"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >
+        </activity>
+        <activity
             android:name="com.vuforia.Navigation.NavigationSummary"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" >

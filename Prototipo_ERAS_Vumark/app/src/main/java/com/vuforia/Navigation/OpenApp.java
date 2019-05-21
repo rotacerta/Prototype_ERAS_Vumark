@@ -41,6 +41,6 @@ public class OpenApp extends Navigate {
 
     private void startApp() {
         Button btn_open = findViewById(R.id.btn_open);
-        setOnClickInButton(btn_open, VuMark.class);
+        setOnClickInButton(btn_open, DrawerNavigation.class);
     }
 }

@@ -1185,6 +1185,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id drawer_layout
 id edit_query
 id end
 id enterAlways
@@ -1198,6 +1199,7 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id frameContent
 id ghost_view
 id gone
 id group_divider
@@ -1236,6 +1238,10 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id navView
+id nav_camera
+id nav_list
+id nav_map
 id nav_summ_date
 id nav_summ_time
 id navigation_header_container
@@ -1406,6 +1412,7 @@ layout floating_button_list
 layout floating_button_map
 layout list_products
 layout map
+layout menu_drawer
 layout menu_tabs
 layout navigation_summary
 layout notification_action
@@ -1420,6 +1427,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout splash_screen
 layout support_simple_spinner_dropdown_item
+menu menu_drawer
 string INIT_ERROR
 string INIT_ERROR_DEVICE_NOT_SUPPORTED
 string INIT_ERROR_NO_CAMERA_ACCESS

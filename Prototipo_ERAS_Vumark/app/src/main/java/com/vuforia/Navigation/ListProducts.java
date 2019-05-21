@@ -34,7 +34,6 @@ public class ListProducts extends Navigate
 
         setContentView(R.layout.list_products);
         cardsLinerLayout = findViewById(R.id.listProducts);
-        changeMenu("LIST");
 
         SetOnClick();
         AddProductsInView();

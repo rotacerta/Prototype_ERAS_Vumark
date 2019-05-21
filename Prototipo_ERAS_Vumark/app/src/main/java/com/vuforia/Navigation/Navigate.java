@@ -2,13 +2,21 @@ package com.vuforia.Navigation;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toolbar;
+
 import com.vuforia.UI.R;
 
 import com.vuforia.VuMark.VuMark;
@@ -47,42 +55,6 @@ public abstract class Navigate extends AppCompatActivity {
     public void goToActivity(View view, Class classSelected) {
         Intent intent = new Intent( view.getContext(), classSelected );
         startActivityForResult( intent, 0);
-    }
-
-    public void changeMenu(String page) {
-        resetMenu();
-        switch (page) {
-            case "MAP":
-                ImageView map = findViewById(R.id.image_map);
-                map.setBackgroundColor(Color.WHITE);
-                map.setImageResource(R.drawable.ic_map_black_dp);
-                break;
-            case "CAMERA":
-                ImageView camera = findViewById(R.id.image_camera);
-                camera.setBackgroundColor(Color.WHITE);
-                camera.setImageResource(R.drawable.ic_camera_alt_black);
-                break;
-            case "LIST":
-                ImageView list = findViewById(R.id.image_list);
-                list.setBackgroundColor(Color.WHITE);
-                list.setImageResource(R.drawable.ic_list_black_24dp);
-                break;
-        }
-    }
-
-    public void resetMenu() {
-        ImageView map = findViewById(R.id.image_map);
-        map.setBackgroundColor(getResources().getColor(R.color.orange));
-        map.setImageResource(R.drawable.ic_map_white_dp);
-
-        ImageView camera = findViewById(R.id.image_camera);
-        camera.setBackgroundColor(getResources().getColor(R.color.orange));
-        camera.setImageResource(R.drawable.ic_camera_alt_white);
-
-        ImageView list = findViewById(R.id.image_list);
-        list.setBackgroundColor(getResources().getColor(R.color.orange));
-        list.setImageResource(R.drawable.ic_list_white_24dp);
-
     }
 
     @Override

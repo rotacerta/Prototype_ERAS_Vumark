@@ -41,7 +41,6 @@ public class Map extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.map);
-        changeMenu("MAP");
         SetOnClick();
 
         MatrixRows = MapDefinitionsEnum.ROWS.Value;
