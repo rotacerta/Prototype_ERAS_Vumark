@@ -74,6 +74,8 @@ public class VuMark extends Navigate implements SampleApplicationControl
     private static final String LOGTAG = "VuMark";
 
     private String imageRender = "arrow_right.png";
+
+    private String dataBaseUrl = "Vumark_PickByPath.xml";
     
     private SampleApplicationSession vuforiaAppSession;
     
@@ -103,8 +105,6 @@ public class VuMark extends Navigate implements SampleApplicationControl
     private AlertDialog mErrorDialog;
     
     private boolean mIsDroidDevice = false;
-
-    String DEBUG_TAG = "TESTE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -404,7 +404,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
             mCurrentDataset = objectTracker.createDataSet();
 
         return mCurrentDataset != null
-                && mCurrentDataset.load("Vumark_PickByPath.xml", STORAGE_TYPE.STORAGE_APPRESOURCE)
+                && mCurrentDataset.load(dataBaseUrl, STORAGE_TYPE.STORAGE_APPRESOURCE)
                 && objectTracker.activateDataSet(mCurrentDataset);
     }
     
@@ -762,4 +762,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
+    public void setDataBaseUrl(String dataBaseUrl) {
+        this.dataBaseUrl = dataBaseUrl;
+    }
 }

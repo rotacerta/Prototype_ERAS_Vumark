@@ -328,7 +328,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                     // TODO: Avaliar se isso vai ter impacto (pode ficar mostrando o card toda hora)
                     if (! markerValue.equalsIgnoreCase(currentVumarkIdOnCard))
                     {
-                        mActivity.showCard(markerType, markerValue, markerBitmap);
+                        mActivity.showCard("Endereço: ", markerValue, markerBitmap);
                         blinkVumark(true);
                     }
                 }
