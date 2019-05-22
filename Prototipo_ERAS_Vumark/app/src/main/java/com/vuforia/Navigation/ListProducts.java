@@ -2,6 +2,7 @@ package com.vuforia.Navigation;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -19,7 +20,7 @@ import com.vuforia.VuMark.VuMark;
 
 import java.util.Locale;
 
-public class ListProducts extends Navigate
+public class ListProducts extends DrawerNavigation
 {
     LinearLayout cardsLinerLayout;
 
@@ -37,6 +38,9 @@ public class ListProducts extends Navigate
 
         SetOnClick();
         AddProductsInView();
+
+        navDrawer = (NavigationView) findViewById(R.id.navView_list);
+        initializeDrawer();
     }
 
     private void AddProductsInView()
@@ -68,12 +72,6 @@ public class ListProducts extends Navigate
     }
 
     public void SetOnClick() {
-        ImageView btn_list = findViewById(R.id.image_map);
-        setOnClickInImageView(btn_list, Map.class);
-
-        ImageView btn_camera = findViewById(R.id.image_camera);
-        setOnClickInImageView(btn_camera, VuMark.class);
-
         Button btn_end = findViewById(R.id.btn_end);
         setOnClickInButton(btn_end, NavigationSummary.class);
     }

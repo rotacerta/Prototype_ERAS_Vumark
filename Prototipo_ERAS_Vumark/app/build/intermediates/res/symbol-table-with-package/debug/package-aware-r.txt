@@ -1239,6 +1239,8 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id navView
+id navView_list
+id navView_map
 id nav_camera
 id nav_list
 id nav_map
@@ -1311,7 +1313,6 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
-id tab_menu
 id tag_transition_group
 id text
 id text2

@@ -7,28 +7,22 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.vuforia.UI.R;
 import com.vuforia.VuMark.VuMark;
 
-public class DrawerNavigation extends AppCompatActivity {
-    private DrawerLayout mDrawer;
-    private NavigationView navDrawer;
+public class DrawerNavigation extends Navigate {
+    protected DrawerLayout mDrawer;
+    protected NavigationView navDrawer;
+    protected View currentView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_drawer);
-
-        // Find our drawer view
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        navDrawer = (NavigationView) findViewById(R.id.navView);
+    protected void initializeDrawer() {
+        currentView = getWindow().getDecorView().getRootView();
         setupDrawerContent(navDrawer);
     }
 
-
-    private void setupDrawerContent(NavigationView navigationView) {
+    protected void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -39,9 +33,8 @@ public class DrawerNavigation extends AppCompatActivity {
                 });
     }
 
-    public void selectDrawerItem(MenuItem menuItem) {
+    protected void selectDrawerItem(MenuItem menuItem) {
         // Create a new fragment and specify the fragment to show based on nav item clicked
-        Fragment fragment = null;
         Class fragmentClass;
         switch(menuItem.getItemId()) {
             case R.id.nav_camera:
@@ -57,21 +50,6 @@ public class DrawerNavigation extends AppCompatActivity {
                 fragmentClass = VuMark.class;
         }
 
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.frameContent, fragment).commit();
-
-        // Highlight the selected item has been done by NavigationView
-        menuItem.setChecked(true);
-        // Set action bar title
-        setTitle(menuItem.getTitle());
-        // Close the navigation drawer
-        mDrawer.closeDrawers();
+        goToActivity(currentView, fragmentClass);
     }
 }

@@ -20,8 +20,6 @@ import com.vuforia.Util.Tuple;
 import com.vuforia.VuMark.VuMark;
 
 public class OpenApp extends Navigate {
-    @Override
-    protected void SetOnClick() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +39,6 @@ public class OpenApp extends Navigate {
 
     private void startApp() {
         Button btn_open = findViewById(R.id.btn_open);
-        setOnClickInButton(btn_open, DrawerNavigation.class);
+        setOnClickInButton(btn_open, VuMark.class);
     }
 }

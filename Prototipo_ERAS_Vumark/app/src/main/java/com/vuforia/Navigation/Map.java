@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Window;
@@ -27,7 +28,7 @@ import com.vuforia.UI.R;
 import com.vuforia.Util.Tuple;
 import com.vuforia.VuMark.VuMark;
 
-public class Map extends Navigate
+public class Map extends DrawerNavigation
 {
     private Cell[][] matrix;
     private int MatrixRows;
@@ -41,7 +42,6 @@ public class Map extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.map);
-        SetOnClick();
 
         MatrixRows = MapDefinitionsEnum.ROWS.Value;
         MatrixColumns = MapDefinitionsEnum.COLUMNS.Value;
@@ -49,6 +49,9 @@ public class Map extends Navigate
         InitMatrix();
 
         AddGridLayoutInLayout((RelativeLayout) findViewById(R.id.contentGridIBGLayout));
+
+        navDrawer = (NavigationView) findViewById(R.id.navView_map);
+        initializeDrawer();
     }
 
     private void AddGridLayoutInLayout(RelativeLayout contentLayout)
@@ -204,15 +207,6 @@ public class Map extends Navigate
         //These values will be currentCell and nextdestination (variables of PathFinderService)
         this.matrix[17][0].setValue(CellValueEnum.STARTPOINT.Value);
         this.matrix[0][9].setValue(CellValueEnum.ENDPOINT.Value);
-    }
-
-    public void SetOnClick()
-    {
-        ImageView btn_list = findViewById(R.id.image_list);
-        setOnClickInImageView(btn_list, ListProducts.class);
-
-        ImageView btn_camera = findViewById(R.id.image_camera);
-        setOnClickInImageView(btn_camera, VuMark.class);
     }
 }
 

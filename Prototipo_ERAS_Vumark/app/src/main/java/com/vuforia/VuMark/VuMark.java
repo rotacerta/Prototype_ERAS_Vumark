@@ -45,6 +45,7 @@ import com.vuforia.HINT;
 import com.vuforia.Models.Cell;
 import com.vuforia.Models.Location;
 import com.vuforia.Models.Product;
+import com.vuforia.Navigation.DrawerNavigation;
 import com.vuforia.Navigation.ListProducts;
 import com.vuforia.Navigation.Map;
 import com.vuforia.Navigation.Navigate;
@@ -69,7 +70,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 
-public class VuMark extends Navigate implements SampleApplicationControl
+public class VuMark extends DrawerNavigation implements SampleApplicationControl
 {
     private static final String LOGTAG = "VuMark";
 

@@ -7,6 +7,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -23,8 +24,6 @@ import com.vuforia.VuMark.VuMark;
 
 public abstract class Navigate extends AppCompatActivity {
 
-    protected abstract void SetOnClick();
-
     public void setOnClickInFloatingButton(FloatingActionButton button, final Class classSelected) {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -35,15 +34,6 @@ public abstract class Navigate extends AppCompatActivity {
     }
 
     public void setOnClickInButton(Button button, final Class classSelected) {
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                goToActivity(v, classSelected);
-                finish();
-            }
-        });
-    }
-
-    public void setOnClickInImageView(ImageView button, final Class classSelected) {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 goToActivity(v, classSelected);
