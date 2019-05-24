@@ -51,5 +51,6 @@ public class DrawerNavigation extends Navigate {
         }
 
         goToActivity(currentView, fragmentClass);
+        finish();
     }
 }

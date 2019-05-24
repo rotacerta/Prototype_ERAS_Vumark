@@ -20,6 +20,8 @@ import com.vuforia.VuMark.VuMark;
 
 import java.util.Locale;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 public class ListProducts extends DrawerNavigation
 {
     LinearLayout cardsLinerLayout;
