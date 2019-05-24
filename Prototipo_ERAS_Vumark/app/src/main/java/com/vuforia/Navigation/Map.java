@@ -41,8 +41,7 @@ public class Map extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.map);
-        changeMenu("MAP");
-        SetOnClick();
+        initializeMenu();
 
         MatrixRows = MapDefinitionsEnum.ROWS.Value;
         MatrixColumns = MapDefinitionsEnum.COLUMNS.Value;
@@ -207,13 +206,5 @@ public class Map extends Navigate
         this.matrix[0][9].setValue(CellValueEnum.ENDPOINT.Value);
     }
 
-    public void SetOnClick()
-    {
-        ImageView btn_list = findViewById(R.id.image_list);
-        setOnClickInImageView(btn_list, ListProducts.class);
-
-        ImageView btn_camera = findViewById(R.id.image_camera);
-        setOnClickInImageView(btn_camera, VuMark.class);
-    }
 }
 

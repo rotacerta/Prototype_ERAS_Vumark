@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_list"
+        android:icon="@drawable/ic_list_white_24dp"
+        android:title="Lista" />
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_camera_alt_white"
+        android:title="Câmera" />
+    <item
+        android:id="@+id/nav_map"
+        android:icon="@drawable/ic_map_white_dp"
+        android:title="Mapa" />
+</menu>

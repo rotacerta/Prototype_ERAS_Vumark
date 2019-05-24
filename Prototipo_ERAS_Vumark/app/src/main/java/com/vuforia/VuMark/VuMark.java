@@ -116,7 +116,6 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.camera_overlay_reticle);
-        SetOnClick();
 
         vuforiaAppSession = new SampleApplicationSession(this);
         
@@ -158,14 +157,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
         _textType = (TextView) _viewCard.findViewById(R.id.text_type);
         _textValue = (TextView) _viewCard.findViewById(R.id.text_value);
         _instanceImageView = (ImageView) _viewCard.findViewById(R.id.instance_image);
-    }
-
-    public void SetOnClick() {
-        FloatingActionButton btn_map = findViewById(R.id.FbtnBottomMap);
-        setOnClickInFloatingButton(btn_map, Map.class);
-
-        FloatingActionButton btn_list = findViewById(R.id.FbtnBottomList);
-        setOnClickInFloatingButton(btn_list, ListProducts.class);
+        initializeMenu();
     }
 
     private class GestureListener extends

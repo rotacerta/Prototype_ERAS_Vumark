@@ -10,35 +10,37 @@
     android:layout_margin="0dp"
     android:padding="0dp">
 
-    <include
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/tab_menu"
-        layout="@layout/menu_tabs"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="520dp"
         android:orientation="horizontal">
 
         <RelativeLayout
-            android:layout_height="match_parent"
             android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1">
+
             <ImageView
-                android:src="@drawable/map_subtitle"
-                android:layout_centerInParent="true"
+                android:layout_width="50dp"
                 android:layout_height="350dp"
-                android:layout_width="50dp"/>
+                android:layout_centerInParent="true"
+                android:src="@drawable/map_subtitle" />
         </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/contentGridIBGLayout"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_weight="9"/>
+            android:layout_width="325dp"
+            android:layout_height="524dp"
+            android:layout_weight="9" />
 
     </LinearLayout>
 
+    <include
+        layout="@layout/menu_tabs"
+        android:layout_weight="1"
+        android:layout_margin="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"/>
 
 </LinearLayout>

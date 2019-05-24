@@ -45,19 +45,9 @@
     </LinearLayout>
 
     <include
-        android:id="@+id/list_camera"
-        layout="@layout/floating_button_list"
+        layout="@layout/menu_tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/map_camera"
-        android:layout_marginBottom="-50dp" />
-
-    <include
-        android:id="@+id/map_camera"
-        layout="@layout/floating_button_map"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
-
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

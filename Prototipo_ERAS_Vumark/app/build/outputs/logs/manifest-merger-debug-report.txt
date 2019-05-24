@@ -4,6 +4,7 @@ ADDED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vuma
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-124:12
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-124:12
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml:2:1-124:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6d7eb81ae6faf4989e9951cd920adc75\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\b17754988a866a58c541c5ad3c8379c8\AndroidManifest.xml:17:1-46:12
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\d5798a498b4ffe1b5d36786e3018dc7f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:design-bottomappbar:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-bottomappbar-28.0.0-alpha1.aar\2e2f0a07655cd766a1940fce0623c893\AndroidManifest.xml:17:1-24:12
@@ -267,6 +268,8 @@ uses-sdk
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\felip\Documents\GitHub\Rota_Certa_Vumark\Prototipo_ERAS_Vumark\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6d7eb81ae6faf4989e9951cd920adc75\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\6d7eb81ae6faf4989e9951cd920adc75\AndroidManifest.xml:20:5-43
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\b17754988a866a58c541c5ad3c8379c8\AndroidManifest.xml:26:5-28:41
 MERGED from [com.google.ar:core:1.5.0] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\core-1.5.0.aar\b17754988a866a58c541c5ad3c8379c8\AndroidManifest.xml:26:5-28:41
 MERGED from [com.android.support:design:28.0.0-alpha1] C:\Users\felip\.gradle\caches\transforms-1\files-1.1\design-28.0.0-alpha1.aar\d5798a498b4ffe1b5d36786e3018dc7f\AndroidManifest.xml:20:5-44

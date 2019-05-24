@@ -62,7 +62,6 @@ public class NavigationSummary extends Navigate
         }
     }
 
-    @Override
     protected void SetOnClick()
     {
         Button btn_finish = findViewById(R.id.btn_finish);

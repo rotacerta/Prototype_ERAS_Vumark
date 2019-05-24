@@ -16,6 +16,7 @@ android {
         applicationId "com.vuforia.VuforiaSamples"
         minSdkVersion 15
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode 750
         versionName "7.5"
 

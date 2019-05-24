@@ -34,7 +34,7 @@ public class ListProducts extends Navigate
 
         setContentView(R.layout.list_products);
         cardsLinerLayout = findViewById(R.id.listProducts);
-        changeMenu("LIST");
+        initializeMenu();
 
         SetOnClick();
         AddProductsInView();
@@ -69,12 +69,6 @@ public class ListProducts extends Navigate
     }
 
     public void SetOnClick() {
-        ImageView btn_list = findViewById(R.id.image_map);
-        setOnClickInImageView(btn_list, Map.class);
-
-        ImageView btn_camera = findViewById(R.id.image_camera);
-        setOnClickInImageView(btn_camera, VuMark.class);
-
         Button btn_end = findViewById(R.id.btn_end);
         setOnClickInButton(btn_end, NavigationSummary.class);
     }
