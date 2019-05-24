@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\aluno\\source\\repos\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru\\values-ru.xml",
+            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru\\values-ru.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\d1ef66c7472cc8e37aca0d4b1e71e6fa\\res\\values-ru\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,237,285,399,500",
-                        "endColumns": "46,47,113,100,61",
-                        "endOffsets": "236,284,398,499,561"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,156,208,326,431",
-                        "endColumns": "50,51,117,104,65",
-                        "endOffsets": "151,203,321,426,492"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\e211075f331625f5c91351879dc1acb4\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0-alpha1.aar\\23847ae00619e36f038fc6b09e9c364a\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\aluno\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\08295ea4939f831159d607025e2de525\\res\\values-ru\\values-ru.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0-alpha1.aar\\01355f2215e98fc68d5f78cd29911838\\res\\values-ru\\values-ru.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2365",
                         "endColumns": "100",
                         "endOffsets": "2461"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\b17754988a866a58c541c5ad3c8379c8\\res\\values-ru\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,237,285,399,500",
+                        "endColumns": "46,47,113,100,61",
+                        "endOffsets": "236,284,398,499,561"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,156,208,326,431",
+                        "endColumns": "50,51,117,104,65",
+                        "endOffsets": "151,203,321,426,492"
                     }
                 }
             ]
