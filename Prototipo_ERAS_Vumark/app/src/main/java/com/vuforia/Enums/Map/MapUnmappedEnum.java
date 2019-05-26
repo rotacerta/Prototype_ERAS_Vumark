@@ -113,7 +113,9 @@ public enum MapUnmappedEnum
     UNMAPPED_108(27, 3),
     UNMAPPED_109(27, 4),
     UNMAPPED_110(27, 5),
-    UNMAPPED_111(27, 6);
+    UNMAPPED_111(27, 6),
+    UNMAPPED_112(7, 9),
+    UNMAPPED_113(7, 10);
 
     public int X;
     public int Y;

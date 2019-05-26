@@ -321,7 +321,7 @@ public class PathFinderService
             ArrayList<Cell> neighborsOfCurrentCell = FindNeighbors(current, this.DIAGONALLY);
             for (Cell neighbor : neighborsOfCurrentCell)
             {
-                if ((neighbor.getValue() == CellValueEnum.OBSTACLE.Value) || (AnyMatchInList(closedList, neighbor)))
+                if ((IsObstacle(neighbor)) || (AnyMatchInList(closedList, neighbor)))
                 {
                     continue;
                 }
@@ -363,14 +363,14 @@ public class PathFinderService
             neighbors.add(matrix[father.getX() + 1][father.getY()]);
             if (father.getY() + 1 < MatrixColumns)
             {
-                if ((matrix[father.getX()][father.getY() + 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() + 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() + 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() + 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() + 1][father.getY() + 1]);
                 }
             }
             if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
             {
-                if ((matrix[father.getX()][father.getY() - 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() + 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() - 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() + 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() + 1][father.getY() - 1]);
                 }
@@ -389,14 +389,14 @@ public class PathFinderService
             neighbors.add(matrix[father.getX() - 1][father.getY()]);
             if (father.getY() + 1 < MatrixColumns)
             {
-                if ((matrix[father.getX()][father.getY() + 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() - 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() + 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() - 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() - 1][father.getY() + 1]);
                 }
             }
             if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
             {
-                if ((matrix[father.getX()][father.getY() - 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() - 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() - 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() - 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() - 1][father.getY() - 1]);
                 }
@@ -488,6 +488,16 @@ public class PathFinderService
             }
         }
         return false;
+    }
+
+    /**
+     * Method to check if a cell is an obstacle (CellValueEnum == OBSTACLE || CellValueEnum == UNMAPPED)
+     * @param cell cell to check
+     * @return <code>true</code> if the cell is an obstacle; <code>false</code> if not
+     */
+    private boolean IsObstacle(Cell cell)
+    {
+        return ((cell.getValue() == CellValueEnum.OBSTACLE.Value) || (cell.getValue() == CellValueEnum.UNMAPPED.Value));
     }
 
     /**
