@@ -22,7 +22,7 @@ public class PathFinderService
     private final int MatrixColumns;
     private final ArrayList<String> errors;
     private final boolean DIAGONALLY = true;
-    private final ArrayList<Cell> destinations;
+    private ArrayList<Cell> destinations;
 
     /**
      * Constructor
@@ -192,6 +192,28 @@ public class PathFinderService
                 if (destinations.size() > 0)
                 {
                     nextdestination = this.destinations.get(0);
+                }
+                else
+                {
+                    nextdestination = null;
+                }
+            }
+            else if(IsDestination(this.currentCell)) {
+                this.destinations.remove(this.currentCell);
+                this.destinations = SortDestinations(this.currentCell, this.destinations);
+                if(this.destinations.size() > 0)
+                {
+                    this.nextdestination = this.destinations.get(0);
+                }
+                else{
+                    nextdestination = null;
+                }
+            }
+            else if(!this.currentCell.Equals(this.nextCell)) {
+                this.destinations = SortDestinations(this.currentCell, this.destinations);
+                if(this.destinations.size() > 0)
+                {
+                    this.nextdestination = this.destinations.get(0);
                 }
                 else
                 {
@@ -444,6 +466,23 @@ public class PathFinderService
         for(Cell element: list)
         {
             if(element.Equals(obj))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Method to check if a cell is a destination
+     * @param cell cell to check
+     * @return <code>true</code> if the cell is a destination; <code>false</code> if not
+     */
+    private boolean IsDestination(Cell cell)
+    {
+        for (Cell c: this.destinations)
+        {
+            if(cell.Equals(c))
             {
                 return true;
             }

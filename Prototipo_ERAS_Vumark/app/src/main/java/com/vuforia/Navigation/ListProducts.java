@@ -42,7 +42,7 @@ public class ListProducts extends Navigate
 
     private void AddProductsInView()
     {
-        Product[] products = Data.getProducts().getMockProducts();
+        Product[] products = Data.getProductList().getMockProducts();
         for (Product product : products)
         {
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);

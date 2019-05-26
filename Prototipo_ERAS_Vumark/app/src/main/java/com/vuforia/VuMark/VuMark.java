@@ -322,13 +322,34 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     }
 
-    boolean isGoal(final String value)
+    boolean isGoal(final String value, String[] productName)
     {
-        Location location = Data.getLocationByVuMarkId(value);
-        if(location != null)
+        ArrayList<Cell> vumarcells = Data.getCellsVumarkByVuMarkId(value.substring(0, 3));
+        if(vumarcells != null && vumarcells.size() > 0)
         {
-            ArrayList<Cell> products = Data.getDestinationsByLocationId(location.getLocationId());
-            return (products != null && products.size() > 0);
+            ArrayList<Cell> destinations = Data.getPathFinderService().GetDestinations();
+            for (Cell c: destinations)
+            {
+                for (Cell c2: vumarcells)
+                {
+                    if(c.Equals(c2))
+                    {
+                        ArrayList<Product> products = getProductsByCell(c);
+                        if(products.size() > 0)
+                        {
+                            Product p = Data.getProductList().getProductById(products.get(0).getProductId());
+                            try
+                            {
+
+                                productName[0] = p.getName();
+                                productName[1] = Data.getLocationById(p.getLocationId()).ToString();
+                            }
+                            catch(Exception ignored) { }
+                        }
+                        return true;
+                    }
+                }
+            }
         }
         return false;
     }
@@ -725,9 +746,9 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     public boolean getAmoutOfProducts(View view)
     {
-        String error = "";
-        EditText msgTextField = (EditText) findViewById(R.id.amount);
+        EditText msgTextField = findViewById(R.id.amount);
         String amountS = msgTextField.getText().toString();
+        hideKeyboardFrom(this, view);
         if(!amountS.isEmpty())
         {
             int amountI;
@@ -742,19 +763,30 @@ public class VuMark extends Navigate implements SampleApplicationControl
             Cell currentCell = Data.getPathFinderService().GetCurrentCell();
             if(currentCell != null)
             {
-                ArrayList<Product> products = Data.getProducts().getProductsByLocationId(currentCell.getLocationId());
-                if(products != null && products.size() > 0)
+                ArrayList<Product> products = getProductsByCell(currentCell);
+                if(products.size() > 0)
                 {
-                    Data.getProducts().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
+                    Data.getProductList().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
+                    msgTextField.setText("");
                     return true;
                 }
             }
-            msgTextField.setText("");
-            hideKeyboardFrom(this, view);
         }
-        // TODO: quando tiver produtos cadastrados descomentar essa linha
-        // return false;
-        return true;
+        return false;
+    }
+
+    private ArrayList<Product> getProductsByCell(Cell cell)
+    {
+        ArrayList<Product> products = new ArrayList<>();
+        ArrayList<Cell> cells = Data.getCellsVumarkByCell(cell);
+        for (Cell c: cells)
+        {
+            for (int lid: c.getLocationsId())
+            {
+                products.addAll(Data.getProductList().getProductsByLocationId(lid));
+            }
+        }
+        return products;
     }
 
     public static void hideKeyboardFrom(Context context, View view) {

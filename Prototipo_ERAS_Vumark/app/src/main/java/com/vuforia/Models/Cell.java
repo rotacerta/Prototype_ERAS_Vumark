@@ -2,6 +2,9 @@ package com.vuforia.Models;
 
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cell implements Comparable
 {
     private int X;
@@ -12,7 +15,7 @@ public class Cell implements Comparable
     private int Value;
     private Cell Father;
     private boolean Way;
-    private int LocationId;
+    private ArrayList<Integer> LocationsId;
 
     public Cell()
     {
@@ -20,7 +23,7 @@ public class Cell implements Comparable
         this.Y = -1;
     }
 
-    public Cell(Cell Father, int Gcost, int Fcost, int Hcost, boolean IsAWay, int Value, int X, int Y, int LocationId)
+    public Cell(Cell Father, int Gcost, int Fcost, int Hcost, boolean IsAWay, int Value, int X, int Y, ArrayList<Integer> LocationsId)
     {
         this.Gcost = Gcost;
         this.Hcost = Hcost;
@@ -30,7 +33,7 @@ public class Cell implements Comparable
         this.Way = IsAWay;
         this.X = X;
         this.Y = Y;
-        this.LocationId = LocationId;
+        this.LocationsId = LocationsId;
     }
 
     public int getY()
@@ -113,14 +116,14 @@ public class Cell implements Comparable
         this.X = X;
     }
 
-    public int getLocationId()
+    public ArrayList<Integer> getLocationsId()
     {
-        return LocationId;
+        return LocationsId;
     }
 
-    public void setLocationId(int locationId)
+    public void setLocationsId(ArrayList<Integer> locationsId)
     {
-        LocationId = locationId;
+        LocationsId = locationsId;
     }
 
     @Override
@@ -132,7 +135,8 @@ public class Cell implements Comparable
 
     public boolean Equals(Cell o)
     {
-        return (this.X == o.getX()) && (this.Y == o.getY());
+        try {return (this.X == o.getX()) && (this.Y == o.getY());}
+        catch (Exception ignore){ return false; }
     }
 
     public boolean IsEmpty()

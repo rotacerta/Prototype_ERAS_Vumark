@@ -201,10 +201,6 @@ public class Map extends Navigate
     {
         MapService mapService = new MapService();
         this.matrix = mapService.GetMap();
-        //TODO: Delete these rows below when necessary
-        //These values will be currentCell and nextdestination (variables of PathFinderService)
-        this.matrix[17][0].setValue(CellValueEnum.STARTPOINT.Value);
-        this.matrix[0][9].setValue(CellValueEnum.ENDPOINT.Value);
     }
 
     public void SetOnClick()

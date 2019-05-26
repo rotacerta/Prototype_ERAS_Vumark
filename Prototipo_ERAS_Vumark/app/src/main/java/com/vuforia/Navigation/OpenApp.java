@@ -33,10 +33,26 @@ public class OpenApp extends Navigate {
 
         setContentView(R.layout.open_view);
 
-        PathFinderService pfs = new PathFinderService(new Tuple<Integer, Integer>(0, 0), new ArrayList<Tuple<Integer, Integer>>());
-        List l = new List(0, "MockList", new Time(0,0,0), new ArrayList<Product>());
-        Data.Init(pfs, l, new ArrayList<Location>());
+        ArrayList<Tuple<Integer, Integer>> destinations = new ArrayList<>();
+        destinations.add(new Tuple<>(5, 13));
+        destinations.add(new Tuple<>(0, 11));
+        PathFinderService pfs = new PathFinderService(new Tuple<>(27, 8), destinations);
+        ArrayList<Product> products = new ArrayList<>();
+        products.add(new Product(1, "Camisa CAI TEC INDUSTRIAL", 4, 25, 0));
+        products.add(new Product(2, "Detergente Neutro", 3, 5, 0));
+        List list = new List(0, "MockList", new Time(0,0,0), products);
+        Data.Init(pfs, list, getLocations());
         startApp();
+    }
+
+    private ArrayList<Location> getLocations()
+    {
+        ArrayList<Location> locations = new ArrayList<>();
+        locations.add(new Location(1, 3,1,1,1));
+        locations.add(new Location(2, 3,1,2,1));
+        locations.add(new Location(3, 7,5,9,3));
+        locations.add(new Location(4, 9,3,4,3));
+        return locations;
     }
 
     private void startApp() {

@@ -69,17 +69,18 @@ public class List
     public ArrayList<Product> getProductsByLocationId(int locationId)
     {
         ArrayList<Product> products = getProducts();
+        ArrayList<Product> productstoReturn = new ArrayList<>();
         if(products != null && products.size() > 0)
         {
             for(Product p: products)
             {
-                if(!(p.getLocationId() == locationId))
+                if(p.getLocationId() == locationId)
                 {
-                    products.remove(p);
+                    productstoReturn.add(p);
                 }
             }
         }
-        return products;
+        return productstoReturn;
     }
 
     public void setRunningTime(Time runningTime)
