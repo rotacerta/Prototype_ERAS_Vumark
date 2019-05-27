@@ -35,7 +35,6 @@ public class NavigationSummary extends Navigate
 
     private void AddProductsInView()
     {
-        // TODO: adicionar layout de QuantityCatched no layout do card (na tela de lista basta dar um hide no layout)
         Product[] products = Data.getProductList().getMockProducts();
         for (Product product : products)
         {
@@ -51,13 +50,11 @@ public class NavigationSummary extends Navigate
                 TextView productLocation = newCard.findViewById(R.id.card_product_location);
                 Location l = Data.getLocationById(product.getLocationId());
                 if(l != null)
-                {
                     productLocation.setText(l.ToString());
-                }
                 else
-                {
                     productLocation.setText("Indefinido");
-                }
+                TextView productQuantitys = newCard.findViewById(R.id.card_product_quantityC);
+                productQuantitys.setText(String.format(Locale.getDefault(), "%d", product.getQuantityCatched()));
             }
         }
     }

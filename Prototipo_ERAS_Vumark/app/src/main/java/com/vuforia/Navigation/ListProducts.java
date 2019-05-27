@@ -57,13 +57,12 @@ public class ListProducts extends Navigate
                 TextView productLocation = newCard.findViewById(R.id.card_product_location);
                 Location l = Data.getLocationById(product.getLocationId());
                 if(l != null)
-                {
                     productLocation.setText(l.ToString());
-                }
                 else
-                {
                     productLocation.setText("Indefinido");
-                }
+                LinearLayout ll = newCard.findViewById(R.id.catchedLayout);
+                if(ll != null)
+                    ll.setVisibility(View.GONE);
             }
         }
     }

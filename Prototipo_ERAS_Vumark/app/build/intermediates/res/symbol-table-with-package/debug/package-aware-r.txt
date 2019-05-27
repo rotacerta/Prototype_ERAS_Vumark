@@ -1158,6 +1158,8 @@ id card_layout
 id card_product_location
 id card_product_name
 id card_product_quantity
+id card_product_quantityC
+id catchedLayout
 id center
 id center_horizontal
 id center_vertical
@@ -1496,6 +1498,7 @@ string button_start
 string card_product_location_label
 string card_product_name_label
 string card_product_quantity_label
+string card_product_quantityc_label
 string character_counter_pattern
 string computer_devices
 string conclude_btn_label

@@ -403,10 +403,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
             }
             Tuple<Integer, Integer> tuple = new Tuple<>(current.getX(), current.getY());
             errors.addAll(Data.getPathFinderService().SetCurrentPoint(tuple));
-            if(errors.size() > 0)
-            {
-                // TODO: mostrar mensagem de erro na tela
-            }
+            if(errors.size() > 0) { /*TODO: mostrar mensagem de erro na tela*/ }
         }
     }
 
