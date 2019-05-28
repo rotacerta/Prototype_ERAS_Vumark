@@ -3,9 +3,12 @@ package com.vuforia.Services;
 import android.annotation.SuppressLint;
 
 import com.vuforia.Enums.CellValueEnum;
+import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
 import com.vuforia.Models.Cell;
 import com.vuforia.Util.Tuple;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +18,7 @@ import java.util.List;
 public class PathFinderService
 {
     private Cell nextCell;
+    private DirectionEnum nextDirection;
     private Cell[][] matrix;
     private Cell currentCell;
     private Cell nextdestination;
@@ -45,6 +49,10 @@ public class PathFinderService
             this.nextdestination = this.destinations.get(0);
         }
         this.errors = SetCurrentPoint(currentCell);
+    }
+
+    public DirectionEnum GetNextDirection() {
+        return nextDirection;
     }
 
     /**
@@ -189,6 +197,9 @@ public class PathFinderService
             if (this.currentCell.Equals(nextdestination))
             {
                 this.destinations.remove(nextdestination);
+
+                nextDirection = DirectionEnum.CHECKED;
+
                 if (destinations.size() > 0)
                 {
                     nextdestination = this.destinations.get(0);
@@ -232,6 +243,7 @@ public class PathFinderService
                     {
                         if(cell.isWay())
                         {
+                            DefineDirection();
                             this.nextCell = cell;
                             break;
                         }
@@ -256,6 +268,74 @@ public class PathFinderService
             errors.add(String.format("Não foi possível encontrar a célula [%d,%d];", currentCell.key, currentCell.value));
         }
         return errors;
+    }
+
+    private void DefineDirection() {
+        if (!isNextDiagonal()) {
+            nextDirection = DirectionEnum.BACK;
+        } else {
+            nextDirection = DefineDirectionByDiagonal();
+        }
+    }
+
+    private DirectionEnum DefineDirectionByDiagonal() {
+        DirectionEnum direction = getNextDirectionInSouth();
+
+        if (direction == null) {
+            direction = getNextDirectionInNorth();
+        }
+        if (direction == null) {
+            direction = getNextDirectionInLest();
+        }
+        if (direction == null) {
+            direction = getNextDirectionInWest();
+        }
+
+        return direction;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInWest() {
+        if (currentCell.getX() < nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+            return DirectionEnum.RIGHT;
+        } else if (currentCell.getX() < nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+            return DirectionEnum.LEFT;
+        }
+        return null;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInLest() {
+        if (currentCell.getX() > nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+            return DirectionEnum.LEFT;
+        } else if (currentCell.getX() > nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+            return DirectionEnum.RIGHT;
+        }
+        return null;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInNorth() {
+        if (currentCell.getX() < nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+            return DirectionEnum.LEFT;
+        } else if (currentCell.getX() > nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+            return DirectionEnum.RIGHT;
+        }
+        return null;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInSouth() {
+        if (currentCell.getX() < nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+            return DirectionEnum.RIGHT;
+        } else if (currentCell.getX() > nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+            return DirectionEnum.LEFT;
+        }
+        return null;
+    }
+
+    private boolean isNextDiagonal() {
+        return currentCell.getX() == nextCell.getX() || currentCell.getY() == nextCell.getY();
     }
 
     /**

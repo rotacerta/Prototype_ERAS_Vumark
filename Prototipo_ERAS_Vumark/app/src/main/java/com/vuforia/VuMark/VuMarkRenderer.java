@@ -15,6 +15,8 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.Log;
+
+import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
 
 import com.vuforia.CameraCalibration;
@@ -404,6 +406,17 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
             Tuple<Integer, Integer> tuple = new Tuple<>(current.getX(), current.getY());
             errors.addAll(Data.getPathFinderService().SetCurrentPoint(tuple));
             if(errors.size() > 0) { /*TODO: mostrar mensagem de erro na tela*/ }
+            else {
+                defineDirection();
+            }
+        }
+    }
+
+    private int defineDirection() {
+        if (currentVumarkIdOnCard != null) {
+            DirectionEnum direction = Data.getPathFinderService().GetNextDirection();
+
+            mActivity.setImageRender(direction);
         }
     }
 

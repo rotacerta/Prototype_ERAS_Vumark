@@ -40,6 +40,7 @@ import android.widget.TextView;
 
 import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
+import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.FUSION_PROVIDER_TYPE;
 import com.vuforia.HINT;
 import com.vuforia.Models.Cell;
@@ -322,6 +323,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     }
 
+    // 1- DESTINO, 2- DIREITA, 3- ESQUERDA, 4- ATRÁS
     boolean isGoal(final String value, String[] productName)
     {
         ArrayList<Cell> vumarcells = Data.getCellsVumarkByVuMarkId(value.substring(0, 3));
@@ -332,24 +334,29 @@ public class VuMark extends Navigate implements SampleApplicationControl
             {
                 for (Cell c2: vumarcells)
                 {
-                    if(c.Equals(c2))
-                    {
-                        ArrayList<Product> products = getProductsByCell(c);
-                        if(products.size() > 0)
-                        {
-                            Product p = Data.getProductList().getProductById(products.get(0).getProductId());
-                            try
-                            {
-
-                                productName[0] = p.getName();
-                                productName[1] = Data.getLocationById(p.getLocationId()).ToString();
-                            }
-                            catch(Exception ignored) { }
-                        }
-                        return true;
-                    }
+                    if (isDestination(productName, c, c2)) return true;
                 }
             }
+        }
+        return false;
+    }
+
+    private boolean isDestination(String[] productName, Cell c, Cell c2) {
+        if(c.Equals(c2))
+        {
+            ArrayList<Product> products = getProductsByCell(c);
+            if(products.size() > 0)
+            {
+                Product p = Data.getProductList().getProductById(products.get(0).getProductId());
+                try
+                {
+
+                    productName[0] = p.getName();
+                    productName[1] = Data.getLocationById(p.getLocationId()).ToString();
+                }
+                catch(Exception ignored) { }
+            }
+            return true;
         }
         return false;
     }
@@ -722,22 +729,22 @@ public class VuMark extends Navigate implements SampleApplicationControl
         return mDeviceTracker;
     }
 
-    public void setImageRender(String imageRender) {
+    public void setImageRender(DirectionEnum directionEnum) {
         // TODO: verificar em que momento essa variavel eh chamada para chamar esse metodo antes
-        switch (imageRender) {
-            case "LEFT":
+        switch (directionEnum) {
+            case LEFT:
                 this.imageRender = "arrow_left.png";
                 break;
-            case "RIGHT":
+            case RIGHT:
                 this.imageRender = "arrow_right.png";
                 break;
-            case "TOP":
+            case BACK:
                 this.imageRender = "arrow_top.png";
                 break;
-            case "BOTTOM":
-                this.imageRender = "arrow_bottom.png";
-                break;
-            case "CHECKED":
+//            case "BOTTOM":
+//                this.imageRender = "arrow_bottom.png";
+//                break;
+            case CHECKED:
                 this.imageRender = "checked.png";
                 hideCard();
                 break;
