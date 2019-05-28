@@ -16,13 +16,17 @@ public class Data
     private static List ProductList;
     private static ArrayList<Location> Locations;
     private static ArrayList<Tuple<String, Cell>> Cells_VuMarks;
+    private static String APIUrl;
 
     public static void Init(PathFinderService pathFinderService, List products, ArrayList<Location> locations)
     {
+        APIUrl = "http://localhost:64414/api/values";
         PathFinderService = pathFinderService;
         ProductList = products;
         Locations = locations;
     }
+
+    public static String getAPIUrl(){ return APIUrl; }
 
     //region PFMethods
     @Contract(pure = true)

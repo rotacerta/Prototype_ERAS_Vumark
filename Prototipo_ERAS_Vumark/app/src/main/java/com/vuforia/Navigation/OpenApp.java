@@ -1,25 +1,29 @@
 package com.vuforia.Navigation;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import java.io.IOException;
 import java.sql.Time;
 import java.util.ArrayList;
 
 import com.vuforia.Models.List;
 import com.vuforia.Models.Location;
 import com.vuforia.Models.Product;
+import com.vuforia.Services.APIConnection;
 import com.vuforia.Services.PathFinderService;
 import com.vuforia.UI.R;
 import com.vuforia.Util.Data;
 import com.vuforia.Util.Tuple;
 import com.vuforia.VuMark.VuMark;
 
-public class OpenApp extends Navigate {
+public class OpenApp extends Navigate
+{
+    String url, requestBody;
+
     @Override
     protected void SetOnClick() {}
 
@@ -43,6 +47,15 @@ public class OpenApp extends Navigate {
         List list = new List(0, "MockList", new Time(0,0,0), products);
         Data.Init(pfs, list, getLocations());
         startApp();
+
+        RequestList();
+    }
+
+    private void RequestList()
+    {
+        url = Data.getAPIUrl();
+        requestBody = "[]";
+        new RequestData().execute(url);
     }
 
     private ArrayList<Location> getLocations()
@@ -58,5 +71,35 @@ public class OpenApp extends Navigate {
     private void startApp() {
         Button btn_open = findViewById(R.id.btn_open);
         setOnClickInButton(btn_open, VuMark.class);
+    }
+
+    private class RequestData extends AsyncTask<String, Void, String>
+    {
+        @Override
+        protected String doInBackground(String... urls)
+        {
+            try
+            {
+                return APIConnection.Request(urls[0], requestBody,0);
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+                return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            /* TODO: Realizar tratamento dos dados recebidos
+            try
+            {
+                JSONObject jsonObject = new JSONObject(result);
+            }
+            catch (JSONException e)
+            {
+            }*/
+        }
     }
 }
