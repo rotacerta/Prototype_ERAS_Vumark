@@ -412,7 +412,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         }
     }
 
-    private int defineDirection() {
+    private void defineDirection() {
         if (currentVumarkIdOnCard != null) {
             DirectionEnum direction = Data.getPathFinderService().GetNextDirection();
 

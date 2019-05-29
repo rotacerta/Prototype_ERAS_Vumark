@@ -271,6 +271,8 @@ public class PathFinderService
     }
 
     private void DefineDirection() {
+        if (currentCell == null || nextCell == null) return;
+
         if (!isNextDiagonal()) {
             nextDirection = DirectionEnum.BACK;
         } else {
