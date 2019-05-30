@@ -42,6 +42,7 @@ public class ListProducts extends Navigate
 
     private void AddProductsInView()
     {
+        // TODO: vincular com os produtos reais (retirando os que ja foram pegos)
         Product[] products = Data.getProductList().getMockProducts();
         for (Product product : products)
         {

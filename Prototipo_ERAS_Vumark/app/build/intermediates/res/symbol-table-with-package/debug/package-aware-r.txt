@@ -1229,6 +1229,7 @@ id list_item
 id loading_indicator
 id logo_image
 id mainGridIBGLayout
+id mainOpenAppLayout
 id map_camera
 id masked
 id menu_list
@@ -1435,6 +1436,8 @@ string INIT_LICENSE_ERROR_PRODUCT_TYPE_MISMATCH
 string INIT_LICENSE_ERROR_UNKNOWN_ERROR
 string INIT_OBJECT_DATASET_NOT_FOUND
 string INIT_OBJECT_DATASET_NOT_FOUND_TITLE
+string OpenAppButtonText
+string OpenAppStartMessage
 string UPDATE_ERROR_AUTHORIZATION_FAILED_DESC
 string UPDATE_ERROR_AUTHORIZATION_FAILED_TITLE
 string UPDATE_ERROR_BAD_FRAME_QUALITY_DESC
