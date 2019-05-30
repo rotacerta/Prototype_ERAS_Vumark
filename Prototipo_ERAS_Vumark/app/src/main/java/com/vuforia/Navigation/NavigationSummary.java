@@ -35,6 +35,7 @@ public class NavigationSummary extends Navigate
 
     private void AddProductsInView()
     {
+        // TODO: vincular com todos os produtos
         Product[] products = Data.getProductList().getMockProducts();
         for (Product product : products)
         {

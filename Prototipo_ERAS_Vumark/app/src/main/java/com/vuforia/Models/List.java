@@ -59,10 +59,10 @@ public class List
     public Product[] getMockProducts()
     {
         Product[] products = new Product[4];
-        products[0] = new Product(1, "Camisa CAI TEC INDUSTRIAL", 0, 35, 0);
-        products[1] = new Product(1, "Computadores Usados", 0, 7, 0);
-        products[2] = new Product(1, "Água mineral", 0, 55, 0);
-        products[3] = new Product(1, "Detergente Neutro", 0, 15, 0);
+        products[0] = new Product(1, 1,  "Camisa CAI TEC INDUSTRIAL", 0, 35, 0);
+        products[1] = new Product(2, 2, "Computadores Usados", 0, 7, 0);
+        products[2] = new Product(3, 3, "Água mineral", 0, 55, 0);
+        products[3] = new Product(4, 4, "Detergente Neutro", 0, 15, 0);
         return products;
     }
 

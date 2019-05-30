@@ -16,17 +16,19 @@ public class Data
     private static List ProductList;
     private static ArrayList<Location> Locations;
     private static ArrayList<Tuple<String, Cell>> Cells_VuMarks;
-    private static String APIUrl;
+    private static ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> Cells_Locations;
 
     public static void Init(PathFinderService pathFinderService, List products, ArrayList<Location> locations)
     {
-        APIUrl = "http://localhost:64414/api/values";
         PathFinderService = pathFinderService;
         ProductList = products;
         Locations = locations;
     }
 
-    public static String getAPIUrl(){ return APIUrl; }
+    public static String getAPIUrl()
+    {
+        return "http://192.168.15.6:80/pbpapi/api/values";
+    }
 
     //region PFMethods
     @Contract(pure = true)
@@ -157,6 +159,50 @@ public class Data
             }
         }
         return null;
+    }
+    //endregion
+
+    //region Cells_LocationsMethods
+    private static void LoadCells_Locations()
+    {
+        Cells_Locations = new ArrayList<>();
+        Cells_Locations.add(new Tuple<>(1, new Tuple<>(14, 6)));
+        Cells_Locations.add(new Tuple<>(2, new Tuple<>(14, 5)));
+        Cells_Locations.add(new Tuple<>(3, new Tuple<>(0, 11)));
+        Cells_Locations.add(new Tuple<>(4, new Tuple<>(5, 13)));
+    }
+
+    public static ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> getCells_Locations()
+    {
+        if(Cells_Locations == null || Cells_Locations.size() == 0)
+            LoadCells_Locations();
+        return Cells_Locations;
+    }
+
+    public static void setCells_Locations(ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> cells_Locations)
+    {
+        Cells_Locations = cells_Locations;
+    }
+
+    public static ArrayList<Tuple<Integer, Integer>> getCellsByLocations(ArrayList<Integer> _locations)
+    {
+        ArrayList<Tuple<Integer, Integer>> _destinations = new ArrayList<>();
+        if(_locations != null && _locations.size() > 0)
+        {
+            ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> cellsTuple = Data.getCells_Locations();
+            if(cellsTuple != null && cellsTuple.size() > 0)
+            {
+                for(Tuple<Integer, Tuple<Integer, Integer>> cellTuple: cellsTuple)
+                {
+                    for(int l: _locations)
+                    {
+                        if(l == cellTuple.key)
+                            _destinations.add(cellTuple.value);
+                    }
+                }
+            }
+        }
+        return _destinations;
     }
     //endregion
 
