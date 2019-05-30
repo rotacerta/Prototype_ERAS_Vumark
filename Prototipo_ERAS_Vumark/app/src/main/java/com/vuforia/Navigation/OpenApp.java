@@ -15,6 +15,7 @@ import java.sql.Time;
 import java.util.ArrayList;
 
 import com.vuforia.Enums.HttpConnectionMethodEnum;
+import com.vuforia.Models.Cell;
 import com.vuforia.Models.List;
 import com.vuforia.Models.Location;
 import com.vuforia.Models.Product;
@@ -75,13 +76,29 @@ public class OpenApp extends Navigate
      */
     private void InitData()
     {
-        // TODO: pegar os destinos pelas localizacoes
-        ArrayList<Tuple<Integer, Integer>> destinations = new ArrayList<>();
-        destinations.add(new Tuple<>(5, 13));
-        destinations.add(new Tuple<>(0, 11));
-        PathFinderService pfs = new PathFinderService(new Tuple<>(27, 8), destinations);
-
-        Data.Init(pfs, list, locations);
+        ArrayList<Integer> locationsId = new ArrayList<>();
+        for(Product p: products)
+        {
+            int lid = p.getLocationId();
+            boolean exists = false;
+            for(int id: locationsId)
+            {
+                exists = (id == lid);
+                if(exists) break;
+            }
+            if(!exists) locationsId.add(lid);
+        }
+        ArrayList<Tuple<Integer, Integer>> destinations = Data.getCellsByLocations(locationsId);
+        if(destinations != null && destinations.size() > 0)
+        {
+            PathFinderService pfs = new PathFinderService(new Tuple<>(27, 8), destinations);
+            Data.Init(pfs, list, locations);
+        }
+        else
+        {
+            btnOpen.setEnabled(false);
+            ShowSnackbar("Não foi possível definir as localizações dos produtos.");
+        }
     }
 
     /**
