@@ -78,6 +78,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
     private int mvpMatrixHandle;
     private int texSampler2DHandle;
     private int calphaHandle;
+    private int textureIndex = 0;
 
     private Renderer mRenderer;
 
@@ -413,16 +414,18 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
     }
 
     private void defineDirection() {
-        if (currentVumarkIdOnCard != null) {
+        if (currentVumarkIdOnCard == null) {
             DirectionEnum direction = Data.getPathFinderService().GetNextDirection();
+            textureIndex = direction.Value;
 
-            mActivity.setImageRender(direction);
+            if (direction == DirectionEnum.CHECKED) {
+                mActivity.hideCard();
+            }
         }
     }
 
     private void renderModel(float[] projectionMatrix, float[] viewMatrix, float[] modelMatrix, boolean isMainVuMark)
     {
-        int textureIndex = 0;
         float[] modelViewProjection = new float[16];
 
         // Combine device pose (view matrix) with model matrix
