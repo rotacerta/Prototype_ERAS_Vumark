@@ -243,8 +243,8 @@ public class PathFinderService
                     {
                         if(cell.isWay())
                         {
-                            DefineDirection();
                             this.nextCell = cell;
+                            DefineDirection();
                             break;
                         }
                     }
