@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainOpenAppLayout"
     android:background="@color/white">
 
     <RelativeLayout
@@ -49,7 +50,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="46dp"
             android:gravity="center"
-            android:text="Para começar a navegação recupere a lista enviada pela plataforma WEB."
+            android:text="@string/OpenAppStartMessage"
             app:fontFamily="sans-serif"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -64,8 +65,9 @@
             android:layout_marginBottom="49dp"
             android:paddingRight="20dp"
             android:paddingLeft="20dp"
+            android:enabled="false"
             android:background="@drawable/border_button_orange"
-            android:text="Iniciar navegação"
+            android:text="@string/OpenAppButtonText"
             android:textColor="@color/white" />
 
     </RelativeLayout>

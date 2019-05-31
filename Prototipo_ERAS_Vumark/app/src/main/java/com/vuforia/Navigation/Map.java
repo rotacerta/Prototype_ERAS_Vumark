@@ -24,6 +24,7 @@ import com.vuforia.Enums.StreetsEnum;
 import com.vuforia.Models.Cell;
 import com.vuforia.Services.MapService;
 import com.vuforia.UI.R;
+import com.vuforia.Util.Data;
 import com.vuforia.Util.Tuple;
 import com.vuforia.VuMark.VuMark;
 
@@ -200,10 +201,12 @@ public class Map extends Navigate
     {
         MapService mapService = new MapService();
         this.matrix = mapService.GetMap();
-        //TODO: Delete these rows below when necessary
-        //These values will be currentCell and nextdestination (variables of PathFinderService)
-        this.matrix[17][0].setValue(CellValueEnum.STARTPOINT.Value);
-        this.matrix[0][9].setValue(CellValueEnum.ENDPOINT.Value);
+        Cell current = Data.getPathFinderService().GetCurrentCell();
+        Cell destin = Data.getPathFinderService().GetNextdestination();
+        if(!(current == null))
+            this.matrix[current.getX()][current.getY()].setValue(CellValueEnum.STARTPOINT.Value);
+        if(!(destin == null))
+            this.matrix[destin.getX()][destin.getY()].setValue(CellValueEnum.ENDPOINT.Value);
     }
 
 }

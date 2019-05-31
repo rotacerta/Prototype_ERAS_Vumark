@@ -42,7 +42,8 @@ public class ListProducts extends Navigate
 
     private void AddProductsInView()
     {
-        Product[] products = Data.getProducts().getMockProducts();
+        // TODO: vincular com os produtos reais (retirando os que ja foram pegos)
+        Product[] products = Data.getProductList().getMockProducts();
         for (Product product : products)
         {
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -57,13 +58,12 @@ public class ListProducts extends Navigate
                 TextView productLocation = newCard.findViewById(R.id.card_product_location);
                 Location l = Data.getLocationById(product.getLocationId());
                 if(l != null)
-                {
                     productLocation.setText(l.ToString());
-                }
                 else
-                {
                     productLocation.setText("Indefinido");
-                }
+                LinearLayout ll = newCard.findViewById(R.id.catchedLayout);
+                if(ll != null)
+                    ll.setVisibility(View.GONE);
             }
         }
     }

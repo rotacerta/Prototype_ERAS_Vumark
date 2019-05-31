@@ -1,7 +1,5 @@
 package com.vuforia.Util;
 
-import android.graphics.Region;
-
 import com.vuforia.Models.Cell;
 import com.vuforia.Models.List;
 import com.vuforia.Models.Location;
@@ -15,14 +13,21 @@ import java.util.ArrayList;
 public class Data
 {
     private static PathFinderService PathFinderService;
-    private static List Products;
+    private static List ProductList;
     private static ArrayList<Location> Locations;
+    private static ArrayList<Tuple<String, Cell>> Cells_VuMarks;
+    private static ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> Cells_Locations;
 
     public static void Init(PathFinderService pathFinderService, List products, ArrayList<Location> locations)
     {
         PathFinderService = pathFinderService;
-        Products = products;
+        ProductList = products;
         Locations = locations;
+    }
+
+    public static String getAPIUrl()
+    {
+        return "http://192.168.15.6:80/pbpapi/api/values";
     }
 
     //region PFMethods
@@ -47,9 +52,13 @@ public class Data
             {
                 for(Cell c: destinations)
                 {
-                    if(c.getLocationId() != locationId)
+                    ArrayList<Integer> lids = c.getLocationsId();
+                    for (Integer id: c.getLocationsId())
                     {
-                        destinations.remove(c);
+                        if(id != locationId)
+                        {
+                            destinations.remove(c);
+                        }
                     }
                 }
             }
@@ -60,14 +69,14 @@ public class Data
 
     //region ListMethods
     @Contract(pure = true)
-    public static List getProducts()
+    public static List getProductList()
     {
-        return Products;
+        return ProductList;
     }
 
-    public static void setProducts(List products)
+    public static void setProductList(List productList)
     {
-        Data.Products = products;
+        Data.ProductList = productList;
     }
     //endregion
 
@@ -81,21 +90,6 @@ public class Data
     public static void setLocations(ArrayList<Location> locations)
     {
         Locations = locations;
-    }
-
-    @Nullable
-    public static Location getLocationByVuMarkId(String vuMarkId)
-    {
-        if(!IsNull(Locations))
-        {
-            for(Location l : Locations)
-            {
-                if(l.getVuMerkId().equals(vuMarkId)){
-                    return l;
-                }
-            }
-        }
-        return null;
     }
 
     public static boolean addLocation(Location location)
@@ -122,6 +116,93 @@ public class Data
             }
         }
         return null;
+    }
+    //endregion
+
+    //region Cells_VuMarksMethods
+    public static void setCells_VuMarks(ArrayList<Tuple<String, Cell>> cells_VuMarks)
+    {
+        Data.Cells_VuMarks = cells_VuMarks;
+    }
+
+    public static ArrayList<Cell> getCellsVumarkByVuMarkId(String vuMarkId)
+    {
+        ArrayList<Cell> cells = new ArrayList<>();
+        if(Data.Cells_VuMarks != null && Data.Cells_VuMarks.size() > 0)
+        {
+            for(Tuple<String, Cell> r: Data.Cells_VuMarks)
+            {
+                if(r.key.equals(vuMarkId))
+                {
+                    cells.add(r.value);
+                }
+            }
+        }
+        return cells;
+    }
+
+    public static ArrayList<Cell> getCellsVumarkByCell(Cell cell)
+    {
+        return Data.getCellsVumarkByVuMarkId(getVumarkIdByCell(cell));
+    }
+
+    private static String getVumarkIdByCell(Cell cell)
+    {
+        if(Data.Cells_VuMarks != null && Data.Cells_VuMarks.size() > 0)
+        {
+            for (Tuple<String, Cell> r: Data.Cells_VuMarks)
+            {
+                if(r.value.Equals(cell))
+                {
+                    return r.key;
+                }
+            }
+        }
+        return null;
+    }
+    //endregion
+
+    //region Cells_LocationsMethods
+    private static void LoadCells_Locations()
+    {
+        Cells_Locations = new ArrayList<>();
+        Cells_Locations.add(new Tuple<>(1, new Tuple<>(14, 6)));
+        Cells_Locations.add(new Tuple<>(2, new Tuple<>(14, 5)));
+        Cells_Locations.add(new Tuple<>(3, new Tuple<>(0, 11)));
+        Cells_Locations.add(new Tuple<>(4, new Tuple<>(5, 13)));
+    }
+
+    public static ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> getCells_Locations()
+    {
+        if(Cells_Locations == null || Cells_Locations.size() == 0)
+            LoadCells_Locations();
+        return Cells_Locations;
+    }
+
+    public static void setCells_Locations(ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> cells_Locations)
+    {
+        Cells_Locations = cells_Locations;
+    }
+
+    public static ArrayList<Tuple<Integer, Integer>> getCellsByLocations(ArrayList<Integer> _locations)
+    {
+        ArrayList<Tuple<Integer, Integer>> _destinations = new ArrayList<>();
+        if(_locations != null && _locations.size() > 0)
+        {
+            ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> cellsTuple = Data.getCells_Locations();
+            if(cellsTuple != null && cellsTuple.size() > 0)
+            {
+                for(Tuple<Integer, Tuple<Integer, Integer>> cellTuple: cellsTuple)
+                {
+                    for(int l: _locations)
+                    {
+                        if(l == cellTuple.key)
+                            _destinations.add(cellTuple.value);
+                    }
+                }
+            }
+        }
+        return _destinations;
     }
     //endregion
 

@@ -1,11 +1,16 @@
 package com.vuforia.Services;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import com.vuforia.Enums.CellValueEnum;
+import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
+import com.vuforia.Enums.OrientationEnum;
 import com.vuforia.Models.Cell;
 import com.vuforia.Util.Tuple;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +20,7 @@ import java.util.List;
 public class PathFinderService
 {
     private Cell nextCell;
+    private DirectionEnum nextDirection;
     private Cell[][] matrix;
     private Cell currentCell;
     private Cell nextdestination;
@@ -22,7 +28,7 @@ public class PathFinderService
     private final int MatrixColumns;
     private final ArrayList<String> errors;
     private final boolean DIAGONALLY = true;
-    private final ArrayList<Cell> destinations;
+    private ArrayList<Cell> destinations;
 
     /**
      * Constructor
@@ -45,6 +51,10 @@ public class PathFinderService
             this.nextdestination = this.destinations.get(0);
         }
         this.errors = SetCurrentPoint(currentCell);
+    }
+
+    public DirectionEnum GetNextDirection() {
+        return nextDirection;
     }
 
     /**
@@ -189,9 +199,34 @@ public class PathFinderService
             if (this.currentCell.Equals(nextdestination))
             {
                 this.destinations.remove(nextdestination);
+
+                nextDirection = DirectionEnum.CHECKED;
+
                 if (destinations.size() > 0)
                 {
                     nextdestination = this.destinations.get(0);
+                }
+                else
+                {
+                    nextdestination = null;
+                }
+            }
+            else if(IsDestination(this.currentCell)) {
+                this.destinations.remove(this.currentCell);
+                this.destinations = SortDestinations(this.currentCell, this.destinations);
+                if(this.destinations.size() > 0)
+                {
+                    this.nextdestination = this.destinations.get(0);
+                }
+                else{
+                    nextdestination = null;
+                }
+            }
+            else if(!this.currentCell.Equals(this.nextCell)) {
+                this.destinations = SortDestinations(this.currentCell, this.destinations);
+                if(this.destinations.size() > 0)
+                {
+                    this.nextdestination = this.destinations.get(0);
                 }
                 else
                 {
@@ -211,6 +246,7 @@ public class PathFinderService
                         if(cell.isWay())
                         {
                             this.nextCell = cell;
+                            DefineDirection();
                             break;
                         }
                     }
@@ -234,6 +270,84 @@ public class PathFinderService
             errors.add(String.format("Não foi possível encontrar a célula [%d,%d];", currentCell.key, currentCell.value));
         }
         return errors;
+    }
+
+    private void DefineDirection() {
+        if (currentCell == null || nextCell == null) return;
+
+        if (isHorizontal(nextCell)) {
+            nextDirection = DirectionEnum.BACK;
+        } else {
+            nextDirection = DefineDirectionByDiagonal();
+        }
+    }
+
+    private DirectionEnum DefineDirectionByDiagonal() {
+        DirectionEnum directionEnum = null;
+        OrientationEnum orientation = currentCell.getOrientation();
+
+        if (orientation != null) {
+            switch (orientation) {
+                case LEST:
+                    directionEnum = getNextDirectionInLest(nextCell);
+                    break;
+                case NORTH:
+                    directionEnum = getNextDirectionInNorth(nextCell);
+                    break;
+                case SOUTH:
+                    directionEnum = getNextDirectionInSouth(nextCell);
+                    break;
+                case WEST:
+                    directionEnum = getNextDirectionInWest(nextCell);
+                    break;
+            }
+        }
+
+        return directionEnum;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInLest(Cell cell) {
+        if (currentCell.getX() < cell.getX() || currentCell.getY() < cell.getY()) {
+            return DirectionEnum.RIGHT;
+        } else if (currentCell.getX() < cell.getX() || currentCell.getY() > cell.getY()) {
+            return DirectionEnum.LEFT;
+        }
+        return null;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInWest(Cell cell) {
+        if (currentCell.getX() > cell.getX() || currentCell.getY() < cell.getY()) {
+            return DirectionEnum.LEFT;
+        } else if (currentCell.getX() > cell.getX() || currentCell.getY() > cell.getY()) {
+            return DirectionEnum.RIGHT;
+        }
+        return null;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInNorth(Cell cell) {
+        if (currentCell.getX() < cell.getX() || currentCell.getY() > cell.getY()) {
+            return DirectionEnum.RIGHT;
+        } else if (currentCell.getX() > cell.getX() || currentCell.getY() > cell.getY()) {
+            return DirectionEnum.LEFT;
+        }
+        return null;
+    }
+
+    @Nullable
+    private DirectionEnum getNextDirectionInSouth(Cell cell) {
+        if (currentCell.getX() < cell.getX() || currentCell.getY() < cell.getY()) {
+            return DirectionEnum.RIGHT;
+        } else if (currentCell.getX() > cell.getX() || currentCell.getY() < cell.getY()) {
+            return DirectionEnum.LEFT;
+        }
+        return null;
+    }
+
+    private boolean isHorizontal(Cell cell) {
+        return currentCell.getX() == cell.getX() || currentCell.getY() == cell.getY();
     }
 
     /**
@@ -299,7 +413,7 @@ public class PathFinderService
             ArrayList<Cell> neighborsOfCurrentCell = FindNeighbors(current, this.DIAGONALLY);
             for (Cell neighbor : neighborsOfCurrentCell)
             {
-                if ((neighbor.getValue() == CellValueEnum.OBSTACLE.Value) || (AnyMatchInList(closedList, neighbor)))
+                if ((IsObstacle(neighbor)) || (AnyMatchInList(closedList, neighbor)))
                 {
                     continue;
                 }
@@ -341,14 +455,14 @@ public class PathFinderService
             neighbors.add(matrix[father.getX() + 1][father.getY()]);
             if (father.getY() + 1 < MatrixColumns)
             {
-                if ((matrix[father.getX()][father.getY() + 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() + 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() + 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() + 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() + 1][father.getY() + 1]);
                 }
             }
             if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
             {
-                if ((matrix[father.getX()][father.getY() - 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() + 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() - 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() + 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() + 1][father.getY() - 1]);
                 }
@@ -367,14 +481,14 @@ public class PathFinderService
             neighbors.add(matrix[father.getX() - 1][father.getY()]);
             if (father.getY() + 1 < MatrixColumns)
             {
-                if ((matrix[father.getX()][father.getY() + 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() - 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() + 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() - 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() - 1][father.getY() + 1]);
                 }
             }
             if ((father.getY() - 1 < MatrixColumns) && (father.getY() - 1 >= 0))
             {
-                if ((matrix[father.getX()][father.getY() - 1].getValue() != CellValueEnum.OBSTACLE.Value || diagonally) && (matrix[father.getX() - 1][father.getY()].getValue() != CellValueEnum.OBSTACLE.Value || diagonally))
+                if (((!IsObstacle(matrix[father.getX()][father.getY() - 1])) || diagonally) && ((!IsObstacle(matrix[father.getX() - 1][father.getY()])) || diagonally))
                 {
                     neighbors.add(matrix[father.getX() - 1][father.getY() - 1]);
                 }
@@ -449,6 +563,33 @@ public class PathFinderService
             }
         }
         return false;
+    }
+
+    /**
+     * Method to check if a cell is a destination
+     * @param cell cell to check
+     * @return <code>true</code> if the cell is a destination; <code>false</code> if not
+     */
+    private boolean IsDestination(Cell cell)
+    {
+        for (Cell c: this.destinations)
+        {
+            if(cell.Equals(c))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Method to check if a cell is an obstacle (CellValueEnum == OBSTACLE || CellValueEnum == UNMAPPED)
+     * @param cell cell to check
+     * @return <code>true</code> if the cell is an obstacle; <code>false</code> if not
+     */
+    private boolean IsObstacle(Cell cell)
+    {
+        return ((cell.getValue() == CellValueEnum.OBSTACLE.Value) || (cell.getValue() == CellValueEnum.UNMAPPED.Value));
     }
 
     /**

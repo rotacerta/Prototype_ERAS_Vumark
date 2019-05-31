@@ -9,16 +9,14 @@ public class Location
     private int Street;
     private int Building;
     private int Flat;
-    private String VuMerkId;
 
-    public Location(int locationId, int structure, int street, int building, int flat, String vuMerkId)
+    public Location(int locationId, int structure, int street, int building, int flat)
     {
         LocationId = locationId;
         Structure = structure;
         Street = street;
         Building = building;
         Flat = flat;
-        VuMerkId = vuMerkId;
     }
 
     public int getLocationId()
@@ -44,11 +42,6 @@ public class Location
     public int getFlat()
     {
         return Flat;
-    }
-
-    public String getVuMerkId()
-    {
-        return VuMerkId;
     }
 
     public String ToString()

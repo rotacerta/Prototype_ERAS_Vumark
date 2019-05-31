@@ -15,6 +15,9 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
 
 import com.vuforia.CameraCalibration;
@@ -76,6 +79,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
     private int mvpMatrixHandle;
     private int texSampler2DHandle;
     private int calphaHandle;
+    private int textureIndex = 0;
 
     private Renderer mRenderer;
 
@@ -322,15 +326,6 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                     markerType = instanceIdToType(instanceId);
                     Image instanceImage = vmTgt.getInstanceImage();
                     markerBitmap = getBitMapFromImage(instanceImage);
-
-                    // Hide the augmentation and reset the blink animation
-                    // if this VuMark is not the one we've detected
-                    // TODO: Avaliar se isso vai ter impacto (pode ficar mostrando o card toda hora)
-                    if (! markerValue.equalsIgnoreCase(currentVumarkIdOnCard))
-                    {
-                        mActivity.showCard("Endereço: ", markerValue, markerBitmap);
-                        blinkVumark(true);
-                    }
                 }
 
                 // Add a translation to recenter the augmentation
@@ -359,11 +354,18 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         {
             // If we have a detection, let's make sure
             // the card is visible
-            if (mActivity.isGoal(markerValue))
+            String[] productData = new String[2];
+            if (mActivity.isGoal(markerValue, productData))
             {
-                mActivity.showCard(markerType, markerValue, markerBitmap);
+                textureIndex = DirectionEnum.CHECKED.Value;
+                mActivity.showCard(productData[0], productData[1], markerBitmap);
                 currentVumarkIdOnCard = markerValue;
             }
+            else if(!markerValue.equalsIgnoreCase(currentVumarkIdOnCard)){
+                mActivity.hideCard();
+                currentVumarkIdOnCard = null;
+            }
+            mActivity.showToast(markerValue);
             FindPath(markerValue);
         }
         else
@@ -373,7 +375,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
             blinkVumark(true);
             // We also reset the value of the current value of the vumark on card
             // so that we hide and show the mumark if we redetect the same vumark instance
-            currentVumarkIdOnCard = null;
+            // currentVumarkIdOnCard = null;
         }
         GLES20.glDisable(GLES20.GL_DEPTH_TEST);
         GLES20.glDisable(GLES20.GL_BLEND);
@@ -383,35 +385,50 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
 
     private void FindPath(String markerValue)
     {
-        Location location = Data.getLocationByVuMarkId(markerValue);
-        if(location != null)
+        ArrayList<String> errors = new ArrayList<>();
+        ArrayList<Cell> vumarkcells = Data.getCellsVumarkByVuMarkId(markerValue.substring(0, 3));
+        if(vumarkcells != null && vumarkcells.size() > 0)
         {
-            Cell[][] map = Data.getPathFinderService().GetMap();
-            if(map != null)
+            Cell current = null;
+            ArrayList<Cell> destinations = Data.getPathFinderService().GetDestinations();
+            for (Cell c: destinations)
             {
-                for(int row = 0; row < MapDefinitionsEnum.ROWS.Value; row++)
+                for (Cell c2: vumarkcells)
                 {
-                    for(int col = 0; col < MapDefinitionsEnum.COLUMNS.Value; col++)
+                    if(c.Equals(c2))
                     {
-                        if(map[row][col].getLocationId() == location.getLocationId())
-                        {
-                            Tuple<Integer, Integer> tuple = new Tuple<Integer, Integer>(map[row][col].getX(), map[row][col].getY());
-                            ArrayList<String> errors = Data.getPathFinderService().SetCurrentPoint(tuple);
-                            if(errors.size() > 0)
-                            {
-                                // TODO: mostrar mensagem de erro na tela
-                            }
-                            break;
-                        }
+                        current = c;
+                        break;
                     }
                 }
+                if(current != null) break;
+            }
+            if(current == null)
+            {
+                current = vumarkcells.get(0);
+            }
+            Tuple<Integer, Integer> tuple = new Tuple<>(current.getX(), current.getY());
+            errors.addAll(Data.getPathFinderService().SetCurrentPoint(tuple));
+            if(errors.size() > 0) { /*TODO: mostrar mensagem de erro na tela*/ }
+            else {
+                defineDirection();
+            }
+        }
+    }
+
+    private void defineDirection() {
+        if (currentVumarkIdOnCard == null) {
+            DirectionEnum direction = Data.getPathFinderService().GetNextDirection();
+            textureIndex = direction.Value;
+
+            if (direction == DirectionEnum.CHECKED) {
+                mActivity.hideCard();
             }
         }
     }
 
     private void renderModel(float[] projectionMatrix, float[] viewMatrix, float[] modelMatrix, boolean isMainVuMark)
     {
-        int textureIndex = 0;
         float[] modelViewProjection = new float[16];
 
         // Combine device pose (view matrix) with model matrix

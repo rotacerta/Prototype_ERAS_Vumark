@@ -2,19 +2,29 @@ package com.vuforia.Models;
 
 public class Product
 {
+    private int ProductListId;
     private int ProductId;
     private String Name;
     private int LocationId;
     private int RequiredQuantity;
     private int QuantityCatched;
 
-    public Product(int productId, String name, int locationId, int requiredQuantity, int quantityCatched)
+    public Product(int productListId, int productId, String name, int locationId, int requiredQuantity, int quantityCatched)
     {
+        ProductListId = productListId;
         ProductId = productId;
         Name = name;
         LocationId = locationId;
         RequiredQuantity = requiredQuantity;
         QuantityCatched = quantityCatched;
+    }
+
+    public int getProductListId() {
+        return ProductListId;
+    }
+
+    public void setProductListId(int productListId) {
+        ProductListId = productListId;
     }
 
     public int getProductId()

@@ -9,13 +9,15 @@ public class List
 {
     private int ListId;
     private String Name;
+    private String Requester;
     private Time RunningTime;
     private ArrayList<Product> Products;
 
-    public List(int listId, String name, Time runningTime, ArrayList<Product> products)
+    public List(int listId, String name, String requester, Time runningTime, ArrayList<Product> products)
     {
         ListId = listId;
         Name = name;
+        Requester = requester;
         RunningTime = runningTime;
         Products = products;
     }
@@ -28,6 +30,11 @@ public class List
     public String getName()
     {
         return Name;
+    }
+
+    public String getRequester()
+    {
+        return Requester;
     }
 
     public Time getRunningTime()
@@ -59,27 +66,33 @@ public class List
     public Product[] getMockProducts()
     {
         Product[] products = new Product[4];
-        products[0] = new Product(1, "Camisa CAI TEC INDUSTRIAL", 0, 35, 0);
-        products[1] = new Product(1, "Computadores Usados", 0, 7, 0);
-        products[2] = new Product(1, "Água mineral", 0, 55, 0);
-        products[3] = new Product(1, "Detergente Neutro", 0, 15, 0);
+        products[0] = new Product(1, 1,  "Camisa CAI TEC INDUSTRIAL", 0, 35, 0);
+        products[1] = new Product(2, 2, "Computadores Usados", 0, 7, 0);
+        products[2] = new Product(3, 3, "Água mineral", 0, 55, 0);
+        products[3] = new Product(4, 4, "Detergente Neutro", 0, 15, 0);
         return products;
     }
 
     public ArrayList<Product> getProductsByLocationId(int locationId)
     {
         ArrayList<Product> products = getProducts();
+        ArrayList<Product> productstoReturn = new ArrayList<>();
         if(products != null && products.size() > 0)
         {
             for(Product p: products)
             {
-                if(!(p.getLocationId() == locationId))
+                if(p.getLocationId() == locationId)
                 {
-                    products.remove(p);
+                    productstoReturn.add(p);
                 }
             }
         }
-        return products;
+        return productstoReturn;
+    }
+
+    public void setRequester(String requester)
+    {
+        Requester = requester;
     }
 
     public void setRunningTime(Time runningTime)

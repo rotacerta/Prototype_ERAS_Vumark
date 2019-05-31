@@ -37,9 +37,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
+import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.FUSION_PROVIDER_TYPE;
 import com.vuforia.HINT;
 import com.vuforia.Models.Cell;
@@ -66,6 +68,7 @@ import com.vuforia.UI.R;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 
@@ -73,27 +76,27 @@ public class VuMark extends Navigate implements SampleApplicationControl
 {
     private static final String LOGTAG = "VuMark";
 
-    private String imageRender = "arrow_right.png";
+    private String imageRender[] = {"arrow_top.png","arrow_left.png", "arrow_right.png", "checked.png"};
 
     private String dataBaseUrl = "Vumark_PickByPath.xml";
-    
+
     private SampleApplicationSession vuforiaAppSession;
-    
+
     private DataSet mCurrentDataset;
 
     private SampleApplicationGLView mGlView;
 
     private VuMarkRenderer mRenderer;
-    
+
     private GestureDetector mGestureDetector;
-    
+
     // The textures we will use for rendering:
     private Vector<Texture> mTextures;
 
     private boolean mDeviceTracker = false;
 
     private RelativeLayout mUILayout;
-    
+
     final LoadingDialogHandler loadingDialogHandler = new LoadingDialogHandler(this);
 
     View _viewCard;
@@ -103,8 +106,10 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     // Alert Dialog used to display SDK errors
     private AlertDialog mErrorDialog;
-    
+
     private boolean mIsDroidDevice = false;
+
+    private String contentToast; // TODO: DEVE SER REMOVIDO, USO PARA TESTES
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -118,20 +123,16 @@ public class VuMark extends Navigate implements SampleApplicationControl
         setContentView(R.layout.camera_overlay_reticle);
 
         vuforiaAppSession = new SampleApplicationSession(this);
-        
+
         startLoadingAnimation();
 
         vuforiaAppSession.initAR( this, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         mGestureDetector = new GestureDetector(this, new GestureListener());
-        
+
         // Load any sample specific textures:
-        mTextures = new Vector<>();
         loadTextures();
-        
-        mIsDroidDevice = Build.MODEL.toLowerCase().startsWith(
-            "droid");
 
         LayoutParams layoutParamsControl = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         _viewCard = View.inflate(this, R.layout.card, null);
@@ -161,12 +162,12 @@ public class VuMark extends Navigate implements SampleApplicationControl
     }
 
     private class GestureListener extends
-        GestureDetector.SimpleOnGestureListener
+            GestureDetector.SimpleOnGestureListener
     {
         // Used to set autofocus one second after a manual focus is triggered
         private final Handler autofocusHandler = new Handler();
-        
-        
+
+
         @Override
         public boolean onDown(MotionEvent e)
         {
@@ -196,7 +197,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
                         Log.e("SingleTapUp", "Unable to re-enable continuous auto-focus");
                 }
             }, 1000L);
-            
+
             return true;
         }
     }
@@ -205,10 +206,14 @@ public class VuMark extends Navigate implements SampleApplicationControl
     // Load specific textures from the APK, which we will later use for rendering.
     private void loadTextures()
     {
-        mTextures.add(Texture.loadTextureFromApk(this.imageRender,
-                getAssets()));
+        mTextures = new Vector<>();
+        for (String image : this.imageRender) {
+            mTextures.add(Texture.loadTextureFromApk(image,
+                    getAssets()));
+            Log.d("IMG", image);
+        }
     }
-    
+
 
     @Override
     protected void onResume()
@@ -217,35 +222,35 @@ public class VuMark extends Navigate implements SampleApplicationControl
         super.onResume();
 
         showProgressIndicator(true);
-        
+
         // This is needed for some Droid devices to force portrait
         if (mIsDroidDevice)
         {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
-        
+
         vuforiaAppSession.onResume();
     }
-    
-    
+
+
     // Callback for configuration changes the activity handles itself
     @Override
     public void onConfigurationChanged(Configuration config)
     {
         Log.d(LOGTAG, "onConfigurationChanged");
         super.onConfigurationChanged(config);
-        
+
         vuforiaAppSession.onConfigurationChanged();
     }
-    
+
 
     @Override
     protected void onPause()
     {
         Log.d(LOGTAG, "onPause");
         super.onPause();
-        
+
         if (mGlView != null)
         {
             mGlView.setVisibility(View.INVISIBLE);
@@ -254,14 +259,14 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
         vuforiaAppSession.onPause();
     }
-    
+
 
     @Override
     protected void onDestroy()
     {
         Log.d(LOGTAG, "onDestroy");
         super.onDestroy();
-        
+
         try
         {
             vuforiaAppSession.stopAR();
@@ -269,14 +274,14 @@ public class VuMark extends Navigate implements SampleApplicationControl
         {
             Log.e(LOGTAG, e.getString());
         }
-        
+
         // Unload texture:
         mTextures.clear();
         mTextures = null;
-        
+
         System.gc();
     }
-    
+
 
     private void initApplicationAR()
     {
@@ -284,28 +289,28 @@ public class VuMark extends Navigate implements SampleApplicationControl
         int depthSize = 16;
         int stencilSize = 0;
         boolean translucent = Vuforia.requiresAlpha();
-        
+
         mGlView = new SampleApplicationGLView(this);
         mGlView.init(translucent, depthSize, stencilSize);
-        
+
         mRenderer = new VuMarkRenderer(this, vuforiaAppSession);
         mRenderer.setTextures(mTextures);
         mGlView.setRenderer(mRenderer);
-        
+
     }
-    
-    
+
+
     private void startLoadingAnimation()
     {
         mUILayout = (RelativeLayout) View.inflate(this, R.layout.camera_overlay_reticle,
-            null);
-        
+                null);
+
         mUILayout.setVisibility(View.VISIBLE);
         mUILayout.setBackgroundColor(Color.BLACK);
 
         loadingDialogHandler.mLoadingDialogContainer = mUILayout
-            .findViewById(R.id.loading_indicator);
-        
+                .findViewById(R.id.loading_indicator);
+
         // Shows the loading indicator at start
         loadingDialogHandler.sendEmptyMessage(LoadingDialogHandler.SHOW_LOADING_DIALOG);
 
@@ -314,13 +319,40 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     }
 
-    boolean isGoal(final String value)
+    // 1- DESTINO, 2- DIREITA, 3- ESQUERDA, 4- ATRÁS
+    boolean isGoal(final String value, String[] productName)
     {
-        Location location = Data.getLocationByVuMarkId(value);
-        if(location != null)
+        ArrayList<Cell> vumarcells = Data.getCellsVumarkByVuMarkId(value.substring(0, 3));
+        if(vumarcells != null && vumarcells.size() > 0)
         {
-            ArrayList<Cell> products = Data.getDestinationsByLocationId(location.getLocationId());
-            return (products != null && products.size() > 0);
+            ArrayList<Cell> destinations = Data.getPathFinderService().GetDestinations();
+            for (Cell c: destinations)
+            {
+                for (Cell c2: vumarcells)
+                {
+                    if (isDestination(productName, c, c2)) return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean isDestination(String[] productName, Cell c, Cell c2) {
+        if(c.Equals(c2))
+        {
+            ArrayList<Product> products = getProductsByCell(c);
+            if(products.size() > 0)
+            {
+                Product p = Data.getProductList().getProductById(products.get(0).getProductId());
+                try
+                {
+
+                    productName[0] = p.getName();
+                    productName[1] = Data.getLocationById(p.getLocationId()).ToString();
+                }
+                catch(Exception ignored) { }
+            }
+            return true;
         }
         return false;
     }
@@ -388,7 +420,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
     {
         TrackerManager tManager = TrackerManager.getInstance();
         ObjectTracker objectTracker = (ObjectTracker) tManager
-            .getTracker(ObjectTracker.getClassType());
+                .getTracker(ObjectTracker.getClassType());
         if (objectTracker == null)
             return false;
 
@@ -399,23 +431,23 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 && mCurrentDataset.load(dataBaseUrl, STORAGE_TYPE.STORAGE_APPRESOURCE)
                 && objectTracker.activateDataSet(mCurrentDataset);
     }
-    
+
     @Override
     public boolean doUnloadTrackersData()
     {
         // Indicate if the trackers were unloaded correctly
         boolean result = true;
-        
+
         TrackerManager tManager = TrackerManager.getInstance();
         ObjectTracker objectTracker = (ObjectTracker) tManager
-            .getTracker(ObjectTracker.getClassType());
+                .getTracker(ObjectTracker.getClassType());
         if (objectTracker == null)
             return false;
-        
+
         if (mCurrentDataset != null && mCurrentDataset.isActive())
         {
             if (objectTracker.getActiveDataSets().at(0).equals(mCurrentDataset)
-                && !objectTracker.deactivateDataSet(mCurrentDataset))
+                    && !objectTracker.deactivateDataSet(mCurrentDataset))
             {
                 result = false;
             } else if (!objectTracker.destroyDataSet(mCurrentDataset))
@@ -425,7 +457,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
             mCurrentDataset = null;
         }
-        
+
         return result;
     }
 
@@ -439,13 +471,12 @@ public class VuMark extends Navigate implements SampleApplicationControl
         }
     }
 
-
     // Called once Vuforia has been initialized or
     // an error has caused Vuforia initialization to stop
     @Override
     public void onInitARDone(SampleApplicationException exception)
     {
-        
+
         if (exception == null)
         {
             initApplicationAR();
@@ -457,8 +488,8 @@ public class VuMark extends Navigate implements SampleApplicationControl
             // BEFORE the camera is started and video
             // background is configured.
             addContentView(mGlView, new LayoutParams(LayoutParams.MATCH_PARENT,
-                LayoutParams.MATCH_PARENT));
-            
+                    LayoutParams.MATCH_PARENT));
+
             // Sets the UILayout to be drawn in front of the camera
             mUILayout.bringToFront();
 
@@ -505,7 +536,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
             loadingDialogHandler.sendEmptyMessage(LoadingDialogHandler.HIDE_LOADING_DIALOG);
         }
     }
-    
+
 
     private void showInitializationErrorMessage(String message)
     {
@@ -518,38 +549,38 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 {
                     mErrorDialog.dismiss();
                 }
-                
+
                 // Generates an Alert Dialog to show the error message
                 AlertDialog.Builder builder = new AlertDialog.Builder(
-                    VuMark.this);
+                        VuMark.this);
                 builder
-                    .setMessage(errorMessage)
-                    .setTitle(getString(R.string.INIT_ERROR))
-                    .setCancelable(false)
-                    .setIcon(0)
-                    .setPositiveButton("OK",
-                        new DialogInterface.OnClickListener()
-                        {
-                            public void onClick(DialogInterface dialog, int id)
-                            {
-                                finish();
-                            }
-                        });
-                
+                        .setMessage(errorMessage)
+                        .setTitle(getString(R.string.INIT_ERROR))
+                        .setCancelable(false)
+                        .setIcon(0)
+                        .setPositiveButton("OK",
+                                new DialogInterface.OnClickListener()
+                                {
+                                    public void onClick(DialogInterface dialog, int id)
+                                    {
+                                        finish();
+                                    }
+                                });
+
                 mErrorDialog = builder.create();
                 mErrorDialog.show();
             }
         });
     }
-    
+
 
     // Called every frame
     @Override
     public void onVuforiaUpdate(State state)
     {
     }
-    
-    
+
+
     @Override
     public boolean doInitTrackers()
     {
@@ -563,17 +594,17 @@ public class VuMark extends Navigate implements SampleApplicationControl
         {
             return false;
         }
-        
+
         TrackerManager tManager = TrackerManager.getInstance();
         Tracker tracker;
-        
+
         // Trying to initialize the image tracker
         tracker = tManager.initTracker(ObjectTracker.getClassType());
         if (tracker == null)
         {
             Log.e(
-                LOGTAG,
-                "Tracker not initialized. Tracker already initialized or the camera is already started");
+                    LOGTAG,
+                    "Tracker not initialized. Tracker already initialized or the camera is already started");
             result = false;
         } else
         {
@@ -596,8 +627,8 @@ public class VuMark extends Navigate implements SampleApplicationControl
         Vuforia.setHint(HINT.HINT_MAX_SIMULTANEOUS_IMAGE_TARGETS, 10);
         return result;
     }
-    
-    
+
+
     @Override
     public boolean doStartTrackers()
     {
@@ -632,11 +663,11 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 Log.e(LOGTAG, "Failed to start Device Tracker");
             }
         }
-        
+
         return result;
     }
-    
-    
+
+
     @Override
     public boolean doStopTrackers()
     {
@@ -644,7 +675,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
         boolean result = true;
 
         TrackerManager trackerManager = TrackerManager.getInstance();
-        
+
         Tracker objectTracker = trackerManager.getTracker(ObjectTracker.getClassType());
 
         if (objectTracker != null)
@@ -684,42 +715,20 @@ public class VuMark extends Navigate implements SampleApplicationControl
         TrackerManager tManager = TrackerManager.getInstance();
         boolean result = tManager.deinitTracker(ObjectTracker.getClassType());
         tManager.deinitTracker(PositionalDeviceTracker.getClassType());
-        
+
         return result;
     }
-    
+
     private boolean isDeviceTrackingActive()
     {
         return mDeviceTracker;
     }
 
-    public void setImageRender(String imageRender) {
-        // TODO: verificar em que momento essa variavel eh chamada para chamar esse metodo antes
-        switch (imageRender) {
-            case "LEFT":
-                this.imageRender = "arrow_left.png";
-                break;
-            case "RIGHT":
-                this.imageRender = "arrow_right.png";
-                break;
-            case "TOP":
-                this.imageRender = "arrow_top.png";
-                break;
-            case "BOTTOM":
-                this.imageRender = "arrow_bottom.png";
-                break;
-            case "CHECKED":
-                this.imageRender = "checked.png";
-                hideCard();
-                break;
-        }
-    }
-
     public boolean getAmoutOfProducts(View view)
     {
-        String error = "";
-        EditText msgTextField = (EditText) findViewById(R.id.amount);
+        EditText msgTextField = findViewById(R.id.amount);
         String amountS = msgTextField.getText().toString();
+        hideKeyboardFrom(this, view);
         if(!amountS.isEmpty())
         {
             int amountI;
@@ -734,19 +743,30 @@ public class VuMark extends Navigate implements SampleApplicationControl
             Cell currentCell = Data.getPathFinderService().GetCurrentCell();
             if(currentCell != null)
             {
-                ArrayList<Product> products = Data.getProducts().getProductsByLocationId(currentCell.getLocationId());
-                if(products != null && products.size() > 0)
+                ArrayList<Product> products = getProductsByCell(currentCell);
+                if(products.size() > 0)
                 {
-                    Data.getProducts().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
+                    Data.getProductList().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
+                    msgTextField.setText("");
                     return true;
                 }
             }
-            msgTextField.setText("");
-            hideKeyboardFrom(this, view);
         }
-        // TODO: quando tiver produtos cadastrados descomentar essa linha
-        // return false;
-        return true;
+        return false;
+    }
+
+    private ArrayList<Product> getProductsByCell(Cell cell)
+    {
+        ArrayList<Product> products = new ArrayList<>();
+        ArrayList<Cell> cells = Data.getCellsVumarkByCell(cell);
+        for (Cell c: cells)
+        {
+            for (int lid: c.getLocationsId())
+            {
+                products.addAll(Data.getProductList().getProductsByLocationId(lid));
+            }
+        }
+        return products;
     }
 
     public static void hideKeyboardFrom(Context context, View view) {
@@ -754,7 +774,12 @@ public class VuMark extends Navigate implements SampleApplicationControl
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void setDataBaseUrl(String dataBaseUrl) {
-        this.dataBaseUrl = dataBaseUrl;
+    public void showToast(String content) {
+        contentToast = content;
+        this.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(getApplicationContext(), contentToast, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
