@@ -9,13 +9,15 @@ public class List
 {
     private int ListId;
     private String Name;
+    private String Requester;
     private Time RunningTime;
     private ArrayList<Product> Products;
 
-    public List(int listId, String name, Time runningTime, ArrayList<Product> products)
+    public List(int listId, String name, String requester, Time runningTime, ArrayList<Product> products)
     {
         ListId = listId;
         Name = name;
+        Requester = requester;
         RunningTime = runningTime;
         Products = products;
     }
@@ -28,6 +30,11 @@ public class List
     public String getName()
     {
         return Name;
+    }
+
+    public String getRequester()
+    {
+        return Requester;
     }
 
     public Time getRunningTime()
@@ -81,6 +88,11 @@ public class List
             }
         }
         return productstoReturn;
+    }
+
+    public void setRequester(String requester)
+    {
+        Requester = requester;
     }
 
     public void setRunningTime(Time runningTime)

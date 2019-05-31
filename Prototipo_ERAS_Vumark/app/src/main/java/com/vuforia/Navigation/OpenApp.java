@@ -198,8 +198,9 @@ public class OpenApp extends Navigate
     {
         int listId = Integer.parseInt(jsonObject.getString("ListId"));
         String listName = jsonObject.getString("Name");
+        String listRequester = jsonObject.getString("Requester");
         Time listTime = new Time(0, 0 , 0);
-        return new List(listId, listName, listTime, products);
+        return new List(listId, listName, listRequester, listTime, products);
     }
 
     /**
@@ -240,9 +241,7 @@ public class OpenApp extends Navigate
             if(result == null)
             {
                 attempts++;
-                if(attempts == 3)
-                    ShowSnackbar("Falha ao recuperar Lista.");
-                else
+                if(attempts != 3)
                     RequestList();
                 return;
             }
@@ -257,7 +256,7 @@ public class OpenApp extends Navigate
             }
             catch (Exception e)
             {
-                ShowSnackbar("Falha ao processar Lista recebida.");
+                ShowSnackbar("Falha ao processar lista recebida.");
             }
         }
     }

@@ -1229,6 +1229,7 @@ id list_item
 id loading_indicator
 id logo_image
 id mainGridIBGLayout
+id mainNavigationSummLayout
 id mainOpenAppLayout
 id map_camera
 id masked
