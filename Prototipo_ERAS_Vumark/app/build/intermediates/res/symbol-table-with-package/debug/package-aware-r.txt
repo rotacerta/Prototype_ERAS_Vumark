@@ -1160,6 +1160,8 @@ id card_layout
 id card_product_location
 id card_product_name
 id card_product_quantity
+id card_product_quantityC
+id catchedLayout
 id center
 id center_horizontal
 id center_vertical
@@ -1224,6 +1226,12 @@ id list_item
 id loading_indicator
 id logo_image
 id mainGridIBGLayout
+<<<<<<< HEAD
+=======
+id mainNavigationSummLayout
+id mainOpenAppLayout
+id map_camera
+>>>>>>> master
 id masked
 id message
 id middle
@@ -1431,6 +1439,8 @@ string INIT_LICENSE_ERROR_PRODUCT_TYPE_MISMATCH
 string INIT_LICENSE_ERROR_UNKNOWN_ERROR
 string INIT_OBJECT_DATASET_NOT_FOUND
 string INIT_OBJECT_DATASET_NOT_FOUND_TITLE
+string OpenAppButtonText
+string OpenAppStartMessage
 string UPDATE_ERROR_AUTHORIZATION_FAILED_DESC
 string UPDATE_ERROR_AUTHORIZATION_FAILED_TITLE
 string UPDATE_ERROR_BAD_FRAME_QUALITY_DESC
@@ -1494,6 +1504,7 @@ string button_start
 string card_product_location_label
 string card_product_name_label
 string card_product_quantity_label
+string card_product_quantityc_label
 string character_counter_pattern
 string computer_devices
 string conclude_btn_label
