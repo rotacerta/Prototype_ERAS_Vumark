@@ -2,6 +2,8 @@ package com.vuforia.Models;
 
 import android.support.annotation.NonNull;
 
+import com.vuforia.Enums.OrientationEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class Cell implements Comparable
     private int Value;
     private Cell Father;
     private boolean Way;
+    private OrientationEnum orientation;
     private ArrayList<Integer> LocationsId;
 
     public Cell()
@@ -34,6 +37,16 @@ public class Cell implements Comparable
         this.X = X;
         this.Y = Y;
         this.LocationsId = LocationsId;
+    }
+
+    public Cell setOrientation(OrientationEnum orientation) {
+        this.orientation = orientation;
+
+        return this;
+    }
+
+    public OrientationEnum getOrientation() {
+        return orientation;
     }
 
     public int getY()

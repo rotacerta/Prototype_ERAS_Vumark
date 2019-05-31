@@ -37,6 +37,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
@@ -107,6 +108,8 @@ public class VuMark extends Navigate implements SampleApplicationControl
     private AlertDialog mErrorDialog;
 
     private boolean mIsDroidDevice = false;
+
+    private String contentToast; // TODO: DEVE SER REMOVIDO, USO PARA TESTES
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -779,7 +782,12 @@ public class VuMark extends Navigate implements SampleApplicationControl
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void setDataBaseUrl(String dataBaseUrl) {
-        this.dataBaseUrl = dataBaseUrl;
+    public void showToast(String content) {
+        contentToast = content;
+        this.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(getApplicationContext(), contentToast, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

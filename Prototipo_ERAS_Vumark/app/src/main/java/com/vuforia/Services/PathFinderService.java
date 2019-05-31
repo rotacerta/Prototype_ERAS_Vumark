@@ -1,10 +1,12 @@
 package com.vuforia.Services;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import com.vuforia.Enums.CellValueEnum;
 import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
+import com.vuforia.Enums.OrientationEnum;
 import com.vuforia.Models.Cell;
 import com.vuforia.Util.Tuple;
 
@@ -273,7 +275,7 @@ public class PathFinderService
     private void DefineDirection() {
         if (currentCell == null || nextCell == null) return;
 
-        if (!isNextDiagonal()) {
+        if (isHorizontal(nextCell)) {
             nextDirection = DirectionEnum.BACK;
         } else {
             nextDirection = DefineDirectionByDiagonal();
@@ -281,63 +283,71 @@ public class PathFinderService
     }
 
     private DirectionEnum DefineDirectionByDiagonal() {
-        DirectionEnum direction = getNextDirectionInSouth();
+        DirectionEnum directionEnum = null;
+        OrientationEnum orientation = currentCell.getOrientation();
 
-        if (direction == null) {
-            direction = getNextDirectionInNorth();
-        }
-        if (direction == null) {
-            direction = getNextDirectionInLest();
-        }
-        if (direction == null) {
-            direction = getNextDirectionInWest();
+        if (orientation != null) {
+            switch (orientation) {
+                case LEST:
+                    directionEnum = getNextDirectionInLest(nextCell);
+                    break;
+                case NORTH:
+                    directionEnum = getNextDirectionInNorth(nextCell);
+                    break;
+                case SOUTH:
+                    directionEnum = getNextDirectionInSouth(nextCell);
+                    break;
+                case WEST:
+                    directionEnum = getNextDirectionInWest(nextCell);
+                    break;
+            }
         }
 
-        return direction;
+        return directionEnum;
     }
 
     @Nullable
-    private DirectionEnum getNextDirectionInWest() {
-        if (currentCell.getX() < nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+    private DirectionEnum getNextDirectionInLest(Cell cell) {
+        if (currentCell.getX() < cell.getX() || currentCell.getY() < cell.getY()) {
             return DirectionEnum.RIGHT;
-        } else if (currentCell.getX() < nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+        } else if (currentCell.getX() < cell.getX() || currentCell.getY() > cell.getY()) {
             return DirectionEnum.LEFT;
         }
         return null;
     }
 
     @Nullable
-    private DirectionEnum getNextDirectionInLest() {
-        if (currentCell.getX() > nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+    private DirectionEnum getNextDirectionInWest(Cell cell) {
+        if (currentCell.getX() > cell.getX() || currentCell.getY() < cell.getY()) {
             return DirectionEnum.LEFT;
-        } else if (currentCell.getX() > nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+        } else if (currentCell.getX() > cell.getX() || currentCell.getY() > cell.getY()) {
             return DirectionEnum.RIGHT;
         }
         return null;
     }
 
     @Nullable
-    private DirectionEnum getNextDirectionInNorth() {
-        if (currentCell.getX() < nextCell.getX() || currentCell.getY() > nextCell.getY()) {
-            return DirectionEnum.LEFT;
-        } else if (currentCell.getX() > nextCell.getX() || currentCell.getY() > nextCell.getY()) {
+    private DirectionEnum getNextDirectionInNorth(Cell cell) {
+        if (currentCell.getX() < cell.getX() || currentCell.getY() > cell.getY()) {
             return DirectionEnum.RIGHT;
+        } else if (currentCell.getX() > cell.getX() || currentCell.getY() > cell.getY()) {
+            return DirectionEnum.LEFT;
         }
         return null;
     }
 
     @Nullable
-    private DirectionEnum getNextDirectionInSouth() {
-        if (currentCell.getX() < nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+    private DirectionEnum getNextDirectionInSouth(Cell cell) {
+        if (currentCell.getX() < cell.getX() || currentCell.getY() < cell.getY()) {
             return DirectionEnum.RIGHT;
-        } else if (currentCell.getX() > nextCell.getX() || currentCell.getY() < nextCell.getY()) {
+        } else if (currentCell.getX() > cell.getX() || currentCell.getY() < cell.getY()) {
             return DirectionEnum.LEFT;
         }
         return null;
     }
 
-    private boolean isNextDiagonal() {
-        return currentCell.getX() == nextCell.getX() || currentCell.getY() == nextCell.getY();
+    private boolean isHorizontal(Cell cell) {
+        return currentCell.getX() == cell.getX() || currentCell.getY() == cell.getY();
     }
 
     /**

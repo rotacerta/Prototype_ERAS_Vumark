@@ -15,6 +15,7 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.vuforia.Enums.DirectionEnum;
 import com.vuforia.Enums.Map.MapDefinitionsEnum;
@@ -356,6 +357,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
             String[] productData = new String[2];
             if (mActivity.isGoal(markerValue, productData))
             {
+                textureIndex = DirectionEnum.CHECKED.Value;
                 mActivity.showCard(productData[0], productData[1], markerBitmap);
                 currentVumarkIdOnCard = markerValue;
             }
@@ -363,6 +365,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                 mActivity.hideCard();
                 currentVumarkIdOnCard = null;
             }
+            mActivity.showToast(markerValue);
             FindPath(markerValue);
         }
         else
