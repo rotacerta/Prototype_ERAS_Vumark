@@ -1,5 +1,4 @@
-samples/*
-samples_vumark/*
+
 # built application files
 *.apk
 *.ap_
@@ -24,5 +23,8 @@ local.properties
 .gradle
 build/
 app/build
+Prototipo_ERAS_Vumark/.idea/
+Prototipo_ERAS_Vumark/.gradle/
+Prototipo_ERAS_Vumark/app/build
 
 *ASUS_PC_01*
