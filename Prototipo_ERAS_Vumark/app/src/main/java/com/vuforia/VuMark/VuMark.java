@@ -122,6 +122,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
         setContentView(R.layout.camera_overlay_reticle);
         SetOnClick();
+        changeMenu("CAMERA");
 
         vuforiaAppSession = new SampleApplicationSession(this);
 
@@ -162,11 +163,11 @@ public class VuMark extends Navigate implements SampleApplicationControl
     }
 
     public void SetOnClick() {
-        FloatingActionButton btn_map = findViewById(R.id.FbtnBottomMap);
-        setOnClickInFloatingButton(btn_map, Map.class);
+        ImageView btn_list = findViewById(R.id.image_list);
+        setOnClickInImageView(btn_list, ListProducts.class);
 
-        FloatingActionButton btn_list = findViewById(R.id.FbtnBottomList);
-        setOnClickInFloatingButton(btn_list, ListProducts.class);
+        ImageView btn_map = findViewById(R.id.image_map);
+        setOnClickInImageView(btn_map, Map.class);
     }
 
     private class GestureListener extends

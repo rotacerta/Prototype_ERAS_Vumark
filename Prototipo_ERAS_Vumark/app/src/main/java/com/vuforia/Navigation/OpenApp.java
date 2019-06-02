@@ -66,10 +66,28 @@ public class OpenApp extends Navigate
         mainLayout = findViewById(R.id.mainOpenAppLayout);
         btnOpen = findViewById(R.id.btn_open);
 
+        ArrayList<Tuple<Integer, Integer>> destinations = new ArrayList<>();
+        destinations.add(new Tuple<>(5, 13));
+        destinations.add(new Tuple<>(0, 11));
+        PathFinderService pfs = new PathFinderService(new Tuple<>(27, 8), destinations);
+        ArrayList<Product> products = new ArrayList<>();
+        products.add(new Product(1, 4, "Camisa CAI TEC INDUSTRIAL", 25, 0,0));
+        products.add(new Product(2, 3, "Detergente Neutro", 5, 0,0));
+        List list = new List(0, "MockList", "", new Time(0,0,0), products);
+        Data.Init(pfs, list, getLocations());
         startApp();
-
-        RequestList();
     }
+
+    private ArrayList<Location> getLocations()
+    {
+        ArrayList<Location> locations = new ArrayList<>();
+        locations.add(new Location(1, 3,1,1,1));
+        locations.add(new Location(2, 3,1,2,1));
+        locations.add(new Location(3, 7,5,9,3));
+        locations.add(new Location(4, 9,3,4,3));
+        return locations;
+    }
+
 
     /**
      * Method that starts the objects in the static data class

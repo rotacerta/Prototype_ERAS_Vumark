@@ -1224,16 +1224,13 @@ id line1
 id line3
 id listMode
 id listProducts
-id list_camera
 id list_item
 id loading_indicator
 id logo_image
 id mainGridIBGLayout
 id mainNavigationSummLayout
 id mainOpenAppLayout
-id map_camera
 id masked
-id menu_list
 id message
 id middle
 id mini
