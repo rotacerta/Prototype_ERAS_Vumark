@@ -7,12 +7,6 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/menu_list"
-        layout="@layout/menu_tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <TextView
         android:text="@string/menu_item_list"
         android:textSize="@dimen/dimen_20sp"
@@ -88,6 +82,12 @@
 
     </RelativeLayout>
 
+    <include
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tab_menu"
+        android:layout_weight="0"
+        layout="@layout/menu_tabs"/>
 
 </LinearLayout>
 

@@ -59,17 +59,14 @@ public abstract class Navigate extends AppCompatActivity {
         switch (page) {
             case "MAP":
                 ImageView map = findViewById(R.id.image_map);
-                map.setBackgroundColor(Color.WHITE);
                 map.setImageResource(R.drawable.ic_map_black_dp);
                 break;
             case "CAMERA":
                 ImageView camera = findViewById(R.id.image_camera);
-                camera.setBackgroundColor(Color.WHITE);
                 camera.setImageResource(R.drawable.ic_camera_alt_black);
                 break;
             case "LIST":
                 ImageView list = findViewById(R.id.image_list);
-                list.setBackgroundColor(Color.WHITE);
                 list.setImageResource(R.drawable.ic_list_black_24dp);
                 break;
         }

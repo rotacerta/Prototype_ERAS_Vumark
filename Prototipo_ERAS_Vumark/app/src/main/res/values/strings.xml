@@ -92,7 +92,7 @@
     <string name="time_label">Tempo:</string>
     <string name="conclude_btn_label">Concluir</string>
     <string name="OpenAppStartMessage">Para começar a navegação recupere a lista enviada pela plataforma WEB.</string>
-    <string name="OpenAppButtonText">Iniciar navegação</string>
+    <string name="OpenAppButtonText">Aguardando lista...</string>
     <string name="no_products_to_get">Nenhum produto a pegar.</string>
 
 </resources>

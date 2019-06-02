@@ -261,6 +261,7 @@ public class OpenApp extends Navigate
                 TreatData(new JSONObject(result));
                 if(canStartNavigation)
                 {
+                    btnOpen.setText("Iniciar navegação");
                     btnOpen.setEnabled(true);
                     InitData();
                 }
