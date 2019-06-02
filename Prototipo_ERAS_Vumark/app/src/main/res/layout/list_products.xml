@@ -14,17 +14,19 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/txt_list"
-        android:layout_below="@+id/menu_list"
-        android:layout_width="wrap_content"
+        android:text="@string/menu_item_list"
+        android:textSize="@dimen/dimen_20sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="4dp"
         android:layout_marginRight="20dp"
-        android:textSize="60px"
-        android:textColorHint="@color/black"
-        android:text="Lista de produtos:" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/black"
+        android:id="@+id/txt_list"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textStyle="bold"/>
 
     <ScrollView
         android:layout_height="wrap_content"
@@ -51,6 +53,16 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <TextView
+        android:text="@string/no_products_to_get"
+        android:textSize="@dimen/dimen_16sp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tv_no_products"
+        android:visibility="gone"
+        android:layout_weight="7"
+        android:gravity="center"/>
 
 
     <RelativeLayout

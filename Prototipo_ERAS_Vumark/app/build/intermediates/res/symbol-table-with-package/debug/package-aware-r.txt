@@ -1333,6 +1333,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_no_products
 id txt_list
 id uniform
 id unlabeled
@@ -1544,6 +1545,7 @@ string mode_mid_air
 string mode_product_placement
 string mtrl_chip_close_icon_content_description
 string navigation_summary_title
+string no_products_to_get
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
