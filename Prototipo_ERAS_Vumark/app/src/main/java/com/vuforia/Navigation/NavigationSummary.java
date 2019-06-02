@@ -21,6 +21,7 @@ import com.vuforia.Services.APIConnection;
 import com.vuforia.UI.R;
 import com.vuforia.Util.Data;
 import com.google.gson.Gson;
+import com.vuforia.VuMark.VuMark;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,7 +32,7 @@ import java.util.Locale;
 
 import okhttp3.Response;
 
-public class NavigationSummary extends AppCompatActivity
+public class NavigationSummary extends Navigate
 {
     private LinearLayout cardsLinerLayout, mainLayout;
     private String requestBodyJson;
@@ -52,6 +53,9 @@ public class NavigationSummary extends AppCompatActivity
         AddProductsInView();
         btn_finish.setOnClickListener(sendJSON);
     }
+
+    @Override
+    protected void SetOnClick() { }
 
     /**
      * Method to create, fill and insert cards in view
@@ -118,6 +122,7 @@ public class NavigationSummary extends AppCompatActivity
         public void onClick(View v)
         {
             RequestList();
+            goToActivity(v, OpenApp.class);
         }
     };
 
