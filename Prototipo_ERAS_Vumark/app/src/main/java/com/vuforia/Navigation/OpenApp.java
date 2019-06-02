@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import java.net.HttpURLConnection;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import com.vuforia.Enums.HttpConnectionMethodEnum;
 import com.vuforia.Models.Cell;
@@ -66,8 +68,7 @@ public class OpenApp extends Navigate
         canStartNavigation = false;
         mainLayout = findViewById(R.id.mainOpenAppLayout);
         btnOpen = findViewById(R.id.btn_open);
-
-        startApp();
+        btnOpen.setOnClickListener(startNavigation);
 
         RequestList();
     }
@@ -112,11 +113,15 @@ public class OpenApp extends Navigate
         new RequestData().execute(url);
     }
 
-    private void startApp()
+    View.OnClickListener startNavigation = new View.OnClickListener()
     {
-        Data.setNavigationStart(new Date());
-        setOnClickInButton(btnOpen, VuMark.class);
-    }
+        public void onClick(View v)
+        {
+            Data.setNavigationStart(new Date());
+            goToActivity(v, VuMark.class);
+            finish();
+        }
+    };
 
     private void ShowSnackbar(String message)
     {
@@ -243,8 +248,12 @@ public class OpenApp extends Navigate
             if(result == null)
             {
                 attempts++;
-                if(attempts != 3)
+                if(attempts < 3)
+                {
+                    try { Thread.sleep(2000); }
+                    catch (Exception ignore) {}
                     RequestList();
+                }
                 return;
             }
             try

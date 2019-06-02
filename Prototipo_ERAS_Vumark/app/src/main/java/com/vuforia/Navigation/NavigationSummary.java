@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vuforia.Enums.HttpConnectionMethodEnum;
 import com.vuforia.Models.List;
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.sql.Time;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Response;
 
@@ -40,7 +42,7 @@ public class NavigationSummary extends Navigate
 {
     private LinearLayout cardsLinerLayout, mainLayout;
     private String requestBodyJson;
-    private int attempts;
+    private Button btn_finish;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +51,7 @@ public class NavigationSummary extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.navigation_summary);
-        attempts = 0;
-        Button btn_finish = findViewById(R.id.btn_finish);
+        btn_finish = findViewById(R.id.btn_finish);
         cardsLinerLayout = findViewById(R.id.LinearLayoutList);
         mainLayout = findViewById(R.id.mainNavigationSummLayout);
         AddProductsInView(Data.getProductList().getProducts());
@@ -154,8 +155,8 @@ public class NavigationSummary extends Navigate
     {
         public void onClick(View v)
         {
+            btn_finish.setEnabled(false);
             RequestList();
-            goToActivity(v, OpenApp.class);
         }
     };
 
@@ -172,6 +173,11 @@ public class NavigationSummary extends Navigate
     private void ShowSnackbar(String message)
     {
         Snackbar.make(mainLayout, message, Snackbar.LENGTH_LONG).show();
+    }
+
+    private void ShowToast(String message)
+    {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -193,7 +199,7 @@ public class NavigationSummary extends Navigate
                     }
                     else
                     {
-                        ShowSnackbar(response.body().string().replace("\\\"", ""));
+                        ShowSnackbar(response.body().string().replace("\"", ""));
                         return null;
                     }
                 }
@@ -211,12 +217,13 @@ public class NavigationSummary extends Navigate
         {
             if(result == null)
             {
-                attempts++;
-                if(attempts != 3)
-                    RequestList();
+                btn_finish.setEnabled(true);
                 return;
             }
-            ShowSnackbar(result.replace("\"", ""));
+            ShowToast(result.replace("\"", ""));
+            try { Thread.sleep(2000); }
+            catch (Exception ignore) {}
+            goToActivity(btn_finish, OpenApp.class);
         }
     }
 }
