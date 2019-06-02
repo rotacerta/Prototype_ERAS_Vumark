@@ -27,6 +27,11 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 import okhttp3.Response;
@@ -49,36 +54,63 @@ public class NavigationSummary extends AppCompatActivity
         btn_finish = findViewById(R.id.btn_finish);
         cardsLinerLayout = findViewById(R.id.LinearLayoutList);
         mainLayout = findViewById(R.id.mainNavigationSummLayout);
-        AddProductsInView();
+        AddProductsInView(Data.getProductList().getProducts());
         btn_finish.setOnClickListener(sendJSON);
+        UpdateTimeAndDate();
+    }
+
+    /**
+     * Method to update Time and Date labels in UI
+     */
+    private void UpdateTimeAndDate()
+    {
+        TextView textViewDate = findViewById(R.id.nav_summ_date);
+        TextView textViewTime = findViewById(R.id.nav_summ_time);
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        textViewDate.setText(String.format(" %s", format.format(new Date())));
+        textViewTime.setText(String.format(" %s", GetNavigationTime()));
+    }
+
+    /**
+     * Method to calculate the running time of the navigation
+     * @return navigation duration
+     */
+    private String GetNavigationTime()
+    {
+        Date NavigationEnd = new Date();
+        long timeL = (NavigationEnd.getTime() - Data.getNavigationStart().getTime()) / (60 * 1000);
+        long hours = timeL / 60;
+        long minutes = timeL - (hours * 60);
+        return String.format("%02d:%02d", hours, minutes);
     }
 
     /**
      * Method to create, fill and insert cards in view
      */
-    private void AddProductsInView()
+    private void AddProductsInView(ArrayList<Product> products)
     {
-        // TODO: vincular com todos os produtos
-        Product[] products = Data.getProductList().getMockProducts();
-        for (Product product : products)
+        if(products != null && products.size() > 0)
         {
-            LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
-            if(inflater != null)
+            for (Product product : products)
             {
-                @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
-                cardsLinerLayout.addView(newCard);
-                TextView productName = newCard.findViewById(R.id.card_product_name);
-                productName.setText(product.getName());
-                TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
-                productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getRequiredQuantity()));
-                TextView productLocation = newCard.findViewById(R.id.card_product_location);
-                Location l = Data.getLocationById(product.getLocationId());
-                if(l != null)
-                    productLocation.setText(l.ToString());
-                else
-                    productLocation.setText("Indefinido");
-                TextView productQuantitys = newCard.findViewById(R.id.card_product_quantityC);
-                productQuantitys.setText(String.format(Locale.getDefault(), "%d", product.getQuantityCatched()));
+                LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+                if(inflater != null)
+                {
+                    @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
+                    cardsLinerLayout.addView(newCard);
+                    TextView productName = newCard.findViewById(R.id.card_product_name);
+                    productName.setText(product.getName());
+                    TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
+                    productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getRequiredQuantity()));
+                    TextView productLocation = newCard.findViewById(R.id.card_product_location);
+                    Location l = Data.getLocationById(product.getLocationId());
+                    if(l != null)
+                        productLocation.setText(l.ToString());
+                    else
+                        productLocation.setText("Indefinido");
+                    TextView productQuantitys = newCard.findViewById(R.id.card_product_quantityC);
+                    productQuantitys.setText(String.format(Locale.getDefault(), "%d", product.getQuantityCatched()));
+                }
             }
         }
     }

@@ -42,16 +42,22 @@ public class ListProducts extends Navigate
         AddProductsInView(FilterProducts(Data.getProductList().getProducts()));
     }
 
+    /**
+     * Method to filter an ArrayList of products and return all of them that were not visited
+     * @param products products to filter
+     * @return products filtered
+     */
     private ArrayList<Product> FilterProducts(ArrayList<Product> products)
     {
+        ArrayList<Product> _products = new ArrayList<>();
         if(products != null && products.size() > 0)
         {
             for(Product product: products)
             {
-                if(product.WasVisited()) products.remove(product);
+                if(!product.WasVisited()) _products.add(product);
             }
         }
-        return products;
+        return _products;
     }
 
     private void AddProductsInView(ArrayList<Product> products)
@@ -60,27 +66,24 @@ public class ListProducts extends Navigate
         {
             for (Product product : products)
             {
-                if(!product.WasVisited())
+                LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+                if(inflater != null)
                 {
-                    LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
-                    if(inflater != null)
-                    {
-                        @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
-                        cardsLinerLayout.addView(newCard);
-                        TextView productName = newCard.findViewById(R.id.card_product_name);
-                        productName.setText(product.getName());
-                        TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
-                        productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getRequiredQuantity()));
-                        TextView productLocation = newCard.findViewById(R.id.card_product_location);
-                        Location l = Data.getLocationById(product.getLocationId());
-                        if(l != null)
-                            productLocation.setText(l.ToString());
-                        else
-                            productLocation.setText("Indefinido");
-                        LinearLayout ll = newCard.findViewById(R.id.catchedLayout);
-                        if(ll != null)
-                            ll.setVisibility(View.GONE);
-                    }
+                    @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
+                    cardsLinerLayout.addView(newCard);
+                    TextView productName = newCard.findViewById(R.id.card_product_name);
+                    productName.setText(product.getName());
+                    TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
+                    productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getRequiredQuantity()));
+                    TextView productLocation = newCard.findViewById(R.id.card_product_location);
+                    Location l = Data.getLocationById(product.getLocationId());
+                    if(l != null)
+                        productLocation.setText(l.ToString());
+                    else
+                        productLocation.setText("Indefinido");
+                    LinearLayout ll = newCard.findViewById(R.id.catchedLayout);
+                    if(ll != null)
+                        ll.setVisibility(View.GONE);
                 }
             }
         }
