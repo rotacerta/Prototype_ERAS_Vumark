@@ -27,10 +27,15 @@ public abstract class Navigate extends AppCompatActivity {
     }
 
     public void setOnClickInButton(Button button, final Class classSelected) {
+        this.setOnClickInButton(button, classSelected, true);
+    }
+
+    public void setOnClickInButton(Button button, final Class classSelected, final boolean shouldClose) {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 goToActivity(v, classSelected);
-                finish();
+                if(shouldClose)
+                    finish();
             }
         });
     }
@@ -86,12 +91,19 @@ public abstract class Navigate extends AppCompatActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(!VuMark.class.getName().equals(event.getClass().getName())){
-            if(keyCode == KeyEvent.KEYCODE_BACK) {
-                startActivity(new Intent(this, VuMark.class));
-                finish();
-                return true;
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        String currentClass = this.getClass().getName();
+        if(!VuMark.class.getName().equals(currentClass))
+        {
+            if(keyCode == KeyEvent.KEYCODE_BACK)
+            {
+                if(!OpenApp.class.getName().equals(currentClass))
+                {
+                    startActivity(new Intent(this, VuMark.class));
+                    finish();
+                    return true;
+                }
             }
         }
         return super.onKeyDown(keyCode, event);

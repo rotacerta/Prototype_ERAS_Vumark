@@ -13,6 +13,7 @@ import java.net.HttpCookie;
 import java.net.HttpURLConnection;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 
 import com.vuforia.Enums.HttpConnectionMethodEnum;
 import com.vuforia.Models.Cell;
@@ -113,6 +114,7 @@ public class OpenApp extends Navigate
 
     private void startApp()
     {
+        Data.setNavigationStart(new Date());
         setOnClickInButton(btnOpen, VuMark.class);
     }
 

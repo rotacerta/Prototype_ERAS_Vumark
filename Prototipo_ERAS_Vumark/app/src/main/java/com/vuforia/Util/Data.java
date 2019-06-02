@@ -26,7 +26,6 @@ public class Data
         PathFinderService = pathFinderService;
         ProductList = products;
         Locations = locations;
-        NavigationStart = new Date();
     }
 
     public static String getAPIUrl()
@@ -210,6 +209,10 @@ public class Data
     }
     //endregion
 
+    public static void setNavigationStart(Date navigationStart)
+    {
+        NavigationStart = navigationStart;
+    }
 
     public static Date getNavigationStart()
     {

@@ -29,9 +29,8 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
+import java.sql.Time;
 import java.util.Locale;
 
 import okhttp3.Response;
@@ -40,7 +39,6 @@ public class NavigationSummary extends AppCompatActivity
 {
     private LinearLayout cardsLinerLayout, mainLayout;
     private String requestBodyJson;
-    private Button btn_finish;
     private int attempts;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +49,7 @@ public class NavigationSummary extends AppCompatActivity
 
         setContentView(R.layout.navigation_summary);
         attempts = 0;
-        btn_finish = findViewById(R.id.btn_finish);
+        Button btn_finish = findViewById(R.id.btn_finish);
         cardsLinerLayout = findViewById(R.id.LinearLayoutList);
         mainLayout = findViewById(R.id.mainNavigationSummLayout);
         AddProductsInView(Data.getProductList().getProducts());
@@ -68,20 +66,23 @@ public class NavigationSummary extends AppCompatActivity
         TextView textViewTime = findViewById(R.id.nav_summ_time);
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         textViewDate.setText(String.format(" %s", format.format(new Date())));
-        textViewTime.setText(String.format(" %s", GetNavigationTime()));
+        Time runningTime = GetNavigationTime();
+        Data.getProductList().setRunningTime(runningTime);
+        textViewTime.setText(String.format(" %s", runningTime.toString()));
     }
 
     /**
      * Method to calculate the running time of the navigation
      * @return navigation duration
      */
-    private String GetNavigationTime()
+    private Time GetNavigationTime()
     {
         Date NavigationEnd = new Date();
-        long timeL = (NavigationEnd.getTime() - Data.getNavigationStart().getTime()) / (60 * 1000);
-        long hours = timeL / 60;
-        long minutes = timeL - (hours * 60);
-        return String.format("%02d:%02d", hours, minutes);
+        long timeL = (NavigationEnd.getTime() - Data.getNavigationStart().getTime()) / (1000);
+        int hours = (int) (timeL / 3600);
+        int minutes = (int) ((timeL - (hours * 3600)) / 60);
+        int seconds = (int) (timeL - (minutes * 60) - (hours * 3600));
+        return new Time(hours, minutes, seconds);
     }
 
     /**
