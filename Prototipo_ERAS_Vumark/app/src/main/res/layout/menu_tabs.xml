@@ -2,15 +2,19 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent">
+    android:background="@color/transparent"
+    android:elevation="6dp"
+    android:translationZ="6dp"
+    tools:ignore="UnusedAttribute">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/customAppBarLayout"
         android:layout_height="50dp"
         android:layout_width="match_parent"
-        android:background="@color/orange"
+        android:background="@drawable/menu_bg"
         android:fitsSystemWindows="true">
 
         <LinearLayout
