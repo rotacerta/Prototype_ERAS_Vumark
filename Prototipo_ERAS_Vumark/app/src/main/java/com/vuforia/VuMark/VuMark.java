@@ -756,6 +756,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 if(products.size() > 0)
                 {
                     Data.getProductList().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
+                    Data.getProductList().getProductById(products.get(0).getProductId()).setWasVisited(true);
                     msgTextField.setText("");
                     return true;
                 }

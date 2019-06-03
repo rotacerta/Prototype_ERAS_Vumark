@@ -59,7 +59,7 @@ public class Map extends Navigate
         {
             Tuple<Integer, Integer> viewDimensions = GetDeviceDimension();
             int contentWidth = (viewDimensions.value * 8) / 10;
-            int contentHeight = (viewDimensions.key * 8) / 10;
+            int contentHeight = (viewDimensions.key * 7) / 10;
 
             GridLayout gridLayout = GenerateGridLayout(contentHeight, contentWidth);
             contentLayout.addView(gridLayout);
@@ -72,6 +72,8 @@ public class Map extends Navigate
 
             ImageView ivStreetLabel = GenerateStreetLabelImageView(contentHeight, contentWidth);
             contentLayout.addView(ivStreetLabel);
+            layoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+            ivStreetLabel.setLayoutParams(layoutParams);
         }
     }
 

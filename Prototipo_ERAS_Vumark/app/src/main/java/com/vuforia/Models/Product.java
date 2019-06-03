@@ -8,6 +8,7 @@ public class Product
     private int LocationId;
     private int RequiredQuantity;
     private int QuantityCatched;
+    private boolean WasVisited;
 
     public Product(int productListId, int productId, String name, int locationId, int requiredQuantity, int quantityCatched)
     {
@@ -17,6 +18,7 @@ public class Product
         LocationId = locationId;
         RequiredQuantity = requiredQuantity;
         QuantityCatched = quantityCatched;
+        WasVisited = false;
     }
 
     public int getProductListId() {
@@ -55,5 +57,15 @@ public class Product
     public void setQuantityCatched(int quantityCatched)
     {
         QuantityCatched = quantityCatched;
+    }
+
+    public void setWasVisited(boolean wasVisited)
+    {
+        WasVisited = wasVisited;
+    }
+
+    public boolean WasVisited()
+    {
+        return WasVisited;
     }
 }

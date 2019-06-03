@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Data
 {
@@ -17,6 +19,7 @@ public class Data
     private static ArrayList<Location> Locations;
     private static ArrayList<Tuple<String, Cell>> Cells_VuMarks;
     private static ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> Cells_Locations;
+    private static Date NavigationStart;
 
     public static void Init(PathFinderService pathFinderService, List products, ArrayList<Location> locations)
     {
@@ -205,6 +208,16 @@ public class Data
         return _destinations;
     }
     //endregion
+
+    public static void setNavigationStart(Date navigationStart)
+    {
+        NavigationStart = navigationStart;
+    }
+
+    public static Date getNavigationStart()
+    {
+        return NavigationStart;
+    }
 
     @org.jetbrains.annotations.Contract(value = "null -> true; !null -> false", pure = true)
     private static boolean IsNull(Object obj)

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -12,7 +11,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.vuforia.Enums.HttpConnectionMethodEnum;
 import com.vuforia.Models.List;
 import com.vuforia.Models.Location;
@@ -20,14 +21,16 @@ import com.vuforia.Models.Product;
 import com.vuforia.Services.APIConnection;
 import com.vuforia.UI.R;
 import com.vuforia.Util.Data;
-import com.google.gson.Gson;
-import com.vuforia.VuMark.VuMark;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 
 import okhttp3.Response;
@@ -37,7 +40,6 @@ public class NavigationSummary extends Navigate
     private LinearLayout cardsLinerLayout, mainLayout;
     private String requestBodyJson;
     private Button btn_finish;
-    private int attempts;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +48,40 @@ public class NavigationSummary extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.navigation_summary);
-        attempts = 0;
         btn_finish = findViewById(R.id.btn_finish);
         cardsLinerLayout = findViewById(R.id.LinearLayoutList);
         mainLayout = findViewById(R.id.mainNavigationSummLayout);
-        AddProductsInView();
+        AddProductsInView(Data.getProductList().getProducts());
         btn_finish.setOnClickListener(sendJSON);
+        UpdateTimeAndDate();
+    }
+
+    /**
+     * Method to update Time and Date labels in UI
+     */
+    private void UpdateTimeAndDate()
+    {
+        TextView textViewDate = findViewById(R.id.nav_summ_date);
+        TextView textViewTime = findViewById(R.id.nav_summ_time);
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        textViewDate.setText(String.format(" %s", format.format(new Date())));
+        Time runningTime = GetNavigationTime();
+        Data.getProductList().setRunningTime(runningTime);
+        textViewTime.setText(String.format(" %s", runningTime.toString()));
+    }
+
+    /**
+     * Method to calculate the running time of the navigation
+     * @return navigation duration
+     */
+    private Time GetNavigationTime()
+    {
+        Date NavigationEnd = new Date();
+        long timeL = (NavigationEnd.getTime() - Data.getNavigationStart().getTime()) / (1000);
+        int hours = (int) (timeL / 3600);
+        int minutes = (int) ((timeL - (hours * 3600)) / 60);
+        int seconds = (int) (timeL - (minutes * 60) - (hours * 3600));
+        return new Time(hours, minutes, seconds);
     }
 
     @Override
@@ -60,29 +90,30 @@ public class NavigationSummary extends Navigate
     /**
      * Method to create, fill and insert cards in view
      */
-    private void AddProductsInView()
+    private void AddProductsInView(ArrayList<Product> products)
     {
-        // TODO: vincular com todos os produtos
-        Product[] products = Data.getProductList().getMockProducts();
-        for (Product product : products)
+        if(products != null && products.size() > 0)
         {
-            LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
-            if(inflater != null)
+            for (Product product : products)
             {
-                @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
-                cardsLinerLayout.addView(newCard);
-                TextView productName = newCard.findViewById(R.id.card_product_name);
-                productName.setText(product.getName());
-                TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
-                productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getRequiredQuantity()));
-                TextView productLocation = newCard.findViewById(R.id.card_product_location);
-                Location l = Data.getLocationById(product.getLocationId());
-                if(l != null)
-                    productLocation.setText(l.ToString());
-                else
-                    productLocation.setText("Indefinido");
-                TextView productQuantitys = newCard.findViewById(R.id.card_product_quantityC);
-                productQuantitys.setText(String.format(Locale.getDefault(), "%d", product.getQuantityCatched()));
+                LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
+                if(inflater != null)
+                {
+                    @SuppressLint("InflateParams") View newCard = inflater.inflate(R.layout.card_list, null);
+                    cardsLinerLayout.addView(newCard);
+                    TextView productName = newCard.findViewById(R.id.card_product_name);
+                    productName.setText(product.getName());
+                    TextView productQuantity = newCard.findViewById(R.id.card_product_quantity);
+                    productQuantity.setText(String.format(Locale.getDefault(), "%d", product.getRequiredQuantity()));
+                    TextView productLocation = newCard.findViewById(R.id.card_product_location);
+                    Location l = Data.getLocationById(product.getLocationId());
+                    if(l != null)
+                        productLocation.setText(l.ToString());
+                    else
+                        productLocation.setText("Indefinido");
+                    TextView productQuantitys = newCard.findViewById(R.id.card_product_quantityC);
+                    productQuantitys.setText(String.format(Locale.getDefault(), "%d", product.getQuantityCatched()));
+                }
             }
         }
     }
@@ -121,8 +152,8 @@ public class NavigationSummary extends Navigate
     {
         public void onClick(View v)
         {
+            btn_finish.setEnabled(false);
             RequestList();
-            goToActivity(v, OpenApp.class);
         }
     };
 
@@ -139,6 +170,11 @@ public class NavigationSummary extends Navigate
     private void ShowSnackbar(String message)
     {
         Snackbar.make(mainLayout, message, Snackbar.LENGTH_LONG).show();
+    }
+
+    private void ShowToast(String message)
+    {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -160,7 +196,7 @@ public class NavigationSummary extends Navigate
                     }
                     else
                     {
-                        ShowSnackbar(response.body().string().replace("\\\"", ""));
+                        ShowSnackbar(response.body().string().replace("\"", ""));
                         return null;
                     }
                 }
@@ -178,12 +214,13 @@ public class NavigationSummary extends Navigate
         {
             if(result == null)
             {
-                attempts++;
-                if(attempts != 3)
-                    RequestList();
+                btn_finish.setEnabled(true);
                 return;
             }
-            ShowSnackbar(result.replace("\"", ""));
+            ShowToast(result.replace("\"", ""));
+            try { Thread.sleep(2000); }
+            catch (Exception ignore) {}
+            goToActivity(btn_finish, OpenApp.class);
         }
     }
 }
