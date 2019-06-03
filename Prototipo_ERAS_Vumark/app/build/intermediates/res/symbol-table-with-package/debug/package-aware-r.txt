@@ -1051,9 +1051,8 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable border_button
+drawable border_button_grey
 drawable border_button_orange
-drawable border_table_body
-drawable border_table_header
 drawable card_info
 drawable cell_current
 drawable cell_destin
@@ -1436,6 +1435,7 @@ string INIT_LICENSE_ERROR_UNKNOWN_ERROR
 string INIT_OBJECT_DATASET_NOT_FOUND
 string INIT_OBJECT_DATASET_NOT_FOUND_TITLE
 string OpenAppButtonText
+string OpenAppButtonText_waiting
 string OpenAppStartMessage
 string UPDATE_ERROR_AUTHORIZATION_FAILED_DESC
 string UPDATE_ERROR_AUTHORIZATION_FAILED_TITLE

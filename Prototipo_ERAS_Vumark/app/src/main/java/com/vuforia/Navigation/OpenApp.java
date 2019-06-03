@@ -9,16 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import java.io.IOException;
-import java.net.HttpCookie;
-import java.net.HttpURLConnection;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
 import com.vuforia.Enums.HttpConnectionMethodEnum;
-import com.vuforia.Models.Cell;
 import com.vuforia.Models.List;
 import com.vuforia.Models.Location;
 import com.vuforia.Models.Product;
@@ -33,11 +24,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import okhttp3.HttpUrl;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Date;
+
 import okhttp3.Response;
-import okhttp3.internal.http.HttpMethod;
-import okhttp3.internal.http2.Http2;
-import okhttp3.internal.http2.Http2Connection;
 
 public class OpenApp extends Navigate
 {
@@ -99,7 +92,7 @@ public class OpenApp extends Navigate
         else
         {
             btnOpen.setEnabled(false);
-            ShowSnackbar("Não foi possível definir as localizações dos produtos.");
+            ShowToast("Não foi possível definir as localizações dos produtos.");
         }
     }
 
@@ -123,7 +116,7 @@ public class OpenApp extends Navigate
         }
     };
 
-    private void ShowSnackbar(String message)
+    private void ShowToast(String message)
     {
         Snackbar.make(mainLayout, message, Snackbar.LENGTH_LONG).show();
     }
@@ -221,23 +214,24 @@ public class OpenApp extends Navigate
             try
             {
                 Response response = APIConnection.Request(urls[0], requestBody, HttpConnectionMethodEnum.GET);
-                if (response != null && response.body() != null)
+                if (response != null)
                 {
-                    if(response.code() == HttpURLConnection.HTTP_OK)
+                    if(response.body() != null)
                     {
-                        return response.body().string();
+                        if(response.code() == HttpURLConnection.HTTP_OK)
+                        {
+                            return response.body().string();
+                        }
                     }
-                    else
-                    {
-                        ShowSnackbar(response.body().string());
-                        return null;
-                    }
+                    TreatResponseError(response.code());
+                    return null;
                 }
+                RequestAgain();
                 return null;
             }
-            catch (IOException e)
+            catch (IOException ignore)
             {
-                e.printStackTrace();
+                RequestAgain();
                 return null;
             }
         }
@@ -246,30 +240,61 @@ public class OpenApp extends Navigate
         protected void onPostExecute(String result)
         {
             if(result == null)
-            {
-                attempts++;
-                if(attempts < 3)
-                {
-                    try { Thread.sleep(2000); }
-                    catch (Exception ignore) {}
-                    RequestList();
-                }
                 return;
-            }
             try
             {
                 TreatData(new JSONObject(result));
                 if(canStartNavigation)
                 {
-                    btnOpen.setText("Iniciar navegação");
+                    btnOpen.setText(R.string.OpenAppButtonText);
                     btnOpen.setEnabled(true);
                     InitData();
                 }
             }
             catch (Exception e)
             {
-                ShowSnackbar("Falha ao processar lista recebida.");
+                ChangeButtonBg();
+                ShowToast("Falha ao processar lista recebida.");
             }
         }
+    }
+
+    private void RequestAgain()
+    {
+        attempts++;
+        if(attempts < 3)
+        {
+            try { Thread.sleep(2000); }
+            catch (Exception ignore) {}
+            RequestList();
+        }
+        else
+        {
+            ChangeButtonBg();
+            ShowToast("Não foi possível pegar uma lista.");
+            btnOpen.setText(R.string.OpenAppButtonText);
+        }
+    }
+
+    private void ChangeButtonBg()
+    {
+        this.runOnUiThread(new Runnable()
+        {
+            public void run()
+            {
+                btnOpen.setBackgroundResource(R.drawable.border_button_grey);
+            }
+        });
+    }
+
+    private void TreatResponseError(int responseCode)
+    {
+        String message = "Algo deu errado.";
+        switch (responseCode)
+        {
+            case HttpURLConnection.HTTP_NO_CONTENT: message = "Não existe lista disponível."; break;
+            case HttpURLConnection.HTTP_INTERNAL_ERROR: message = "Erro ao converter lista."; break;
+        }
+        ShowToast(message);
     }
 }
