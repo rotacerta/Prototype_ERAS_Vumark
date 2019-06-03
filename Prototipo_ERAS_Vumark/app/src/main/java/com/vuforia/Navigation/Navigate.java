@@ -91,7 +91,8 @@ public abstract class Navigate extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         String currentClass = this.getClass().getName();
-        if(!VuMark.class.getName().equals(currentClass))
+        if(!VuMark.class.getName().equals(currentClass) &&
+                !NavigationSummary.class.getName().equals(currentClass))
         {
             if(keyCode == KeyEvent.KEYCODE_BACK)
             {

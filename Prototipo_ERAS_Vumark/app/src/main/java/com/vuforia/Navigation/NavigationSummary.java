@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -14,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.vuforia.Enums.HttpConnectionMethodEnum;
 import com.vuforia.Models.List;
 import com.vuforia.Models.Location;
@@ -21,20 +21,17 @@ import com.vuforia.Models.Product;
 import com.vuforia.Services.APIConnection;
 import com.vuforia.UI.R;
 import com.vuforia.Util.Data;
-import com.google.gson.Gson;
-import com.vuforia.VuMark.VuMark;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.sql.Time;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.Response;
 
