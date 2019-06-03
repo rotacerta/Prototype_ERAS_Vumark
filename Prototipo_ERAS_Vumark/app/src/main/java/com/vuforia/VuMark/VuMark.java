@@ -328,7 +328,6 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     }
 
-    // 1- DESTINO, 2- DIREITA, 3- ESQUERDA, 4- ATRÁS
     boolean isGoal(final String value, String[] productName)
     {
         ArrayList<Cell> vumarcells = Data.getCellsVumarkByVuMarkId(value.substring(0, 3));

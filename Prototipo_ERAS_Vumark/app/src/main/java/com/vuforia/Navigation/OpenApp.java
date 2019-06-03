@@ -91,8 +91,9 @@ public class OpenApp extends Navigate
         }
         else
         {
+            ChangeOpenButton();
             btnOpen.setEnabled(false);
-            ShowToast("Não foi possível definir as localizações dos produtos.");
+            ShowSnackbar("Não foi possível definir as localizações dos produtos.");
         }
     }
 
@@ -116,7 +117,7 @@ public class OpenApp extends Navigate
         }
     };
 
-    private void ShowToast(String message)
+    private void ShowSnackbar(String message)
     {
         Snackbar.make(mainLayout, message, Snackbar.LENGTH_LONG).show();
     }
@@ -253,12 +254,15 @@ public class OpenApp extends Navigate
             }
             catch (Exception e)
             {
-                ChangeButtonBg();
-                ShowToast("Falha ao processar lista recebida.");
+                ChangeOpenButton();
+                ShowSnackbar("Falha ao processar lista recebida.");
             }
         }
     }
 
+    /**
+     * Method to try to request a maximum of 2 times
+     */
     private void RequestAgain()
     {
         attempts++;
@@ -270,23 +274,30 @@ public class OpenApp extends Navigate
         }
         else
         {
-            ChangeButtonBg();
-            ShowToast("Não foi possível pegar uma lista.");
-            btnOpen.setText(R.string.OpenAppButtonText);
+            ChangeOpenButton();
+            ShowSnackbar("Não foi possível pegar uma lista.");
         }
     }
 
-    private void ChangeButtonBg()
+    /**
+     * Method to run a change in button on UI Thread
+     */
+    private void ChangeOpenButton()
     {
         this.runOnUiThread(new Runnable()
         {
             public void run()
             {
                 btnOpen.setBackgroundResource(R.drawable.border_button_grey);
+                btnOpen.setText(R.string.OpenAppButtonText);
             }
         });
     }
 
+    /**
+     * Method to treat some request error response
+     * @param responseCode
+     */
     private void TreatResponseError(int responseCode)
     {
         String message = "Algo deu errado.";
@@ -295,6 +306,6 @@ public class OpenApp extends Navigate
             case HttpURLConnection.HTTP_NO_CONTENT: message = "Não existe lista disponível."; break;
             case HttpURLConnection.HTTP_INTERNAL_ERROR: message = "Erro ao converter lista."; break;
         }
-        ShowToast(message);
+        ShowSnackbar(message);
     }
 }
