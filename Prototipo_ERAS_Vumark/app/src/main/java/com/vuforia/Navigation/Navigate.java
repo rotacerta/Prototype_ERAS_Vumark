@@ -56,18 +56,19 @@ public abstract class Navigate extends AppCompatActivity {
 
     public void changeMenu(String page) {
         resetMenu();
+        ImageView camera = findViewById(R.id.image_camera);
         switch (page) {
             case "MAP":
                 ImageView map = findViewById(R.id.image_map);
                 map.setImageResource(R.drawable.ic_map_black_dp);
-                break;
-            case "CAMERA":
-                ImageView camera = findViewById(R.id.image_camera);
-                camera.setImageResource(R.drawable.ic_camera_alt_black);
+
+                camera.setImageResource(R.drawable.ic_camera_alt_white);
                 break;
             case "LIST":
                 ImageView list = findViewById(R.id.image_list);
                 list.setImageResource(R.drawable.ic_list_black_24dp);
+
+                camera.setImageResource(R.drawable.ic_camera_alt_white);
                 break;
         }
     }

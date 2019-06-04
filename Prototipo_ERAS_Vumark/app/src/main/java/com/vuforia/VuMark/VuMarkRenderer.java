@@ -365,6 +365,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                 mActivity.hideCard();
                 currentVumarkIdOnCard = null;
             }
+//            mActivity.showToast(markerValue);
             FindPath(markerValue);
         }
         else

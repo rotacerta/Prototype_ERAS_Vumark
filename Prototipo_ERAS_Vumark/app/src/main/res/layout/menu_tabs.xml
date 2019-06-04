@@ -34,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_camera_alt_white"/>
+                android:src="@drawable/ic_camera_alt_black"/>
             <ImageView
                 android:id="@+id/image_map"
                 android:layout_width="wrap_content"
