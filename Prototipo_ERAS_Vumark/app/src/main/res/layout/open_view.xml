@@ -41,7 +41,7 @@
             android:layout_marginBottom="218dp"
             android:contentDescription="@string/splash_screen_description"
             android:scaleType="centerInside"
-            android:src="@drawable/icon_open" />
+            android:src="@drawable/open_icon" />
 
         <TextView
             android:layout_width="257dp"
