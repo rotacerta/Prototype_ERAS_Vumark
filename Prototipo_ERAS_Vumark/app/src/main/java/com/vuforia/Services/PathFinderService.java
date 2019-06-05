@@ -310,9 +310,9 @@ public class PathFinderService
 
     @Nullable
     private DirectionEnum getNextDirectionInLest(Cell cell) {
-        if (currentCell.getX() < cell.getX() || currentCell.getY() < cell.getY()) {
+        if (currentCell.getY() < cell.getY()) {
             return DirectionEnum.RIGHT;
-        } else if (currentCell.getX() < cell.getX() || currentCell.getY() > cell.getY()) {
+        } else if (currentCell.getY() > cell.getY()) {
             return DirectionEnum.LEFT;
         }
         return null;
@@ -320,9 +320,9 @@ public class PathFinderService
 
     @Nullable
     private DirectionEnum getNextDirectionInWest(Cell cell) {
-        if (currentCell.getX() > cell.getX() || currentCell.getY() < cell.getY()) {
+        if (currentCell.getY() < cell.getY()) {
             return DirectionEnum.LEFT;
-        } else if (currentCell.getX() > cell.getX() || currentCell.getY() > cell.getY()) {
+        } else if (currentCell.getY() > cell.getY()) {
             return DirectionEnum.RIGHT;
         }
         return null;
@@ -330,9 +330,9 @@ public class PathFinderService
 
     @Nullable
     private DirectionEnum getNextDirectionInNorth(Cell cell) {
-        if (currentCell.getX() < cell.getX() || currentCell.getY() > cell.getY()) {
+        if (currentCell.getY() > cell.getY()) {
             return DirectionEnum.RIGHT;
-        } else if (currentCell.getX() > cell.getX() || currentCell.getY() > cell.getY()) {
+        } else if (currentCell.getY() < cell.getY()) {
             return DirectionEnum.LEFT;
         }
         return null;
@@ -340,16 +340,17 @@ public class PathFinderService
 
     @Nullable
     private DirectionEnum getNextDirectionInSouth(Cell cell) {
-        if (currentCell.getX() < cell.getX() || currentCell.getY() < cell.getY()) {
+        if (currentCell.getX() < cell.getX()) {
             return DirectionEnum.RIGHT;
-        } else if (currentCell.getX() > cell.getX() || currentCell.getY() < cell.getY()) {
+        } else if (currentCell.getX() > cell.getX()) {
             return DirectionEnum.LEFT;
         }
         return null;
     }
 
     private boolean isHorizontal(Cell cell) {
-        return currentCell.getX() == cell.getX() || currentCell.getY() == cell.getY();
+        return (currentCell.getX() == cell.getX() || currentCell.getY() == cell.getY())
+                && currentCell.getOrientation() != cell.getOrientation();
     }
 
     /**
