@@ -77,7 +77,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
 {
     private static final String LOGTAG = "VuMark";
 
-    private String imageRender[] = {"arrow_top.png","arrow_left.png", "arrow_right.png", "checked.png"};
+    private String imageRender[] = {"arrow_back.png","arrow_left.png", "arrow_right.png", "checked.png"};
 
     private String dataBaseUrl = "Vumark_PickByPath.xml";
 
