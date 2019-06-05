@@ -50,6 +50,7 @@ import com.vuforia.Models.Product;
 import com.vuforia.Navigation.ListProducts;
 import com.vuforia.Navigation.Map;
 import com.vuforia.Navigation.Navigate;
+import com.vuforia.Navigation.NavigationSummary;
 import com.vuforia.ObjectTracker;
 import com.vuforia.PositionalDeviceTracker;
 import com.vuforia.STORAGE_TYPE;
@@ -110,6 +111,8 @@ public class VuMark extends Navigate implements SampleApplicationControl
     private boolean mIsDroidDevice = false;
 
     private String contentToast; // TODO: DEVE SER REMOVIDO, USO PARA TESTES
+
+    public String currentMarkerValue = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -739,6 +742,9 @@ public class VuMark extends Navigate implements SampleApplicationControl
 
     public boolean getAmoutOfProducts(View view)
     {
+        boolean response = false;
+        mRenderer.FindPath(currentMarkerValue);
+
         EditText msgTextField = findViewById(R.id.amount);
         String amountS = msgTextField.getText().toString();
         hideKeyboardFrom(this, view);
@@ -753,7 +759,8 @@ public class VuMark extends Navigate implements SampleApplicationControl
             {
                 return false;
             }
-            Cell currentCell = Data.getPathFinderService().GetNextdestination();
+            Cell currentCell = Data.getPathFinderService().GetCurrentCell();
+            Cell nextDirection = Data.getPathFinderService().GetNextdestination();
             if(currentCell != null)
             {
                 ArrayList<Product> products = getProductsByCell(currentCell);
@@ -763,11 +770,14 @@ public class VuMark extends Navigate implements SampleApplicationControl
                     Data.getProductList().getProductById(products.get(0).getProductId()).setWasVisited(true);
                     msgTextField.setText("");
                     mRenderer.SetIsWaiting(false);
-                    return true;
+                    response = true;
                 }
             }
+            if (nextDirection == null){
+                goToActivity(view, NavigationSummary.class);
+            }
         }
-        return false;
+        return response;
     }
 
     private ArrayList<Product> getProductsByCell(Cell cell)
@@ -796,5 +806,9 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 Toast.makeText(getApplicationContext(), contentToast, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void setCurrentMarkerValue(String currentMarkerValue) {
+        this.currentMarkerValue = currentMarkerValue;
     }
 }

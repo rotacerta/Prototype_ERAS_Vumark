@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Home\\AndroidStudioProjects\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mo\\values-mo.xml",
+            "outputFile": "C:\\Users\\felip\\Documents\\GitHub\\Rota_Certa_Vumark\\Prototipo_ERAS_Vumark\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mo\\values-mo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-2\\files-2.1\\61e2f291f0fe2cf55fe8db3a58a64699\\res\\values-mo\\values.xml",
+                    "source": "C:\\Users\\felip\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.5.0.aar\\b17754988a866a58c541c5ad3c8379c8\\res\\values-mo\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",

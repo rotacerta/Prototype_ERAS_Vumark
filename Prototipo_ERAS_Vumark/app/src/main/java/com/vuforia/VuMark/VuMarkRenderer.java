@@ -27,6 +27,7 @@ import com.vuforia.InstanceId;
 import com.vuforia.Matrix44F;
 import com.vuforia.Models.Cell;
 import com.vuforia.Models.Location;
+import com.vuforia.Navigation.NavigationSummary;
 import com.vuforia.PIXEL_FORMAT;
 import com.vuforia.Renderer;
 import com.vuforia.SampleApplication.SampleAppRenderer;
@@ -362,11 +363,10 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                 if(mIsWaiting)
                 {
                     textureIndex = DirectionEnum.CHECKED.Value;
+                    mActivity.setCurrentMarkerValue(markerValue);
                     mActivity.showCard(productData[0], productData[1], markerBitmap);
                     currentVumarkIdOnCard = markerValue;
-                }
-                else
-                {
+                } else {
                     FindPath(markerValue);
                 }
             }
@@ -375,6 +375,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                 currentVumarkIdOnCard = null;
                 FindPath(markerValue);
             }
+
         }
         else
         {
@@ -391,7 +392,7 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         mRenderer.end();
     }
 
-    private void FindPath(String markerValue)
+    public void FindPath(String markerValue)
     {
         ArrayList<String> errors = new ArrayList<>();
         ArrayList<Cell> vumarkcells = Data.getCellsVumarkByVuMarkId(markerValue.substring(0, 3));
@@ -427,6 +428,9 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
     private void defineDirection() {
         if (currentVumarkIdOnCard == null) {
             DirectionEnum direction = Data.getPathFinderService().GetNextDirection();
+
+            if (direction == null) return;
+
             textureIndex = direction.Value;
 
             if (direction == DirectionEnum.CHECKED) {
@@ -586,6 +590,5 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         bitmap.setPixels(colors, 0, width, 0, 0, width, height);
         return bitmap;
     }
-
 
 }

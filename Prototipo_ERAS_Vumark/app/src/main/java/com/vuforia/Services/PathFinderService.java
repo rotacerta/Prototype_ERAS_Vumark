@@ -209,6 +209,7 @@ public class PathFinderService
                 else
                 {
                     nextdestination = null;
+                    nextDirection = null;
                 }
             }
             else if(IsDestination(this.currentCell)) {
@@ -220,6 +221,7 @@ public class PathFinderService
                 }
                 else{
                     nextdestination = null;
+                    nextDirection = null;
                 }
             }
             else if(!this.currentCell.Equals(this.nextCell)) {
