@@ -338,14 +338,19 @@ public class VuMark extends Navigate implements SampleApplicationControl
             {
                 for (Cell c2: vumarcells)
                 {
-                    if (isDestination(productName, c, c2)) return true;
+                    if (isDestination(productName, c, c2))
+                    {
+                        mRenderer.SetIsWaiting(true);
+                        return true;
+                    }
                 }
             }
         }
         return false;
     }
 
-    private boolean isDestination(String[] productName, Cell c, Cell c2) {
+    private boolean isDestination(String[] productName, Cell c, Cell c2)
+    {
         if(c.Equals(c2))
         {
             ArrayList<Product> products = getProductsByCell(c);
@@ -354,13 +359,13 @@ public class VuMark extends Navigate implements SampleApplicationControl
                 Product p = Data.getProductList().getProductById(products.get(0).getProductId());
                 try
                 {
-
                     productName[0] = p.getName();
                     productName[1] = Data.getLocationById(p.getLocationId()).ToString();
                 }
                 catch(Exception ignored) { }
+                return true;
             }
-            return true;
+            return false;
         }
         return false;
     }
@@ -748,7 +753,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
             {
                 return false;
             }
-            Cell currentCell = Data.getPathFinderService().GetCurrentCell();
+            Cell currentCell = Data.getPathFinderService().GetNextdestination();
             if(currentCell != null)
             {
                 ArrayList<Product> products = getProductsByCell(currentCell);
@@ -757,6 +762,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
                     Data.getProductList().getProductById(products.get(0).getProductId()).setQuantityCatched(amountI);
                     Data.getProductList().getProductById(products.get(0).getProductId()).setWasVisited(true);
                     msgTextField.setText("");
+                    mRenderer.SetIsWaiting(false);
                     return true;
                 }
             }
@@ -772,7 +778,7 @@ public class VuMark extends Navigate implements SampleApplicationControl
         {
             for (int lid: c.getLocationsId())
             {
-                products.addAll(Data.getProductList().getProductsByLocationId(lid));
+                products.addAll(Data.getProductList().getProductsByLocationId(lid, true));
             }
         }
         return products;

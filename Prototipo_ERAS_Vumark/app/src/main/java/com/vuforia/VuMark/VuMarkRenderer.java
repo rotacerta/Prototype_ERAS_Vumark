@@ -90,6 +90,8 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
 
     private boolean mIsActive = false;
 
+    private boolean mIsWaiting = false;
+
     // Ratio to apply so that the augmentation surrounds the VuMark
     private static final float VUMARK_SCALE = 1.02f;
     private String currentVumarkIdOnCard;
@@ -357,16 +359,22 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
             String[] productData = new String[2];
             if (mActivity.isGoal(markerValue, productData))
             {
-                textureIndex = DirectionEnum.CHECKED.Value;
-                mActivity.showCard(productData[0], productData[1], markerBitmap);
-                currentVumarkIdOnCard = markerValue;
+                if(mIsWaiting)
+                {
+                    textureIndex = DirectionEnum.CHECKED.Value;
+                    mActivity.showCard(productData[0], productData[1], markerBitmap);
+                    currentVumarkIdOnCard = markerValue;
+                }
+                else
+                {
+                    FindPath(markerValue);
+                }
             }
-            else if(!markerValue.equalsIgnoreCase(currentVumarkIdOnCard)){
+            else {
                 mActivity.hideCard();
                 currentVumarkIdOnCard = null;
+                FindPath(markerValue);
             }
-//            mActivity.showToast(markerValue);
-            FindPath(markerValue);
         }
         else
         {
@@ -425,6 +433,11 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
                 mActivity.hideCard();
             }
         }
+    }
+
+    public void SetIsWaiting(boolean isWaiting)
+    {
+        mIsWaiting = isWaiting;
     }
 
     private void renderModel(float[] projectionMatrix, float[] viewMatrix, float[] modelMatrix, boolean isMainVuMark)
@@ -573,4 +586,6 @@ public class VuMarkRenderer implements GLSurfaceView.Renderer, SampleAppRenderer
         bitmap.setPixels(colors, 0, width, 0, 0, width, height);
         return bitmap;
     }
+
+
 }

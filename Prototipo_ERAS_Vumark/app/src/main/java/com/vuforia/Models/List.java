@@ -65,6 +65,11 @@ public class List
 
     public ArrayList<Product> getProductsByLocationId(int locationId)
     {
+        return getProductsByLocationId(locationId, false);
+    }
+
+    public ArrayList<Product> getProductsByLocationId(int locationId, boolean filterNotVisited)
+    {
         ArrayList<Product> products = getProducts();
         ArrayList<Product> productstoReturn = new ArrayList<>();
         if(products != null && products.size() > 0)
@@ -73,7 +78,10 @@ public class List
             {
                 if(p.getLocationId() == locationId)
                 {
-                    productstoReturn.add(p);
+                    if(filterNotVisited && !p.WasVisited())
+                        productstoReturn.add(p);
+                    else if (!filterNotVisited)
+                        productstoReturn.add(p);
                 }
             }
         }
