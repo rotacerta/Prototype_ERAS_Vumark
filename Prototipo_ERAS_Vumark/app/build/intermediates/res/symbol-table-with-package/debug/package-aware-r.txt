@@ -1076,7 +1076,6 @@ drawable ic_map_white_dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable icon_open
 drawable logo
 drawable map_subtitle
 drawable menu_bg
@@ -1094,6 +1093,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable open_icon
 drawable pbp_apk_logo
 drawable pbp_logo
 drawable reticle

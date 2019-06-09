@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.vuforia.Models.Cell;
 import com.vuforia.Models.Location;
 import com.vuforia.Models.Product;
 import com.vuforia.UI.R;
@@ -39,7 +40,36 @@ public class ListProducts extends Navigate
         changeMenu("LIST");
 
         SetOnClick();
-        AddProductsInView(FilterProducts(Data.getProductList().getProducts()));
+        AddProductsInView(FilterProducts(SortList(Data.getProductList().getProducts())));
+    }
+
+    /**
+     * Method for sorting the list of products based on the destination list
+     * @param products products list to sort
+     * @return products list sorted
+     */
+    private ArrayList<Product> SortList(ArrayList<Product> products)
+    {
+        ArrayList<Product> sortedproducts = new ArrayList<>();
+        if(products != null && products.size() > 0)
+        {
+            ArrayList<Cell> destinations = Data.getPathFinderService().GetDestinations();
+            for(Cell d : destinations)
+            {
+                for(int lid : d.getLocationsId())
+                {
+                    for(Product p : products)
+                    {
+                        if(p.getLocationId() == lid)
+                        {
+                            sortedproducts.add(p);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return sortedproducts;
     }
 
     /**
