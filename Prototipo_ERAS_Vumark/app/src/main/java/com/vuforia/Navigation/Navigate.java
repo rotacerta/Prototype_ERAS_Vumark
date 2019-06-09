@@ -60,15 +60,15 @@ public abstract class Navigate extends AppCompatActivity {
         switch (page) {
             case "MAP":
                 ImageView map = findViewById(R.id.image_map);
-                map.setImageResource(R.drawable.ic_map_black_dp);
+                map.setImageResource(R.drawable.ic_map_white_dp);
 
-                camera.setImageResource(R.drawable.ic_camera_alt_white);
+                camera.setImageResource(R.drawable.ic_camera_alt_grey);
                 break;
             case "LIST":
                 ImageView list = findViewById(R.id.image_list);
-                list.setImageResource(R.drawable.ic_list_black_24dp);
+                list.setImageResource(R.drawable.ic_list_white_24dp);
 
-                camera.setImageResource(R.drawable.ic_camera_alt_white);
+                camera.setImageResource(R.drawable.ic_camera_alt_grey);
                 break;
         }
     }
@@ -76,15 +76,15 @@ public abstract class Navigate extends AppCompatActivity {
     public void resetMenu() {
         ImageView map = findViewById(R.id.image_map);
         map.setBackgroundColor(getResources().getColor(R.color.orange));
-        map.setImageResource(R.drawable.ic_map_white_dp);
+        map.setImageResource(R.drawable.ic_map_gray_dp);
 
         ImageView camera = findViewById(R.id.image_camera);
         camera.setBackgroundColor(getResources().getColor(R.color.orange));
-        camera.setImageResource(R.drawable.ic_camera_alt_white);
+        camera.setImageResource(R.drawable.ic_camera_alt_grey);
 
         ImageView list = findViewById(R.id.image_list);
         list.setBackgroundColor(getResources().getColor(R.color.orange));
-        list.setImageResource(R.drawable.ic_list_white_24dp);
+        list.setImageResource(R.drawable.ic_list_grey_24dp);
 
     }
 

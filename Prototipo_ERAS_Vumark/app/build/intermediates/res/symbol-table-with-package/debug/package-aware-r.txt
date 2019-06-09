@@ -1067,11 +1067,14 @@ drawable eras_logo
 drawable eras_logo_apk
 drawable grey_square
 drawable ic_camera_alt_black
+drawable ic_camera_alt_grey
 drawable ic_camera_alt_white
 drawable ic_dehaze_black
 drawable ic_list_black_24dp
+drawable ic_list_grey_24dp
 drawable ic_list_white_24dp
 drawable ic_map_black_dp
+drawable ic_map_gray_dp
 drawable ic_map_white_dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
