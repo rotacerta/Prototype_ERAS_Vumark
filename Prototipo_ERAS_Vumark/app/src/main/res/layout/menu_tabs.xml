@@ -27,21 +27,21 @@
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_list_white_24dp"/>
+                android:src="@drawable/ic_list_grey_24dp"/>
             <ImageView
                 android:id="@+id/image_camera"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_camera_alt_black"/>
+                android:src="@drawable/ic_camera_alt_white"/>
             <ImageView
                 android:id="@+id/image_map"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="10dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_map_white_dp"/>
+                android:src="@drawable/ic_map_gray_dp"/>
         </LinearLayout>
     </android.support.design.widget.AppBarLayout>
 

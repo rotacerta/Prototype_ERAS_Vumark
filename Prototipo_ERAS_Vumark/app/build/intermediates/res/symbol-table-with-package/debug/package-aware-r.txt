@@ -1067,16 +1067,18 @@ drawable eras_logo
 drawable eras_logo_apk
 drawable grey_square
 drawable ic_camera_alt_black
+drawable ic_camera_alt_grey
 drawable ic_camera_alt_white
 drawable ic_dehaze_black
 drawable ic_list_black_24dp
+drawable ic_list_grey_24dp
 drawable ic_list_white_24dp
 drawable ic_map_black_dp
+drawable ic_map_gray_dp
 drawable ic_map_white_dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable icon_open
 drawable logo
 drawable map_subtitle
 drawable menu_bg
@@ -1094,6 +1096,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable open_icon
 drawable pbp_apk_logo
 drawable pbp_logo
 drawable reticle
