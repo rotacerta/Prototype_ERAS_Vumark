@@ -3,73 +3,62 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:id="@+id/mainOpenAppLayout"
     android:background="@color/white">
 
-    <RelativeLayout
+    <LinearLayout
+        android:gravity="center"
         android:id="@+id/open_box"
+        android:orientation="vertical"
+        android:layout_marginLeft="60sp"
+        android:layout_marginRight="60sp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="25"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:ignore="MissingConstraints">
-
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/logo_image"
-            android:layout_width="199dp"
-            android:layout_height="86dp"
-            android:layout_above="@+id/open_image"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="64dp"
-            android:layout_marginBottom="34dp"
             android:contentDescription="@string/splash_screen_description"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="28sp"
             android:scaleType="centerInside"
-            android:src="@drawable/pbp_logo" />
-
+            android:src="@drawable/pbp_logo"
+            android:layout_height="150sp"
+            android:id="@+id/logo_image" />
 
         <ImageView
-            android:id="@+id/open_image"
+            android:contentDescription="@string/splash_screen_description"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="218dp"
-            android:contentDescription="@string/splash_screen_description"
+            android:layout_marginBottom="36sp"
+            android:src="@drawable/open_icon"
             android:scaleType="centerInside"
-            android:src="@drawable/open_icon" />
+            android:layout_height="200sp"
+            android:id="@+id/open_image"/>
 
         <TextView
-            android:layout_width="257dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/btn_open"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="46dp"
-            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center_horizontal"
             android:text="@string/OpenAppStartMessage"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36sp"
+            android:layout_width="match_parent"
             app:fontFamily="sans-serif"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:gravity="center" />
 
         <Button
-            android:id="@+id/btn_open"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="49dp"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:enabled="false"
             android:background="@drawable/border_button_orange"
             android:text="@string/OpenAppButtonText_waiting"
-            android:textColor="@color/white" />
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:paddingRight="20sp"
+            android:paddingLeft="20sp"
+            android:id="@+id/btn_open"
+            android:enabled="false" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
