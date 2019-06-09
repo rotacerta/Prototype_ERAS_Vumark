@@ -40,6 +40,53 @@
             android:paddingTop="16dp">
 
             <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:paddingRight="16sp"
+                android:paddingLeft="16sp"
+                android:layout_weight="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="@string/name_label"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                    <TextView
+                        android:id="@+id/name_content"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8sp">
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="@string/requester_label"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                    <TextView
+                        android:id="@+id/requester_content"
+                        android:textSize="@dimen/dimen_16sp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="8"
+                android:layout_marginTop="16sp"
                 android:id="@+id/listProducts"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -116,11 +116,20 @@ public class ListProducts extends Navigate
                         ll.setVisibility(View.GONE);
                 }
             }
+            SetListDetails();
         }
         else
         {
             ShowExceptionMessage();
         }
+    }
+
+    private void SetListDetails()
+    {
+        TextView listName = findViewById(R.id.name_content);
+        listName.setText(String.format(" %s", Data.getProductList().getName()));
+        TextView listReq = findViewById(R.id.requester_content);
+        listReq.setText(String.format(" %s", Data.getProductList().getRequester()));
     }
 
     private void ShowExceptionMessage()
