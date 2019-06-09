@@ -1515,10 +1515,12 @@ string descr_loading_icon
 string descr_scan_line
 string descr_vumark_instance
 string electronic_materials
+string ending_the_list
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string feature_ground_plane
 string feature_model_targets
+string finishList_btn_label
 string hide_bottom_view_on_scroll_behavior
 string insert_quantity_input_hint
 string instruct_empty

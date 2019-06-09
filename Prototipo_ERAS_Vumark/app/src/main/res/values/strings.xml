@@ -95,5 +95,7 @@
     <string name="OpenAppButtonText_waiting">Aguardando lista...</string>
     <string name="OpenAppButtonText">Iniciar navegação</string>
     <string name="no_products_to_get">Nenhum produto a pegar.</string>
+    <string name="ending_the_list">Encerrando...</string>
+    <string name="finishList_btn_label">Encerrar</string>
 
 </resources>

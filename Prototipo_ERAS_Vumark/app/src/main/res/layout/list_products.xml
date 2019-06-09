@@ -71,7 +71,7 @@
 
         <Button
             android:background="@drawable/border_button_orange"
-            android:text="Encerrar"
+            android:text="@string/finishList_btn_label"
             android:layout_centerInParent="true"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

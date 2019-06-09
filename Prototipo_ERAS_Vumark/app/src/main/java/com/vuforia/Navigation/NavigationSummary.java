@@ -152,6 +152,7 @@ public class NavigationSummary extends Navigate
     {
         public void onClick(View v)
         {
+            btn_finish.setText(R.string.ending_the_list);
             btn_finish.setEnabled(false);
             RequestList();
         }
@@ -214,6 +215,7 @@ public class NavigationSummary extends Navigate
         {
             if(result == null)
             {
+                btn_finish.setText(R.string.finishList_btn_label);
                 btn_finish.setEnabled(true);
                 return;
             }
