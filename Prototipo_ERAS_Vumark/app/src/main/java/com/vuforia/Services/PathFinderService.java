@@ -334,7 +334,7 @@ public class PathFinderService
 
         if (currentCell.getX() < cell.getX()) {
             return (isDiagonal) ? DirectionEnum.DIAGONAL_RIGHT : DirectionEnum.RIGHT;
-        } else if (currentCell.getX() > cell.getX()) {      
+        } else if (currentCell.getX() > cell.getX()) {
             return (isDiagonal) ? DirectionEnum.DIAGONAL_LEFT : DirectionEnum.LEFT;
         }
         return null;
