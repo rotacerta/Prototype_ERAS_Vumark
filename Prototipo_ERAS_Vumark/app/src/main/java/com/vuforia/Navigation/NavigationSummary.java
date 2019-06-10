@@ -53,13 +53,13 @@ public class NavigationSummary extends Navigate
         mainLayout = findViewById(R.id.mainNavigationSummLayout);
         AddProductsInView(Data.getProductList().getProducts());
         btn_finish.setOnClickListener(sendJSON);
-        UpdateTimeAndDate();
+        UpdateListDetails();
     }
 
     /**
      * Method to update Time and Date labels in UI
      */
-    private void UpdateTimeAndDate()
+    private void UpdateListDetails()
     {
         TextView textViewDate = findViewById(R.id.nav_summ_date);
         TextView textViewTime = findViewById(R.id.nav_summ_time);
@@ -68,6 +68,10 @@ public class NavigationSummary extends Navigate
         Time runningTime = GetNavigationTime();
         Data.getProductList().setRunningTime(runningTime);
         textViewTime.setText(String.format(" %s", runningTime.toString()));
+        TextView listName = findViewById(R.id.nav_summ_name);
+        listName.setText(String.format(" %s", Data.getProductList().getName()));
+        TextView listReq = findViewById(R.id.nav_summ_requester);
+        listReq.setText(String.format(" %s", Data.getProductList().getRequester()));
     }
 
     /**
@@ -152,6 +156,7 @@ public class NavigationSummary extends Navigate
     {
         public void onClick(View v)
         {
+            btn_finish.setText(R.string.ending_the_list);
             btn_finish.setEnabled(false);
             RequestList();
         }
@@ -214,6 +219,7 @@ public class NavigationSummary extends Navigate
         {
             if(result == null)
             {
+                btn_finish.setText(R.string.finishList_btn_label);
                 btn_finish.setEnabled(true);
                 return;
             }

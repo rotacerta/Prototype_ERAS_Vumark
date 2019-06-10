@@ -1241,7 +1241,10 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name_content
 id nav_summ_date
+id nav_summ_name
+id nav_summ_requester
 id nav_summ_time
 id navigation_header_container
 id never
@@ -1263,6 +1266,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id requester_content
 id right
 id right_icon
 id right_side
@@ -1518,10 +1522,12 @@ string descr_loading_icon
 string descr_scan_line
 string descr_vumark_instance
 string electronic_materials
+string ending_the_list
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string feature_ground_plane
 string feature_model_targets
+string finishList_btn_label
 string hide_bottom_view_on_scroll_behavior
 string insert_quantity_input_hint
 string instruct_empty
@@ -1548,6 +1554,7 @@ string mode_description
 string mode_mid_air
 string mode_product_placement
 string mtrl_chip_close_icon_content_description
+string name_label
 string navigation_summary_title
 string no_products_to_get
 string password_toggle_content_description
@@ -1555,6 +1562,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string requester_label
 string search_menu_title
 string splash_screen_description
 string status_bar_notification_info_overflow
