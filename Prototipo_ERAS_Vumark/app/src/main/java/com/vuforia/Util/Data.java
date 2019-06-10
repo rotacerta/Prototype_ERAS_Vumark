@@ -30,7 +30,7 @@ public class Data
 
     public static String getAPIUrl()
     {
-        return "http://192.168.43.36:80/pbpapi/api/values";
+        return "http://192.168.25.235/pbpapi/api/Values";
     }
 
     //region PFMethods

@@ -310,20 +310,32 @@ public class PathFinderService
 
     @Nullable
     private DirectionEnum getNextDirectionInLest(Cell cell) {
-        if (currentCell.getY() < cell.getY()) {
-            return DirectionEnum.RIGHT;
-        } else if (currentCell.getY() > cell.getY()) {
-            return DirectionEnum.LEFT;
+        boolean isDiagonal = false;
+
+        if (currentCell.getY() > cell.getY()) {
+            isDiagonal = true;
+        }
+
+        if (currentCell.getX() < cell.getX()) {
+            return (isDiagonal)? DirectionEnum.DIAGONAL_LEFT : DirectionEnum.LEFT;
+        } else if (currentCell.getX() > cell.getX()) {
+            return (isDiagonal)? DirectionEnum.DIAGONAL_RIGHT : DirectionEnum.RIGHT;
         }
         return null;
     }
 
     @Nullable
     private DirectionEnum getNextDirectionInWest(Cell cell) {
+        boolean isDiagonal = false;
+
         if (currentCell.getY() < cell.getY()) {
-            return DirectionEnum.LEFT;
-        } else if (currentCell.getY() > cell.getY()) {
-            return DirectionEnum.RIGHT;
+            isDiagonal = true;
+        }
+
+        if (currentCell.getX() < cell.getX()) {
+            return (isDiagonal) ? DirectionEnum.DIAGONAL_RIGHT : DirectionEnum.RIGHT;
+        } else if (currentCell.getX() > cell.getX()) {      
+            return (isDiagonal) ? DirectionEnum.DIAGONAL_LEFT : DirectionEnum.LEFT;
         }
         return null;
     }
@@ -340,9 +352,9 @@ public class PathFinderService
 
     @Nullable
     private DirectionEnum getNextDirectionInSouth(Cell cell) {
-        if (currentCell.getX() < cell.getX()) {
+        if (currentCell.getY() < cell.getY()) {
             return DirectionEnum.RIGHT;
-        } else if (currentCell.getX() > cell.getX()) {
+        } else if (currentCell.getY() > cell.getY()) {
             return DirectionEnum.LEFT;
         }
         return null;
