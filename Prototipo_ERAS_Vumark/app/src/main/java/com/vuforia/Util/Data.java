@@ -20,6 +20,7 @@ public class Data
     private static ArrayList<Tuple<String, Cell>> Cells_VuMarks;
     private static ArrayList<Tuple<Integer, Tuple<Integer, Integer>>> Cells_Locations;
     private static Date NavigationStart;
+    private static String UserIPAddress;
 
     public static void Init(PathFinderService pathFinderService, List products, ArrayList<Location> locations)
     {
@@ -30,7 +31,12 @@ public class Data
 
     public static String getAPIUrl()
     {
-        return "http://192.168.25.235/pbpapi/api/Values";
+        return "http://" + UserIPAddress +"/pbpapi/api/Values";
+    }
+
+    public static void setUserIPAddress(String userIPAddress)
+    {
+        UserIPAddress = userIPAddress;
     }
 
     //region PFMethods

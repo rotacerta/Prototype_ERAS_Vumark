@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.vuforia.Enums.HttpConnectionMethodEnum;
 import com.vuforia.Models.List;
@@ -29,17 +32,18 @@ import java.net.HttpURLConnection;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 import okhttp3.Response;
 
 public class OpenApp extends Navigate
 {
+    private boolean canStartNavigation, hasList;
     private ArrayList<Location> locations;
     private ConstraintLayout mainLayout;
     private ArrayList<Product> products;
-    private boolean canStartNavigation;
+    private Button btnOpen, btnIP;
     private String requestBody;
-    private Button btnOpen;
     private int attempts;
     private List list;
 
@@ -60,10 +64,12 @@ public class OpenApp extends Navigate
         attempts = 1;
         canStartNavigation = false;
         mainLayout = findViewById(R.id.mainOpenAppLayout);
+        btnIP = findViewById(R.id.btn_conn_insata);
+        btnIP.setOnClickListener(getIP);
         btnOpen = findViewById(R.id.btn_open);
         btnOpen.setOnClickListener(startNavigation);
 
-        RequestList();
+        hasList = false;
     }
 
     /**
@@ -91,8 +97,7 @@ public class OpenApp extends Navigate
         }
         else
         {
-            ChangeOpenButton();
-            btnOpen.setEnabled(false);
+            RestoreButton(R.string.OpenAppButtonText_init);
             ShowSnackbar("Não foi possível definir as localizações dos produtos.");
         }
     }
@@ -111,11 +116,66 @@ public class OpenApp extends Navigate
     {
         public void onClick(View v)
         {
-            Data.setNavigationStart(new Date());
-            goToActivity(v, VuMark.class);
-            finish();
+            if(hasList)
+            {
+                Data.setNavigationStart(new Date());
+                goToActivity(v, VuMark.class);
+                finish();
+            }
+            else
+            {
+                btnOpen.setText(R.string.OpenAppButtonText_waiting);
+                btnOpen.setEnabled(false);
+                RequestList();
+            }
         }
     };
+
+    View.OnClickListener getIP = new View.OnClickListener()
+    {
+        public void onClick(View v)
+        {
+            EditText editText = findViewById(R.id.userIPEdit);
+            String userip = editText.getText().toString();
+            if(TreatIP(userip))
+            {
+                Data.setUserIPAddress(userip);
+                LinearLayout layout = findViewById(R.id.ipEditLayout);
+                layout.setVisibility(View.GONE);
+                TextView viewMessage = findViewById(R.id.TextViewMessage);
+                viewMessage.setText(R.string.OpenAppStartMessage);
+                btnOpen.setVisibility(View.VISIBLE);
+            }
+            else
+            {
+                ShowSnackbar("Chave inválida.");
+            }
+        }
+    };
+
+    private boolean TreatIP(String userip)
+    {
+        if(!userip.isEmpty())
+        {
+            if(userip.matches("\\d+\\.\\d+\\.\\d+\\.\\d+"))
+            {
+                String[] peaces = userip.split(Pattern.quote("."));
+                if(peaces.length == 4)
+                {
+                    for(String ippeace : peaces)
+                    {
+                        try
+                        {
+                            Integer.parseInt(ippeace);
+                        }
+                        catch (Exception ignore) { return false; }
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     private void ShowSnackbar(String message)
     {
@@ -247,14 +307,15 @@ public class OpenApp extends Navigate
                 TreatData(new JSONObject(result));
                 if(canStartNavigation)
                 {
-                    btnOpen.setText(R.string.OpenAppButtonText);
-                    btnOpen.setEnabled(true);
+                    RestoreButton(R.string.OpenAppButtonText);
+                    hasList = true;
                     InitData();
                 }
+                else { RestoreButton(R.string.OpenAppButtonText_init); }
             }
             catch (Exception e)
             {
-                ChangeOpenButton();
+                RestoreButton(R.string.OpenAppButtonText_init);
                 ShowSnackbar("Falha ao processar lista recebida.");
             }
         }
@@ -274,7 +335,7 @@ public class OpenApp extends Navigate
         }
         else
         {
-            ChangeOpenButton();
+            RestoreButton(R.string.OpenAppButtonText_init);
             ShowSnackbar("Não foi possível pegar uma lista.");
         }
     }
@@ -282,14 +343,14 @@ public class OpenApp extends Navigate
     /**
      * Method to run a change in button on UI Thread
      */
-    private void ChangeOpenButton()
+    private void RestoreButton(final int text)
     {
         this.runOnUiThread(new Runnable()
         {
             public void run()
             {
-                btnOpen.setBackgroundResource(R.drawable.border_button_grey);
-                btnOpen.setText(R.string.OpenAppButtonText);
+                btnOpen.setText(text);
+                btnOpen.setEnabled(true);
             }
         });
     }

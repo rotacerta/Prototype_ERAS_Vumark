@@ -12,8 +12,8 @@
         android:gravity="center"
         android:id="@+id/open_box"
         android:orientation="vertical"
-        android:layout_marginLeft="60sp"
-        android:layout_marginRight="60sp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,43 +21,77 @@
             android:contentDescription="@string/splash_screen_description"
             android:layout_gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_marginBottom="28sp"
+            android:layout_marginBottom="0dp"
             android:scaleType="centerInside"
             android:src="@drawable/pbp_logo"
-            android:layout_height="150sp"
+            android:layout_height="150dp"
             android:id="@+id/logo_image" />
 
         <ImageView
             android:contentDescription="@string/splash_screen_description"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_marginBottom="36sp"
+            android:layout_marginBottom="32dp"
             android:src="@drawable/open_icon"
             android:scaleType="centerInside"
-            android:layout_height="200sp"
+            android:layout_height="200dp"
             android:id="@+id/open_image"/>
 
-        <TextView
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/OpenAppStartMessage"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="36sp"
+        <LinearLayout
+            android:paddingBottom="8dp"
+            android:orientation="vertical"
+            android:id="@+id/footerStackLayout"
             android:layout_width="match_parent"
-            app:fontFamily="sans-serif"
-            android:gravity="center" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:background="@drawable/border_button_orange"
-            android:text="@string/OpenAppButtonText_waiting"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:paddingRight="20sp"
-            android:paddingLeft="20sp"
-            android:id="@+id/btn_open"
-            android:enabled="false" />
+            <TextView
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/OpenAppStartIPMessage"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:id="@+id/TextViewMessage"
+                app:fontFamily="sans-serif" />
+
+            <LinearLayout
+                android:id="@+id/ipEditLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="0dp"
+                    android:inputType="number|text"
+                    android:id="@+id/userIPEdit"
+                    tools:ignore="RtlHardcoded"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <Button
+                    android:text=">"
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/btn_conn_insata"
+                    android:background="@drawable/border_button_orange"/>
+            </LinearLayout>
+            <Button
+                android:background="@drawable/border_button_orange"
+                android:text="@string/OpenAppButtonText_init"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:id="@+id/btn_open"
+                android:visibility="gone" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
