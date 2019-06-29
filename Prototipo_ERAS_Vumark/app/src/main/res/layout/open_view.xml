@@ -60,24 +60,25 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <EditText
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginLeft="0dp"
-                    android:inputType="number|text"
                     android:id="@+id/userIPEdit"
-                    tools:ignore="RtlHardcoded"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="8dp"
                     android:layout_weight="1"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:inputType="number|text"
+                    tools:ignore="RtlHardcoded" />
 
                 <Button
-                    android:text=">"
-                    android:layout_height="50dp"
-                    android:layout_width="50dp"
-                    android:textColor="@color/white"
                     android:id="@+id/btn_conn_insata"
-                    android:background="@drawable/border_button_orange"/>
+                    android:layout_width="50dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/border_button_orange"
+                    android:text=">"
+                    android:textColor="@color/white" />
             </LinearLayout>
             <Button
                 android:background="@drawable/border_button_orange"

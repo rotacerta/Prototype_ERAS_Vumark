@@ -59,6 +59,7 @@ public class OpenApp extends Navigate
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+
         setContentView(R.layout.open_view);
 
         attempts = 1;
